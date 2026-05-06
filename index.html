@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cybespoke — Bespoke digital craft for web, mobile & AI</title>
+  <meta name="description" content="Cybespoke designs and builds bespoke web, mobile, and AI products. Studio-grade craft, end to end." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <style>
+    /* ===== Homepage signature visuals ===== */
+    .hero {
+      position: relative; min-height: 100vh; padding: 140px 0 80px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(800px 500px at 70% 20%, rgba(124,92,255,0.18), transparent 60%),
+        radial-gradient(600px 400px at 10% 80%, rgba(33,212,253,0.12), transparent 60%);
+    }
+    .hero__grid {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+      animation: gridSlide 30s linear infinite;
+    }
+    @keyframes gridSlide { from { background-position: 0 0; } to { background-position: 60px 60px; } }
+
+    .hero__inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: center; }
+    @media (max-width: 980px) { .hero__inner { grid-template-columns: 1fr; } }
+
+    .hero h1 .word { display: inline-block; opacity: 0; transform: translateY(40px); animation: wordIn 0.8s var(--easing) forwards; }
+    .hero h1 .word:nth-child(1) { animation-delay: 0.1s; }
+    .hero h1 .word:nth-child(2) { animation-delay: 0.2s; }
+    .hero h1 .word:nth-child(3) { animation-delay: 0.3s; }
+    .hero h1 .word:nth-child(4) { animation-delay: 0.4s; }
+    .hero h1 .word:nth-child(5) { animation-delay: 0.5s; }
+    @keyframes wordIn { to { opacity: 1; transform: none; } }
+
+    .hero .grad {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2) 50%, var(--accent-3));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      background-size: 220% 220%; animation: gradShift 8s ease-in-out infinite;
+    }
+    @keyframes gradShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+    .hero__lede { color: var(--muted); font-size: 18px; max-width: 520px; margin-top: 24px; }
+    .hero__cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+    /* Floating service tiles */
+    .float-stack {
+      position: relative; height: 460px;
+      perspective: 1400px;
+    }
+    .tile {
+      position: absolute; width: 78%; padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border: 1px solid var(--line);
+      border-radius: 18px; backdrop-filter: blur(8px);
+      transform-style: preserve-3d;
+      animation: floatY 7s var(--easing) infinite;
+    }
+    .tile h3 { margin-bottom: 6px; }
+    .tile p { font-size: 14px; }
+    .tile .icon {
+      width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+      margin-bottom: 14px; font-size: 20px; font-weight: 700;
+    }
+    .tile--web   { top: 0%;  left: 0;   transform: rotateZ(-3deg); animation-delay: 0s; }
+    .tile--mob   { top: 18%; left: 22%; transform: rotateZ(2deg);  animation-delay: 0.6s; }
+    .tile--ai    { top: 38%; left: 0;   transform: rotateZ(-1deg); animation-delay: 1.2s; }
+    .tile--bes   { top: 58%; left: 22%; transform: rotateZ(3deg);  animation-delay: 1.8s; }
+    .tile--web .icon { background: rgba(33,212,253,0.15); color: var(--accent-2); }
+    .tile--mob .icon { background: rgba(124,92,255,0.15); color: var(--accent); }
+    .tile--ai  .icon { background: rgba(255,93,143,0.15); color: var(--accent-3); }
+    .tile--bes .icon { background: rgba(255,209,102,0.15); color: var(--accent-4); }
+    @keyframes floatY { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+    @media (max-width: 980px) { .float-stack { height: 380px; } }
+
+    /* Marquee */
+    .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 80px; padding: 22px 0; }
+    .marquee__track { display: flex; gap: 60px; white-space: nowrap; animation: marquee 28s linear infinite; }
+    .marquee__track span { font-family: "Space Grotesk"; font-size: 22px; color: var(--muted); display: inline-flex; align-items: center; gap: 60px; }
+    .marquee__track span::after { content: "✦"; color: var(--accent); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* Services grid */
+    .services { padding: 120px 0; }
+    .services__head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+    .services__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 820px) { .services__grid { grid-template-columns: 1fr; } }
+
+    .service-card {
+      position: relative; padding: 36px; min-height: 320px;
+      border-radius: 22px; border: 1px solid var(--line);
+      background: var(--bg-soft); overflow: hidden;
+      transition: transform .5s var(--easing), border-color .4s var(--easing);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.18); }
+    .service-card::before {
+      content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: 22px;
+      background: var(--gradient, linear-gradient(135deg, var(--accent), var(--accent-2)));
+      opacity: 0; transition: opacity .4s var(--easing);
+    }
+    .service-card:hover::before { opacity: 0.18; }
+    .service-card .label { font-family: "JetBrains Mono"; font-size: 12px; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; }
+    .service-card h2 { margin-top: 8px; }
+    .service-card p { margin-top: 12px; max-width: 480px; }
+    .service-card .arrow {
+      align-self: flex-start; width: 48px; height: 48px; border-radius: 50%;
+      border: 1px solid var(--line); display: grid; place-items: center;
+      margin-top: 24px; transition: transform .4s var(--easing), background .3s var(--easing);
+    }
+    .service-card:hover .arrow { transform: translate(6px, -6px); background: var(--accent); border-color: transparent; color: #fff; }
+
+    .service-card--web   { --gradient: linear-gradient(135deg, #21d4fd, #2152ff); }
+    .service-card--mob   { --gradient: linear-gradient(135deg, #7c5cff, #a855f7); }
+    .service-card--ai    { --gradient: linear-gradient(135deg, #ff5d8f, #ff8a3c); }
+    .service-card--bes   { --gradient: linear-gradient(135deg, #ffd166, #ef476f); }
+
+    .service-card .ornament {
+      position: absolute; right: -40px; bottom: -40px; width: 220px; height: 220px;
+      border-radius: 50%; opacity: 0.12; filter: blur(2px);
+      background: var(--gradient);
+      transition: transform .8s var(--easing);
+    }
+    .service-card:hover .ornament { transform: scale(1.2) translate(-10px, -10px); }
+
+    /* Stats */
+    .stats { padding: 80px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat { padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-soft); }
+    .stat .num { font-family: "Space Grotesk"; font-size: 44px; font-weight: 700; }
+    .stat .num span { background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat .lbl { color: var(--muted); font-size: 14px; margin-top: 6px; }
+    @media (max-width: 820px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+    /* CTA */
+    .cta-section {
+      margin: 120px 0 0; padding: 80px 40px; border-radius: 28px;
+      background:
+        radial-gradient(800px 400px at 0% 0%, rgba(124,92,255,0.25), transparent 60%),
+        radial-gradient(600px 400px at 100% 100%, rgba(33,212,253,0.18), transparent 60%),
+        var(--bg-soft);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .cta-section h2 { max-width: 720px; margin: 0 auto; }
+    .cta-section p { max-width: 540px; margin: 16px auto 28px; }
+  </style>
+</head>
+<body class="page-enter">
+  <!-- NAV -->
+  <header class="nav">
+    <a href="index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
+    <nav class="nav__links">
+      <a href="services/web.html">Web</a>
+      <a href="services/mobile.html">Mobile</a>
+      <a href="services/ai.html">AI</a>
+      <a href="services/bespoke.html">Bespoke</a>
+    </nav>
+    <a href="#contact" class="nav__cta">Start a project</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__grid"></div>
+    <div class="container hero__inner">
+      <div>
+        <div class="section-eyebrow"><span class="dot"></span> Studio · Est. 2024</div>
+        <h1 style="margin-top: 20px;">
+          <span class="word">Bespoke</span>
+          <span class="word grad">digital</span>
+          <span class="word">products,</span>
+          <span class="word">crafted</span>
+          <span class="word">end&#8209;to&#8209;end.</span>
+        </h1>
+        <p class="hero__lede">We design and ship web, mobile, and AI products for ambitious teams. Every line of code, every pixel — tailored.</p>
+        <div class="hero__cta">
+          <a href="#services" class="btn btn--primary">Explore services →</a>
+          <a href="#contact" class="btn btn--ghost">Book a call</a>
+        </div>
+      </div>
+
+      <div class="float-stack reveal">
+        <div class="tile tile--web">
+          <div class="icon">{ }</div>
+          <h3>Web</h3>
+          <p>Marketing sites, dashboards, and platforms that load fast and feel inevitable.</p>
+        </div>
+        <div class="tile tile--mob">
+          <div class="icon">⌘</div>
+          <h3>Mobile</h3>
+          <p>iOS, Android, and cross-platform apps with motion that feels native.</p>
+        </div>
+        <div class="tile tile--ai">
+          <div class="icon">∿</div>
+          <h3>AI</h3>
+          <p>Agents, RAG systems and copilots wired into your product surface.</p>
+        </div>
+        <div class="tile tile--bes">
+          <div class="icon">✦</div>
+          <h3>Bespoke</h3>
+          <p>One-of-one builds — custom internal tools, hardware-aware UIs, exotic stacks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Design</span><span>Engineering</span><span>Motion</span><span>AI</span><span>Strategy</span><span>Bespoke</span>
+      <span>Design</span><span>Engineering</span><span>Motion</span><span>AI</span><span>Strategy</span><span>Bespoke</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services container" id="services">
+    <div class="services__head reveal">
+      <div>
+        <div class="section-eyebrow"><span class="dot"></span> Services</div>
+        <h2 style="margin-top: 14px;">Four disciplines.<br/><span style="color: var(--muted);">One studio.</span></h2>
+      </div>
+      <p style="max-width: 360px;">Pick a track to see how we work, what we ship, and how we collaborate from kickoff to launch.</p>
+    </div>
+
+    <div class="services__grid">
+      <a href="services/web.html" class="service-card service-card--web reveal">
+        <div>
+          <div class="label">01 — Web</div>
+          <h2>Web platforms</h2>
+          <p>Production-grade marketing sites, SaaS dashboards, and storefronts. SSR, edge, animations, design systems.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="ornament"></div>
+      </a>
+      <a href="services/mobile.html" class="service-card service-card--mob reveal">
+        <div>
+          <div class="label">02 — Mobile</div>
+          <h2>Mobile apps</h2>
+          <p>Native iOS &amp; Android, React Native, Flutter. Onboarding, payments, offline-first, push.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="ornament"></div>
+      </a>
+      <a href="services/ai.html" class="service-card service-card--ai reveal">
+        <div>
+          <div class="label">03 — AI</div>
+          <h2>AI &amp; Agents</h2>
+          <p>RAG, agentic workflows, evals, fine-tuning. Bring intelligence to product without the science-fair feel.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="ornament"></div>
+      </a>
+      <a href="services/bespoke.html" class="service-card service-card--bes reveal">
+        <div>
+          <div class="label">04 — Bespoke</div>
+          <h2>Bespoke solutions</h2>
+          <p>Internal tools, custom hardware UIs, niche integrations. The work that doesn't fit a template.</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="ornament"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats container reveal">
+    <div class="stat"><div class="num"><span>40+</span></div><div class="lbl">Products shipped</div></div>
+    <div class="stat"><div class="num"><span>12</span></div><div class="lbl">Industries served</div></div>
+    <div class="stat"><div class="num"><span>4.9</span></div><div class="lbl">Avg. client rating</div></div>
+    <div class="stat"><div class="num"><span>∞</span></div><div class="lbl">Iterations welcome</div></div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container" id="contact">
+    <div class="cta-section reveal">
+      <div class="section-eyebrow"><span class="dot"></span> Get in touch</div>
+      <h2 style="margin-top: 18px;">Got something ambitious in mind?</h2>
+      <p>Tell us about it. We'll come back within a working day with a sharp first read and a path forward.</p>
+      <a href="mailto:hello@cybespoke.com" class="btn btn--primary">hello@cybespoke.com →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
+        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio building web, mobile and AI products with care.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/web.html">Web</a></li>
+          <li><a href="services/mobile.html">Mobile</a></li>
+          <li><a href="services/ai.html">AI</a></li>
+          <li><a href="services/bespoke.html">Bespoke</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">Process</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span data-year></span> Cybespoke. All rights reserved.</span>
+      <span>Crafted in dark mode.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/global.js"></script>
+</body>
+</html>
