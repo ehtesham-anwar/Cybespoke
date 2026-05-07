@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Start a project — Cybespoke Belfast</title>
+  <meta name="description" content="Tell us about your project in a few short questions. Cybespoke will respond within one working day with considered next steps." />
+  <link rel="canonical" href="https://cybespoke.co.uk/start.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cybespoke" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://cybespoke.co.uk/start.html" />
+  <meta property="og:title" content="Start a project — Cybespoke Belfast" />
+  <meta property="og:description" content="A short questionnaire to help us understand your project and respond with considered next steps." />
+  <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Start a project — Cybespoke Belfast" />
+  <meta name="twitter:description" content="A short questionnaire to help us understand your project and respond with considered next steps." />
+  <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <style>
+    .q-page { position: relative; padding: 140px 0 80px; min-height: 100vh; }
+    .q-page__bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(900px 600px at 80% 0%, rgba(139, 92, 246, 0.18), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(45, 212, 191, 0.12), transparent 60%);
+    }
+    .q-shell { position: relative; z-index: 2; max-width: 760px; margin-inline: auto; }
+
+    .q-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: "JetBrains Mono"; font-size: 12px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+    }
+    .q-eyebrow .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.6);
+    }
+    .q-intro h1 {
+      font-family: "Space Grotesk", sans-serif; font-weight: 600;
+      font-size: clamp(34px, 5vw, 56px); line-height: 1.05;
+      letter-spacing: -0.02em; margin-top: 16px;
+    }
+    .q-intro h1 .grad {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2) 50%, var(--accent-3));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .q-intro p {
+      color: var(--muted); margin-top: 18px; max-width: 560px;
+      font-size: 17px; line-height: 1.6;
+    }
+
+    /* Progress */
+    .q-progress {
+      margin-top: 36px; display: flex; align-items: center; gap: 14px;
+      font-family: "JetBrains Mono"; font-size: 12px; color: var(--muted);
+      letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .q-progress__bar {
+      flex: 1; height: 3px; background: var(--line); border-radius: 999px; overflow: hidden;
+    }
+    .q-progress__fill {
+      display: block; height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      transition: width .5s var(--easing-soft);
+    }
+
+    /* Card */
+    .q-card {
+      margin-top: 30px; position: relative; padding: 44px;
+      border: 1px solid var(--line); border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0)),
+        rgba(13, 13, 20, 0.6);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      box-shadow: var(--shadow-soft);
+      min-height: 380px;
+      display: flex; flex-direction: column;
+    }
+    .q-card::before {
+      content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: 24px;
+      background: linear-gradient(135deg, rgba(45,212,191,0.25), rgba(139,92,246,0.25));
+      opacity: 0; transition: opacity .6s var(--easing-soft);
+    }
+    .q-card:hover::before { opacity: 0.18; }
+
+    .q-step__count {
+      font-family: "JetBrains Mono"; font-size: 12px; color: var(--muted);
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .q-step__title {
+      font-family: "Space Grotesk", sans-serif; font-weight: 600;
+      font-size: clamp(26px, 3.4vw, 36px); line-height: 1.15;
+      letter-spacing: -0.015em; margin-top: 10px;
+    }
+    .q-step__hint { color: var(--muted); margin-top: 10px; font-size: 15px; }
+
+    /* Step transitions */
+    .q-step { display: none; flex: 1; flex-direction: column; }
+    .q-step.is-active { display: flex; animation: stepIn .45s var(--easing-soft) both; }
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* Options grid */
+    .q-options {
+      margin-top: 28px; display: grid; gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 620px) { .q-options { grid-template-columns: 1fr; } }
+    .q-option {
+      position: relative; text-align: left;
+      padding: 18px 20px; border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      color: var(--text); font-weight: 500; font-size: 15px;
+      display: flex; align-items: center; gap: 14px;
+      transition:
+        border-color .35s var(--easing-soft),
+        background .35s var(--easing-soft),
+        transform .35s var(--easing-soft);
+    }
+    .q-option:hover { border-color: var(--line-strong); background: rgba(255,255,255,0.04); transform: translateY(-2px); }
+    .q-option .glyph {
+      width: 30px; height: 30px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      font-family: "JetBrains Mono"; font-size: 12px; color: var(--muted);
+      flex-shrink: 0;
+    }
+    .q-option.is-selected {
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(45,212,191,0.14), rgba(139,92,246,0.14));
+      box-shadow: 0 0 0 1px rgba(139,92,246,0.45) inset, 0 18px 40px -22px rgba(45,212,191,0.45);
+    }
+    .q-option.is-selected .glyph {
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      color: #050508; border-color: transparent; font-weight: 700;
+    }
+
+    /* Inputs */
+    .q-fields { margin-top: 28px; display: grid; gap: 14px; }
+    .q-field {
+      display: grid; gap: 8px;
+    }
+    .q-field label {
+      font-family: "JetBrains Mono"; font-size: 11px; color: var(--muted);
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .q-field input,
+    .q-field textarea {
+      font: inherit; color: var(--text);
+      padding: 14px 16px; border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.025);
+      transition: border-color .3s var(--easing-soft), background .3s var(--easing-soft);
+      width: 100%;
+    }
+    .q-field textarea { resize: vertical; min-height: 120px; line-height: 1.55; }
+    .q-field input:focus,
+    .q-field textarea:focus {
+      outline: none; border-color: rgba(139,92,246,0.55);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Footer controls */
+    .q-controls {
+      margin-top: auto; padding-top: 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+    }
+    .q-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
+      letter-spacing: 0.02em; transition: all .35s var(--easing-soft);
+      border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,0.025);
+    }
+    .q-btn:hover { border-color: var(--line-strong); background: rgba(255,255,255,0.05); }
+    .q-btn--primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      color: #050508;
+      box-shadow: var(--shadow-glow);
+    }
+    .q-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 24px 60px -22px rgba(139,92,246,0.55); }
+    .q-btn[disabled] { opacity: 0.4; pointer-events: none; }
+
+    /* Summary */
+    .q-summary {
+      display: grid; gap: 12px; margin-top: 24px;
+      border-top: 1px solid var(--line); padding-top: 24px;
+    }
+    .q-summary__row {
+      display: grid; grid-template-columns: 180px 1fr; gap: 18px; align-items: start;
+      padding: 12px 0; border-bottom: 1px solid var(--line);
+    }
+    .q-summary__row:last-child { border-bottom: 0; }
+    .q-summary__label {
+      font-family: "JetBrains Mono"; font-size: 11px; color: var(--muted);
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .q-summary__value { color: var(--text); font-size: 15px; line-height: 1.55; }
+    @media (max-width: 620px) {
+      .q-summary__row { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    .q-success { text-align: center; padding: 20px 0; }
+    .q-success .check {
+      width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
+      margin: 0 auto 18px; font-size: 26px; color: #050508;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      box-shadow: var(--shadow-glow);
+    }
+
+    @media (max-width: 620px) {
+      .q-page { padding: 110px 0 50px; }
+      .q-card { padding: 28px; min-height: 320px; border-radius: 20px; }
+      .q-step__title { font-size: 24px; }
+      .q-controls { padding-top: 24px; }
+      .q-btn { padding: 12px 18px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body class="page-enter">
+  <header class="nav">
+    <a href="index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
+    <nav class="nav__links">
+      <a href="services/web.html">Websites</a>
+      <a href="services/mobile.html">Apps</a>
+      <a href="services/ai.html">Smart tools</a>
+      <a href="services/bespoke.html">Bespoke</a>
+    </nav>
+    <a href="start.html" class="nav__cta active">Start a project</a>
+  </header>
+
+  <div class="q-page__bg"></div>
+
+  <main class="q-page">
+    <div class="q-shell container">
+      <div class="q-intro">
+        <div class="q-eyebrow"><span class="dot"></span> Start a project</div>
+        <h1>Tell us about your <span class="grad">project</span>.</h1>
+        <p>A short, considered questionnaire — six questions, no more. We will reply within one working day with a considered response and clear next steps.</p>
+      </div>
+
+      <div class="q-progress" aria-hidden="true">
+        <span data-progress-text>Step 1 of 6</span>
+        <span class="q-progress__bar"><span class="q-progress__fill" data-progress-fill></span></span>
+      </div>
+
+      <form class="q-card" id="q-form" novalidate>
+
+        <!-- Step 1 -->
+        <div class="q-step is-active" data-step="1" data-key="service">
+          <div class="q-step__count">Question 1</div>
+          <h2 class="q-step__title">What would you like to build?</h2>
+          <p class="q-step__hint">Select the option that best fits. You can refine this later in the conversation.</p>
+          <div class="q-options" role="radiogroup" data-input="single">
+            <button type="button" class="q-option" data-value="Website"><span class="glyph">01</span><span>A website</span></button>
+            <button type="button" class="q-option" data-value="Mobile app"><span class="glyph">02</span><span>A mobile app</span></button>
+            <button type="button" class="q-option" data-value="AI tool"><span class="glyph">03</span><span>An AI tool</span></button>
+            <button type="button" class="q-option" data-value="SEO & marketing"><span class="glyph">04</span><span>SEO &amp; marketing</span></button>
+            <button type="button" class="q-option" data-value="Bespoke software"><span class="glyph">05</span><span>Bespoke software</span></button>
+            <button type="button" class="q-option" data-value="Not sure yet"><span class="glyph">06</span><span>Not sure yet</span></button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="q-step" data-step="2" data-key="problem">
+          <div class="q-step__count">Question 2</div>
+          <h2 class="q-step__title">Which challenge brings you here?</h2>
+          <p class="q-step__hint">A brief sense of where you are today helps us pitch the conversation appropriately.</p>
+          <div class="q-options" role="radiogroup" data-input="single">
+            <button type="button" class="q-option" data-value="Building from scratch"><span class="glyph">i</span><span>We are starting from scratch</span></button>
+            <button type="button" class="q-option" data-value="Existing product underperforming"><span class="glyph">ii</span><span>What we have is not working</span></button>
+            <button type="button" class="q-option" data-value="Scaling and upgrading"><span class="glyph">iii</span><span>We are scaling and need to upgrade</span></button>
+            <button type="button" class="q-option" data-value="Adding new capabilities"><span class="glyph">iv</span><span>Adding new capabilities</span></button>
+            <button type="button" class="q-option" data-value="Replacing a third party"><span class="glyph">v</span><span>Replacing a third‑party tool</span></button>
+            <button type="button" class="q-option" data-value="Just exploring"><span class="glyph">vi</span><span>Just exploring options</span></button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="q-step" data-step="3" data-key="timeline">
+          <div class="q-step__count">Question 3</div>
+          <h2 class="q-step__title">When would you like to begin?</h2>
+          <p class="q-step__hint">Indicative timing only. We will work with you to confirm a realistic start date.</p>
+          <div class="q-options" role="radiogroup" data-input="single">
+            <button type="button" class="q-option" data-value="As soon as possible"><span class="glyph">→</span><span>As soon as possible</span></button>
+            <button type="button" class="q-option" data-value="Within 1–3 months"><span class="glyph">→</span><span>Within one to three months</span></button>
+            <button type="button" class="q-option" data-value="3–6 months"><span class="glyph">→</span><span>Three to six months</span></button>
+            <button type="button" class="q-option" data-value="No specific timeline"><span class="glyph">→</span><span>No specific timeline yet</span></button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="q-step" data-step="4" data-key="budget">
+          <div class="q-step__count">Question 4</div>
+          <h2 class="q-step__title">What is your approximate budget?</h2>
+          <p class="q-step__hint">Honest ranges allow us to recommend an appropriate scope. There is no wrong answer.</p>
+          <div class="q-options" role="radiogroup" data-input="single">
+            <button type="button" class="q-option" data-value="Under £10k"><span class="glyph">£</span><span>Under £10k</span></button>
+            <button type="button" class="q-option" data-value="£10k – £25k"><span class="glyph">£</span><span>£10k – £25k</span></button>
+            <button type="button" class="q-option" data-value="£25k – £75k"><span class="glyph">£</span><span>£25k – £75k</span></button>
+            <button type="button" class="q-option" data-value="£75k+"><span class="glyph">£</span><span>£75k or above</span></button>
+            <button type="button" class="q-option" data-value="Prefer to discuss"><span class="glyph">£</span><span>I would prefer to discuss</span></button>
+            <button type="button" class="q-option" data-value="Not sure yet"><span class="glyph">£</span><span>Not sure yet</span></button>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="q-step" data-step="5" data-key="details">
+          <div class="q-step__count">Question 5</div>
+          <h2 class="q-step__title">Tell us a little about your project.</h2>
+          <p class="q-step__hint">A few sentences are plenty. Goals, audience, anything you have considered already.</p>
+          <div class="q-fields">
+            <div class="q-field">
+              <label for="q-details">Project notes</label>
+              <textarea id="q-details" name="details" placeholder="What are you trying to achieve? Who is it for? What have you tried so far?"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="q-step" data-step="6" data-key="contact">
+          <div class="q-step__count">Question 6</div>
+          <h2 class="q-step__title">Where can we reach you?</h2>
+          <p class="q-step__hint">We respond within one working day. Your details will be used solely to reply to this enquiry.</p>
+          <div class="q-fields">
+            <div class="q-field">
+              <label for="q-name">Your name</label>
+              <input id="q-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" />
+            </div>
+            <div class="q-field">
+              <label for="q-company">Company (optional)</label>
+              <input id="q-company" name="company" type="text" autocomplete="organization" placeholder="Acme Ltd" />
+            </div>
+            <div class="q-field">
+              <label for="q-email">Email address</label>
+              <input id="q-email" name="email" type="email" autocomplete="email" required placeholder="jane@acme.co.uk" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 7: Review -->
+        <div class="q-step" data-step="7" data-key="review">
+          <div class="q-step__count">Almost there</div>
+          <h2 class="q-step__title">A quick review before we send it.</h2>
+          <p class="q-step__hint">Please check that the details below are correct. You can step back to amend any answer.</p>
+          <div class="q-summary" data-summary></div>
+        </div>
+
+        <!-- Step 8: Success -->
+        <div class="q-step" data-step="8" data-key="done">
+          <div class="q-success">
+            <div class="check">✓</div>
+            <h2 class="q-step__title" style="margin-top: 0;">Thank you — your brief is ready.</h2>
+            <p class="q-step__hint" style="max-width: 480px; margin: 14px auto 0;">Your default mail application should now be open with the details prepared. If it has not opened, you can copy the summary below and send it to <a href="mailto:hello@cybespoke.co.uk" style="color: var(--text); border-bottom: 1px solid var(--line-strong);">hello@cybespoke.co.uk</a>.</p>
+            <div class="q-summary" data-summary-final style="text-align: left; max-width: 600px; margin: 28px auto 0;"></div>
+          </div>
+        </div>
+
+        <div class="q-controls">
+          <button type="button" class="q-btn" data-back disabled>← Back</button>
+          <button type="button" class="q-btn q-btn--primary" data-next>Next →</button>
+        </div>
+      </form>
+
+      <p style="text-align: center; margin-top: 28px; font-size: 13px; color: var(--muted);">
+        Prefer email? Write to <a href="mailto:hello@cybespoke.co.uk" style="color: var(--text); border-bottom: 1px solid var(--line-strong);">hello@cybespoke.co.uk</a> directly.
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
+        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/web.html">Websites</a></li>
+          <li><a href="services/mobile.html">Apps</a></li>
+          <li><a href="services/ai.html">Smart tools</a></li>
+          <li><a href="services/bespoke.html">Bespoke</a></li>
+          <li><a href="services/seo.html">SEO &amp; marketing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="start.html">Start a project</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#services">Process</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span data-year></span> Cybespoke · Belfast</span>
+      <span>Crafted in Belfast.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/global.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('q-form');
+      if (!form) return;
+
+      const totalAnswerableSteps = 6;
+      const steps = Array.from(form.querySelectorAll('.q-step'));
+      const backBtn = form.querySelector('[data-back]');
+      const nextBtn = form.querySelector('[data-next]');
+      const progressFill = document.querySelector('[data-progress-fill]');
+      const progressText = document.querySelector('[data-progress-text]');
+      const summaryEl = form.querySelector('[data-summary]');
+      const summaryFinalEl = form.querySelector('[data-summary-final]');
+
+      const answers = {
+        service: '', problem: '', timeline: '', budget: '',
+        details: '', name: '', company: '', email: ''
+      };
+
+      let current = 1;
+
+      // Wire option chips
+      form.querySelectorAll('.q-step').forEach((step) => {
+        const key = step.dataset.key;
+        step.querySelectorAll('.q-option').forEach((opt) => {
+          opt.addEventListener('click', () => {
+            step.querySelectorAll('.q-option').forEach((o) => o.classList.remove('is-selected'));
+            opt.classList.add('is-selected');
+            answers[key] = opt.dataset.value;
+            updateNextState();
+          });
+        });
+      });
+
+      // Wire text fields
+      form.querySelectorAll('input, textarea').forEach((el) => {
+        el.addEventListener('input', () => {
+          answers[el.name] = el.value.trim();
+          updateNextState();
+        });
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && el.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            if (!nextBtn.disabled) nextBtn.click();
+          }
+        });
+      });
+
+      function setStep(n) {
+        current = n;
+        steps.forEach((s) => s.classList.toggle('is-active', Number(s.dataset.step) === n));
+        // progress
+        const visible = Math.min(n, totalAnswerableSteps);
+        const pct = (visible / totalAnswerableSteps) * 100;
+        if (progressFill) progressFill.style.width = pct + '%';
+        if (progressText) {
+          if (n <= totalAnswerableSteps) progressText.textContent = 'Step ' + n + ' of ' + totalAnswerableSteps;
+          else if (n === totalAnswerableSteps + 1) progressText.textContent = 'Review';
+          else progressText.textContent = 'Sent';
+        }
+        // buttons
+        backBtn.disabled = n === 1 || n === steps.length;
+        backBtn.style.visibility = (n === steps.length) ? 'hidden' : 'visible';
+
+        if (n === steps.length) {
+          nextBtn.style.display = 'none';
+        } else {
+          nextBtn.style.display = '';
+          if (n === totalAnswerableSteps + 1) nextBtn.textContent = 'Send brief →';
+          else nextBtn.textContent = 'Next →';
+        }
+        updateNextState();
+
+        // focus management
+        const active = steps.find((s) => Number(s.dataset.step) === n);
+        if (active) {
+          const firstInput = active.querySelector('input, textarea');
+          if (firstInput) setTimeout(() => firstInput.focus({ preventScroll: true }), 60);
+        }
+
+        if (n === totalAnswerableSteps + 1) renderSummary(summaryEl);
+      }
+
+      function isStepValid(n) {
+        const step = steps.find((s) => Number(s.dataset.step) === n);
+        if (!step) return true;
+        const key = step.dataset.key;
+        if (n <= 4) return Boolean(answers[key]);
+        if (n === 5) return answers.details.length >= 1;
+        if (n === 6) {
+          const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email);
+          return Boolean(answers.name) && emailOk;
+        }
+        return true;
+      }
+
+      function updateNextState() {
+        nextBtn.disabled = !isStepValid(current);
+      }
+
+      function renderSummary(target) {
+        if (!target) return;
+        const rows = [
+          ['Service', answers.service],
+          ['Challenge', answers.problem],
+          ['Timeline', answers.timeline],
+          ['Budget', answers.budget],
+          ['Project notes', answers.details],
+          ['Name', answers.name + (answers.company ? ' — ' + answers.company : '')],
+          ['Email', answers.email]
+        ];
+        target.innerHTML = rows.map(([label, value]) => (
+          '<div class="q-summary__row">' +
+            '<div class="q-summary__label">' + label + '</div>' +
+            '<div class="q-summary__value">' + escapeHtml(value || '—') + '</div>' +
+          '</div>'
+        )).join('');
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function buildMailto() {
+        const subject = 'New project brief — ' + (answers.service || 'Cybespoke');
+        const lines = [
+          'A new project brief from the Cybespoke questionnaire.',
+          '',
+          'Service: ' + answers.service,
+          'Challenge: ' + answers.problem,
+          'Timeline: ' + answers.timeline,
+          'Budget: ' + answers.budget,
+          '',
+          'Project notes:',
+          answers.details,
+          '',
+          'Name: ' + answers.name,
+          'Company: ' + (answers.company || '—'),
+          'Email: ' + answers.email
+        ];
+        const body = lines.join('\n');
+        return 'mailto:hello@cybespoke.co.uk?subject=' + encodeURIComponent(subject) +
+               '&body=' + encodeURIComponent(body);
+      }
+
+      backBtn.addEventListener('click', () => {
+        if (current > 1) setStep(current - 1);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (!isStepValid(current)) return;
+        if (current === totalAnswerableSteps + 1) {
+          // Send brief: open mailto, render final summary, advance.
+          window.location.href = buildMailto();
+          renderSummary(summaryFinalEl);
+          setStep(steps.length);
+          return;
+        }
+        if (current < steps.length) setStep(current + 1);
+      });
+
+      setStep(1);
+    })();
+  </script>
+</body>
+</html>
