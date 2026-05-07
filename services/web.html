@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Web — Cybespoke</title>
-  <meta name="description" content="Production-grade web platforms by Cybespoke." />
+  <title>Websites — Cybespoke</title>
+  <meta name="description" content="Beautiful, fast websites for ambitious teams — built by Cybespoke in Belfast." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -61,25 +62,42 @@
 
     .web-hero p { color: var(--muted); margin-top: 22px; max-width: 540px; font-family: "Inter", sans-serif; font-size: 17px; }
 
-    /* Code window */
-    .code-window {
+    /* Promise card */
+    .promise {
       position: relative;
-      border-radius: 14px; overflow: hidden;
-      border: 1px solid rgba(33,212,253,0.25);
-      background: #050810; box-shadow: 0 30px 80px -20px rgba(33,212,253,0.18);
+      padding: 28px 28px 22px;
+      border-radius: 20px;
+      border: 1px solid rgba(33,212,253,0.18);
+      background: linear-gradient(180deg, rgba(33,212,253,0.05), rgba(33,82,255,0.02));
+      box-shadow: 0 30px 80px -28px rgba(33,212,253,0.18);
+      backdrop-filter: blur(8px);
     }
-    .code-window__bar { display: flex; gap: 6px; padding: 14px 16px; border-bottom: 1px solid rgba(33,212,253,0.12); background: #060a16; }
-    .code-window__bar i { width: 12px; height: 12px; border-radius: 50%; background: #2a2f3a; display: block; }
-    .code-window__bar i:nth-child(1) { background: #ff5f56; }
-    .code-window__bar i:nth-child(2) { background: #ffbd2e; }
-    .code-window__bar i:nth-child(3) { background: #27c93f; }
-    .code-window__bar span { margin-left: auto; font-size: 12px; color: var(--muted); }
-    .code-window pre { padding: 22px 24px; font-size: 14px; line-height: 1.7; overflow: auto; }
-    .code-window .k { color: #ff7edb; }
-    .code-window .s { color: #f1fa8c; }
-    .code-window .c { color: #6272a4; font-style: italic; }
-    .code-window .v { color: #50fa7b; }
-    .code-window .n { color: var(--web-cyan); }
+    .promise__head {
+      font-family: "Inter", sans-serif;
+      font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--web-cyan); margin-bottom: 18px;
+    }
+    .promise__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .promise__list li {
+      display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+      padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .promise__list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .promise__tick {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--web-cyan), #2152ff);
+      color: #051018; font-weight: 700; font-size: 13px;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .promise__list strong {
+      font-family: "Inter", sans-serif; font-size: 15px; color: var(--text); font-weight: 600;
+      display: block;
+    }
+    .promise__list p {
+      font-family: "Inter", sans-serif; font-size: 13.5px; color: var(--muted);
+      margin-top: 2px; line-height: 1.5;
+    }
 
     /* Glitch heading */
     .glitch { position: relative; display: inline-block; }
@@ -142,16 +160,37 @@
     }
     .pager a { color: var(--muted); font-size: 14px; }
     .pager a:hover { color: var(--web-cyan); }
+
+    @media (max-width: 720px) {
+      .web-hero { padding: 110px 0 50px; min-height: auto; }
+      .web-hero__inner { gap: 32px; }
+      .web-hero p { font-size: 15px; margin-top: 16px; }
+      .promise { padding: 22px 22px 18px; border-radius: 16px; }
+      .promise__head { font-size: 12px; margin-bottom: 14px; }
+      .promise__list { gap: 12px; }
+      .promise__list strong { font-size: 14.5px; }
+      .promise__list p { font-size: 13px; }
+      .promise__tick { width: 20px; height: 20px; font-size: 11px; }
+      .caps { padding: 60px 0; }
+      .caps__grid { gap: 10px; margin-top: 24px; }
+      .cap { padding: 18px; }
+      .process { padding: 40px 0; }
+      .timeline { padding-left: 16px; }
+      .step { padding: 18px 0 18px 22px; }
+      .step h3 { font-size: 16px; }
+      .stack { padding: 50px 0; }
+      .pager { margin-top: 60px; padding: 18px; gap: 10px; }
+      .pager a { font-size: 13px; }
+    }
   </style>
 </head>
 <body class="page-enter">
   <header class="nav">
     <a href="../index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
     <nav class="nav__links">
-      <a href="web.html" class="active">Web</a>
-      <a href="mobile.html">Mobile</a>
-      <a href="ai.html">AI</a>
-      <a href="bespoke.html">Bespoke</a>
+      <a href="web.html" class="active">Websites</a>
+      <a href="mobile.html">Apps</a>
+      <a href="ai.html">Smart tools</a>
     </nav>
     <a href="../index.html#contact" class="nav__cta">Start a project</a>
   </header>
@@ -161,79 +200,78 @@
     <div class="web-hero__matrix"></div>
     <div class="container web-hero__inner">
       <div>
-        <div class="term-prompt">cybespoke@studio:~/web</div>
-        <h1>
-          <span class="typed">Web platforms</span><br/>
-          <span class="glitch" data-text="that compile to wow.">that compile to wow.</span><span class="caret"></span>
+        <div class="section-eyebrow"><span class="dot"></span> Websites</div>
+        <h1 style="margin-top: 18px;">
+          <span class="typed">Websites</span><br/>
+          <span class="glitch" data-text="that earn the click.">that earn the click.</span><span class="caret"></span>
         </h1>
-        <p>From marketing sites that convert to dashboards that scale to a million sessions — we build the web layer the rest of your product runs on.</p>
+        <p>From a homepage that wins customers to a full back‑office dashboard for your team — we build the website your business runs on.</p>
         <div style="display:flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
           <a class="btn btn--primary" href="../index.html#contact">Brief us →</a>
           <a class="btn btn--ghost" href="#process">Our process</a>
         </div>
       </div>
 
-      <div class="code-window reveal">
-        <div class="code-window__bar"><i></i><i></i><i></i><span>cybespoke.config.ts</span></div>
-<pre><span class="c">// what we ship by default</span>
-<span class="k">export const</span> <span class="v">stack</span> = {
-  <span class="n">framework</span>: <span class="s">"Next.js / Remix / Astro"</span>,
-  <span class="n">styling</span>:   <span class="s">"Tailwind + design tokens"</span>,
-  <span class="n">motion</span>:    <span class="s">"Framer · GSAP · CSS"</span>,
-  <span class="n">cms</span>:       <span class="s">"Sanity · Contentful · custom"</span>,
-  <span class="n">infra</span>:     <span class="s">"Vercel · Cloudflare · AWS"</span>,
-  <span class="n">a11y</span>:      <span class="s">"WCAG 2.2 AA, baked in"</span>,
-  <span class="n">perf</span>:      <span class="s">"&gt; 95 Lighthouse, every route"</span>,
-};</pre>
+      <div class="promise reveal">
+        <div class="promise__head">What every site we build comes with</div>
+        <ul class="promise__list">
+          <li><span class="promise__tick">✓</span><div><strong>On‑brand design</strong><p>Made for you, not stitched from a template.</p></div></li>
+          <li><span class="promise__tick">✓</span><div><strong>Loads in a blink</strong><p>Fast even on a phone with patchy signal.</p></div></li>
+          <li><span class="promise__tick">✓</span><div><strong>Easy to update</strong><p>Your team can change words and images without a developer.</p></div></li>
+          <li><span class="promise__tick">✓</span><div><strong>Friendly to everyone</strong><p>Works for keyboards, screen readers and people with low vision.</p></div></li>
+          <li><span class="promise__tick">✓</span><div><strong>Reliable hosting</strong><p>Global, secure, with backups you'll never have to think about.</p></div></li>
+          <li><span class="promise__tick">✓</span><div><strong>Real human support</strong><p>Email a person when you need a tweak — same‑day reply.</p></div></li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="caps container reveal" id="capabilities">
-    <div class="section-eyebrow"><span class="dot"></span> Capabilities</div>
-    <h2 style="margin-top: 14px;">Everything between the URL and the database.</h2>
+    <div class="section-eyebrow"><span class="dot"></span> What we build</div>
+    <h2 style="margin-top: 14px;">From the homepage to the back office.</h2>
 
     <div class="caps__grid">
-      <div class="cap"><div class="cap__num">// 01</div><h3>Marketing &amp; brand sites</h3><p>Editorial layouts, motion, CMS — built to convert and tell a sharp story.</p></div>
-      <div class="cap"><div class="cap__num">// 02</div><h3>SaaS dashboards</h3><p>Auth, billing, RBAC, complex data tables, charting, and design systems.</p></div>
-      <div class="cap"><div class="cap__num">// 03</div><h3>E-commerce</h3><p>Headless storefronts, custom checkouts, product configurators.</p></div>
-      <div class="cap"><div class="cap__num">// 04</div><h3>Performance audits</h3><p>Lighthouse 95+ as a baseline. Edge rendering, smart caching, image strategy.</p></div>
-      <div class="cap"><div class="cap__num">// 05</div><h3>Accessibility</h3><p>WCAG 2.2 AA across the board. Keyboard, screen reader, contrast, motion.</p></div>
-      <div class="cap"><div class="cap__num">// 06</div><h3>Design systems</h3><p>Tokens → components → docs. Built so your team can move without us.</p></div>
+      <div class="cap"><div class="cap__num">// 01</div><h3>Marketing &amp; brand sites</h3><p>Beautiful pages with a clear story — built to win you customers and tell your brand well.</p></div>
+      <div class="cap"><div class="cap__num">// 02</div><h3>Customer dashboards</h3><p>Login, billing, permissions, charts and tables — the day‑to‑day tools your customers and team rely on.</p></div>
+      <div class="cap"><div class="cap__num">// 03</div><h3>Online shops</h3><p>Custom checkouts, subscriptions and product builders that don't get in the way of a sale.</p></div>
+      <div class="cap"><div class="cap__num">// 04</div><h3>Speed</h3><p>Top scores on Google's speed tests. Pages load fast on slow phones in poor signal.</p></div>
+      <div class="cap"><div class="cap__num">// 05</div><h3>Accessibility</h3><p>Friendly to screen readers, keyboards, and people with low vision — by default.</p></div>
+      <div class="cap"><div class="cap__num">// 06</div><h3>A look that lasts</h3><p>Reusable colours, fonts and components — documented so your team can run with it long after we hand over.</p></div>
     </div>
   </section>
 
   <section class="process container reveal" id="process">
-    <div class="section-eyebrow"><span class="dot"></span> Process</div>
-    <h2 style="margin-top: 14px;">From <code style="color:var(--web-cyan)">git init</code> to launch.</h2>
+    <div class="section-eyebrow"><span class="dot"></span> How it goes</div>
+    <h2 style="margin-top: 14px;">From first chat to launch day.</h2>
 
     <div class="timeline">
       <div class="step reveal">
-        <div class="num">// 01 — Discover</div>
-        <h3>Brief, audit, scope</h3>
-        <p>One week of discovery. We map goals, constraints, and the shortest path to value. You leave with a written plan.</p>
+        <div class="num">// 01 — Get to know you</div>
+        <h3>A week of discovery</h3>
+        <p>We listen, ask the awkward questions, and map out the shortest route to something useful. You leave with a written plan and a clear price.</p>
       </div>
       <div class="step reveal">
-        <div class="num">// 02 — Design</div>
-        <h3>Design system &amp; flows</h3>
-        <p>Tokens, components, key flows in Figma. Wired up to a working preview — not just static screens.</p>
+        <div class="num">// 02 — Design it</div>
+        <h3>Real screens, not just pictures</h3>
+        <p>The look, the words, and the way it moves — designed and shown to you on a working preview, not just static slides.</p>
       </div>
       <div class="step reveal">
-        <div class="num">// 03 — Build</div>
-        <h3>Engineering sprints</h3>
-        <p>Two-week sprints with a live staging URL. Demos every Friday. You always know what's shipped.</p>
+        <div class="num">// 03 — Build it</div>
+        <h3>Two‑week build cycles</h3>
+        <p>Live preview from week one. A demo every Friday. You always know what's been done and what's next.</p>
       </div>
       <div class="step reveal">
-        <div class="num">// 04 — Launch</div>
-        <h3>Go-live + handover</h3>
-        <p>Performance pass, a11y pass, analytics, monitoring, docs. Optional retainer for ongoing work.</p>
+        <div class="num">// 04 — Launch &amp; handover</div>
+        <h3>Go live with confidence</h3>
+        <p>A speed check, accessibility check, analytics, monitoring and short docs for your team. Optional ongoing support if you want us to stick around.</p>
       </div>
     </div>
   </section>
 
   <section class="stack container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> Stack</div>
-    <h2 style="margin-top: 14px;">Modern, dull, reliable — in that order.</h2>
+    <div class="section-eyebrow"><span class="dot"></span> Under the hood</div>
+    <h2 style="margin-top: 14px;">Modern, boring, reliable — in that order.</h2>
+    <p style="max-width: 540px; margin-top: 12px; color: var(--muted); font-family: 'Inter', sans-serif;">A few names you might recognise — and a few you don't need to. We pick the right tool for your project, not the trendy one.</p>
     <div class="stack__cloud">
       <span class="chip">Next.js</span>
       <span class="chip">Remix</span>
@@ -260,14 +298,43 @@
   <div class="container">
     <div class="pager reveal">
       <a href="../index.html">← Back to home</a>
-      <a href="mobile.html">Next: Mobile →</a>
+      <a href="mobile.html">Next: Apps →</a>
     </div>
   </div>
 
   <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
+        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="web.html">Websites</a></li>
+          <li><a href="mobile.html">Apps</a></li>
+          <li><a href="ai.html">Smart tools</a></li>
+          <li><a href="bespoke.html">Made‑to‑order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../index.html#services">Process</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke · Web</span>
-      <span>Compiled with care.</span>
+      <span>© <span data-year></span> Cybespoke · Websites</span>
+      <span>Crafted in Belfast.</span>
     </div>
   </footer>
 

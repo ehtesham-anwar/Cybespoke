@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cybespoke — Bespoke digital craft for web, mobile & AI</title>
-  <meta name="description" content="Cybespoke designs and builds bespoke web, mobile, and AI products. Studio-grade craft, end to end." />
+  <title>Cybespoke — Tailor‑made websites, apps & smart tools</title>
+  <meta name="description" content="Cybespoke is a Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams. Fast, friendly, made for your customers." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -14,6 +15,22 @@
     .hero {
       position: relative; min-height: 100vh; padding: 140px 0 80px;
       display: flex; align-items: center; overflow: hidden;
+    }
+    @media (max-width: 720px) {
+      .hero { min-height: auto; padding: 110px 0 60px; }
+      .hero__lede { font-size: 16px; margin-top: 18px; }
+      .hero__cta { gap: 10px; margin-top: 26px; }
+      .services { padding: 70px 0; }
+      .services__head { margin-bottom: 28px; }
+      .service-card { padding: 26px; min-height: auto; }
+      .service-card .arrow { width: 42px; height: 42px; margin-top: 18px; }
+      .stats { padding: 50px 0; gap: 12px; }
+      .stat { padding: 22px; }
+      .stat .num { font-size: 36px; }
+      .cta-section { margin: 70px 0 0; padding: 56px 22px; border-radius: 24px; }
+      .marquee { margin-top: 50px; padding: 18px 0; }
+      .marquee__track span { font-size: 18px; gap: 40px; }
+      .marquee__track { gap: 40px; }
     }
     .hero__bg {
       position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -105,7 +122,28 @@
       0%, 100% { --float-y: 0px; }
       50%      { --float-y: -12px; }
     }
-    @media (max-width: 980px) { .float-stack { height: 380px; } }
+    @media (max-width: 980px) {
+      .float-stack {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        perspective: none;
+      }
+      .tile {
+        position: relative; width: 100%;
+        top: auto; left: auto;
+        animation: none;
+        transform: none;
+      }
+      .tile h3 { font-size: 17px; }
+      .tile p { font-size: 13px; }
+      .tile .icon { width: 36px; height: 36px; margin-bottom: 12px; font-size: 17px; }
+      .tile { padding: 18px; border-radius: 16px; }
+    }
+    @media (max-width: 480px) {
+      .float-stack { grid-template-columns: 1fr; }
+    }
 
     /* Marquee */
     .marquee {
@@ -244,12 +282,11 @@
   <header class="nav">
     <a href="index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
     <nav class="nav__links">
-      <a href="services/web.html">Web</a>
-      <a href="services/mobile.html">Mobile</a>
-      <a href="services/ai.html">AI</a>
-      <a href="services/bespoke.html">Bespoke</a>
+      <a href="services/web.html">Websites</a>
+      <a href="services/mobile.html">Apps</a>
+      <a href="services/ai.html">Smart tools</a>
     </nav>
-    <a href="#contact" class="nav__cta">Start a project</a>
+    <a href="#contact" class="nav__cta">Get a free quote</a>
   </header>
 
   <!-- HERO -->
@@ -258,41 +295,40 @@
     <div class="hero__grid"></div>
     <div class="container hero__inner">
       <div>
-        <div class="section-eyebrow"><span class="dot"></span> Studio · Est. 2024</div>
         <h1 style="margin-top: 20px;">
-          <span class="word">Bespoke</span>
-          <span class="word grad">digital</span>
-          <span class="word">products,</span>
-          <span class="word">crafted</span>
-          <span class="word">end&#8209;to&#8209;end.</span>
+          <span class="word">Tailor‑made</span>
+          <span class="word grad">websites,</span>
+          <span class="word">apps,</span>
+          <span class="word">&amp;</span>
+          <span class="word">smart&nbsp;tools.</span>
         </h1>
-        <p class="hero__lede">We design and ship web, mobile, and AI products for ambitious teams. Every line of code, every pixel — tailored.</p>
+        <p class="hero__lede">A small Belfast studio building websites, apps, and AI helpers for ambitious teams. Every detail thought through, every screen made for your customers.</p>
         <div class="hero__cta">
-          <a href="#services" class="btn btn--primary">Explore services →</a>
-          <a href="#contact" class="btn btn--ghost">Book a call</a>
+          <a href="#contact" class="btn btn--primary">Get a free quote →</a>
+          <a href="#services" class="btn btn--ghost">See what we make</a>
         </div>
       </div>
 
       <div class="float-stack reveal">
         <div class="tile tile--web">
-          <div class="icon">{ }</div>
-          <h3>Web</h3>
-          <p>Marketing sites, dashboards, and platforms that load fast and feel inevitable.</p>
+          <div class="icon">◆</div>
+          <h3>Websites</h3>
+          <p>Marketing sites, customer dashboards and online shops that load fast and look the part.</p>
         </div>
         <div class="tile tile--mob">
-          <div class="icon">⌘</div>
-          <h3>Mobile</h3>
-          <p>iOS, Android, and cross-platform apps with motion that feels native.</p>
+          <div class="icon">◇</div>
+          <h3>Apps</h3>
+          <p>iPhone and Android apps that feel polished from the very first tap.</p>
         </div>
         <div class="tile tile--ai">
-          <div class="icon">∿</div>
-          <h3>AI</h3>
-          <p>Agents, RAG systems and copilots wired into your product surface.</p>
+          <div class="icon">✦</div>
+          <h3>Smart tools</h3>
+          <p>AI assistants and automations that quietly do the heavy lifting for your team.</p>
         </div>
         <div class="tile tile--bes">
-          <div class="icon">✦</div>
-          <h3>Bespoke</h3>
-          <p>One-of-one builds — custom internal tools, hardware-aware UIs, exotic stacks.</p>
+          <div class="icon">✺</div>
+          <h3>Made‑to‑order</h3>
+          <p>One‑off builds for the bits that don't fit a template — internal tools, in‑store screens, the unusual asks.</p>
         </div>
       </div>
     </div>
@@ -301,8 +337,8 @@
   <!-- MARQUEE -->
   <div class="marquee">
     <div class="marquee__track">
-      <span>Design</span><span>Engineering</span><span>Motion</span><span>AI</span><span>Strategy</span><span>Bespoke</span>
-      <span>Design</span><span>Engineering</span><span>Motion</span><span>AI</span><span>Strategy</span><span>Bespoke</span>
+      <span>Design</span><span>Build</span><span>Motion</span><span>Smart tools</span><span>Strategy</span><span>Made‑to‑order</span>
+      <span>Design</span><span>Build</span><span>Motion</span><span>Smart tools</span><span>Strategy</span><span>Made‑to‑order</span>
     </div>
   </div>
 
@@ -310,45 +346,45 @@
   <section class="services container" id="services">
     <div class="services__head reveal">
       <div>
-        <div class="section-eyebrow"><span class="dot"></span> Services</div>
-        <h2 style="margin-top: 14px;">Four disciplines.<br/><span style="color: var(--muted);">One studio.</span></h2>
+        <div class="section-eyebrow"><span class="dot"></span> What we make</div>
+        <h2 style="margin-top: 14px;">Four things we make well.<br/><span style="color: var(--muted);">All under one roof.</span></h2>
       </div>
-      <p style="max-width: 360px;">Pick a track to see how we work, what we ship, and how we collaborate from kickoff to launch.</p>
+      <p style="max-width: 360px;">Pick one to see how we work, what you'll get, and how we'll work together from first call to launch day.</p>
     </div>
 
     <div class="services__grid">
       <a href="services/web.html" class="service-card service-card--web reveal">
         <div>
-          <div class="label">01 — Web</div>
-          <h2>Web platforms</h2>
-          <p>Production-grade marketing sites, SaaS dashboards, and storefronts. SSR, edge, animations, design systems.</p>
+          <div class="label">01 — Websites</div>
+          <h2>Websites that work</h2>
+          <p>Marketing sites, customer dashboards and online shops — fast, beautiful, and built to last.</p>
         </div>
         <div class="arrow">→</div>
         <div class="ornament"></div>
       </a>
       <a href="services/mobile.html" class="service-card service-card--mob reveal">
         <div>
-          <div class="label">02 — Mobile</div>
+          <div class="label">02 — Apps</div>
           <h2>Mobile apps</h2>
-          <p>Native iOS &amp; Android, React Native, Flutter. Onboarding, payments, offline-first, push.</p>
+          <p>iPhone and Android apps with sign‑up, payments and notifications — built so people actually keep using them.</p>
         </div>
         <div class="arrow">→</div>
         <div class="ornament"></div>
       </a>
       <a href="services/ai.html" class="service-card service-card--ai reveal">
         <div>
-          <div class="label">03 — AI</div>
-          <h2>AI &amp; Agents</h2>
-          <p>RAG, agentic workflows, evals, fine-tuning. Bring intelligence to product without the science-fair feel.</p>
+          <div class="label">03 — Smart tools</div>
+          <h2>AI helpers</h2>
+          <p>Smart assistants and automations that work with your data — useful, reliable, no science‑fair feel.</p>
         </div>
         <div class="arrow">→</div>
         <div class="ornament"></div>
       </a>
       <a href="services/bespoke.html" class="service-card service-card--bes reveal">
         <div>
-          <div class="label">04 — Bespoke</div>
-          <h2>Bespoke solutions</h2>
-          <p>Internal tools, custom hardware UIs, niche integrations. The work that doesn't fit a template.</p>
+          <div class="label">04 — Made‑to‑order</div>
+          <h2>One‑off projects</h2>
+          <p>Internal tools, in‑store screens, unusual integrations — the work that doesn't fit a template.</p>
         </div>
         <div class="arrow">→</div>
         <div class="ornament"></div>
@@ -358,19 +394,22 @@
 
   <!-- STATS -->
   <section class="stats container reveal">
-    <div class="stat"><div class="num"><span data-count="40" data-suffix="+">0</span></div><div class="lbl">Products shipped</div></div>
-    <div class="stat"><div class="num"><span data-count="12">0</span></div><div class="lbl">Industries served</div></div>
-    <div class="stat"><div class="num"><span data-count="4.9" data-decimals="1">0</span></div><div class="lbl">Avg. client rating</div></div>
-    <div class="stat"><div class="num"><span>∞</span></div><div class="lbl">Iterations welcome</div></div>
+    <div class="stat"><div class="num"><span data-count="40" data-suffix="+">0</span></div><div class="lbl">Products launched</div></div>
+    <div class="stat"><div class="num"><span data-count="12">0</span></div><div class="lbl">Industries we've worked in</div></div>
+    <div class="stat"><div class="num"><span data-count="4.9" data-decimals="1">0</span></div><div class="lbl">Average client rating</div></div>
+    <div class="stat"><div class="num"><span>∞</span></div><div class="lbl">Tweaks welcome</div></div>
   </section>
 
   <!-- CTA -->
   <section class="container" id="contact">
     <div class="cta-section reveal">
       <div class="section-eyebrow"><span class="dot"></span> Get in touch</div>
-      <h2 style="margin-top: 18px;">Got something ambitious in mind?</h2>
-      <p>Tell us about it. We'll come back within a working day with a sharp first read and a path forward.</p>
-      <a href="mailto:hello@cybespoke.com" class="btn btn--primary">hello@cybespoke.com →</a>
+      <h2 style="margin-top: 18px;">Got something in mind?</h2>
+      <p>Tell us about it — even if it's still a rough idea. We'll get back to you within a working day with honest first thoughts, a clear next step, and a free, no‑obligation quote.</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:hello@cybespoke.co.uk?subject=Free%20quote%20request" class="btn btn--primary">Get a free quote →</a>
+        <a href="mailto:hello@cybespoke.co.uk" class="btn btn--ghost">hello@cybespoke.co.uk</a>
+      </div>
     </div>
   </section>
 
@@ -379,15 +418,15 @@
     <div class="container footer__grid">
       <div>
         <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio building web, mobile and AI products with care.</p>
+        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
       </div>
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="services/web.html">Web</a></li>
-          <li><a href="services/mobile.html">Mobile</a></li>
-          <li><a href="services/ai.html">AI</a></li>
-          <li><a href="services/bespoke.html">Bespoke</a></li>
+          <li><a href="services/web.html">Websites</a></li>
+          <li><a href="services/mobile.html">Apps</a></li>
+          <li><a href="services/ai.html">Smart tools</a></li>
+          <li><a href="services/bespoke.html">Made‑to‑order</a></li>
         </ul>
       </div>
       <div>
@@ -401,15 +440,13 @@
       <div>
         <h4>Connect</h4>
         <ul>
-          <li><a href="#">Twitter / X</a></li>
           <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">GitHub</a></li>
         </ul>
       </div>
     </div>
     <div class="container footer__bottom">
       <span>© <span data-year></span> Cybespoke. All rights reserved.</span>
-      <span>Crafted in dark mode.</span>
+      <span>Crafted in Belfast.</span>
     </div>
   </footer>
 

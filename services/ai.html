@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI — Cybespoke</title>
+  <title>Smart tools — Cybespoke</title>
+  <meta name="description" content="AI assistants and automations built into the apps your team already uses — by Cybespoke, Belfast." />
   <meta name="description" content="AI products, agents, RAG and copilots — engineered into your product surface." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -173,16 +175,70 @@
     .pager { margin: 100px 0 0; padding: 28px; border: 1px solid var(--line); border-radius: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .pager a { color: var(--muted); font-size: 14px; }
     .pager a:hover { color: var(--ai-rose); }
+
+    @media (max-width: 820px) {
+      body { overflow-x: hidden; }
+      .ai-hero { padding: 110px 0 50px; min-height: auto; }
+      .ai-hero__inner { gap: 28px; }
+      .ai-hero .lede { font-size: 16px; margin-top: 18px; max-width: none; }
+      .ai-hero .ctas { gap: 10px; margin-top: 22px; }
+      .ai-hero h1 { font-size: clamp(34px, 9vw, 56px); line-height: 1.1; }
+
+      /* Neural canvas — keep it compact and contained */
+      .neural { max-width: 70vw; margin-top: 8px; }
+      .neural::after { display: none; }
+
+      /* Hide the floating decorative chips on mobile — they overflow */
+      .stream { display: none; }
+
+      /* Output card */
+      .out { padding: 14px; margin-top: 22px; max-width: 100%; }
+      .out__bar { font-size: 11px; }
+      .out__text { font-size: 11.5px; }
+
+      /* Capabilities */
+      .caps { padding: 60px 0; }
+      .caps__grid { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+      .cap-ai { padding: 20px; }
+      .cap-ai h3 { font-size: 18px; }
+
+      /* Use cases */
+      .uc { padding: 50px 0; }
+      .uc__row { grid-template-columns: 1fr; gap: 12px; margin-top: 22px; }
+      .uc__card { padding: 22px; }
+      .uc__card h3 { font-size: 19px; }
+      .uc__card .dots { width: 110px; height: 110px; right: -10px; bottom: -10px; }
+
+      /* Models */
+      .models { padding: 40px 0; }
+      .models__cloud { gap: 8px; }
+      .model-chip { padding: 8px 12px; font-size: 12px; }
+
+      /* Eval bars */
+      .evals { padding: 50px 0; }
+      .eval { grid-template-columns: 110px 1fr 40px; gap: 10px; padding: 12px 0; }
+      .eval .lbl { font-size: 12px; }
+      .eval .num { font-size: 12px; }
+
+      .pager { margin-top: 60px; padding: 18px; gap: 10px; }
+      .pager a { font-size: 13px; }
+    }
+
+    @media (max-width: 480px) {
+      .ai-hero h1 { font-size: clamp(30px, 10vw, 44px); }
+      .neural { max-width: 80vw; }
+      .eval { grid-template-columns: 100px 1fr 36px; gap: 8px; }
+      .eval .lbl { font-size: 11px; }
+    }
   </style>
 </head>
 <body class="page-enter">
   <header class="nav">
     <a href="../index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
     <nav class="nav__links">
-      <a href="web.html">Web</a>
-      <a href="mobile.html">Mobile</a>
-      <a href="ai.html" class="active">AI</a>
-      <a href="bespoke.html">Bespoke</a>
+      <a href="web.html">Websites</a>
+      <a href="mobile.html">Apps</a>
+      <a href="ai.html" class="active">Smart tools</a>
     </nav>
     <a href="../index.html#contact" class="nav__cta">Start a project</a>
   </header>
@@ -190,82 +246,82 @@
   <section class="ai-hero">
     <div class="container ai-hero__inner">
       <div>
-        <div class="section-eyebrow"><span class="dot"></span> AI · Agents · RAG</div>
+        <div class="section-eyebrow"><span class="dot"></span> Smart tools</div>
         <h1 style="margin-top: 18px;">Intelligence, woven into your product.</h1>
-        <p class="lede">RAG systems, agents, copilots, and evals — engineered into the surface your users already know. We build the unflashy parts that make AI features feel reliable.</p>
+        <p class="lede">Smart assistants and automations built into the apps your team already uses. We focus on the unflashy parts — the bits that make AI actually reliable, not just impressive.</p>
         <div class="ctas">
           <a class="btn btn--primary" href="../index.html#contact">Talk to us →</a>
-          <a class="btn btn--ghost" href="#capabilities">Capabilities</a>
+          <a class="btn btn--ghost" href="#capabilities">What we build</a>
         </div>
 
         <div class="out reveal">
-          <div class="out__bar"><i></i> claude · streaming</div>
-          <div class="out__text">Indexing 12,408 documents · grounding response · checking citations…</div>
+          <div class="out__bar"><i></i> assistant · thinking</div>
+          <div class="out__text">Reading 12,408 documents · checking the answer · adding sources…</div>
         </div>
       </div>
 
       <div class="neural reveal">
         <canvas id="net" width="600" height="600" aria-hidden="true"></canvas>
         <div class="stream">
-          <span>tool_call: search_docs()</span>
-          <span>retrieval · top-k = 6</span>
-          <span>eval: groundedness 0.94</span>
-          <span>token usage: 1,284</span>
-          <span>latency: 412ms</span>
+          <span>looking up · your handbook</span>
+          <span>found · 6 matches</span>
+          <span>quality · 94%</span>
+          <span>cost · £0.004</span>
+          <span>reply in · 0.4s</span>
         </div>
       </div>
     </div>
   </section>
 
   <section class="caps container reveal" id="capabilities">
-    <div class="section-eyebrow"><span class="dot"></span> Capabilities</div>
-    <h2 style="margin-top: 14px;">From prompt to production.</h2>
+    <div class="section-eyebrow"><span class="dot"></span> What we build</div>
+    <h2 style="margin-top: 14px;">From idea to live in your product.</h2>
 
     <div class="caps__grid">
-      <div class="cap-ai"><div class="num">// 01</div><h3>RAG &amp; search</h3><p>Hybrid search, chunking strategies, citations, freshness — the unsexy work that makes outputs trustworthy.</p></div>
-      <div class="cap-ai"><div class="num">// 02</div><h3>Agents &amp; tool use</h3><p>Multi-step agents with tool calling, planning, and guardrails. Real workflows, not demos.</p></div>
-      <div class="cap-ai"><div class="num">// 03</div><h3>Copilots</h3><p>In-product assistants that ground in your data and work alongside the user, not in a separate chat tab.</p></div>
-      <div class="cap-ai"><div class="num">// 04</div><h3>Evals &amp; observability</h3><p>Golden datasets, grading rubrics, regression detection. We treat AI like the rest of the stack.</p></div>
-      <div class="cap-ai"><div class="num">// 05</div><h3>Fine-tuning &amp; distillation</h3><p>When prompts hit a ceiling. We fine-tune small models for narrow tasks at a fraction of the cost.</p></div>
-      <div class="cap-ai"><div class="num">// 06</div><h3>Voice &amp; multimodal</h3><p>Speech-to-speech, vision, and document understanding wired into apps users already love.</p></div>
+      <div class="cap-ai"><div class="num">// 01</div><h3>Smart search &amp; answers</h3><p>Search that finds the right answer, shows where it came from, and stays current as your data changes.</p></div>
+      <div class="cap-ai"><div class="num">// 02</div><h3>Assistants that take action</h3><p>Helpers that plan, do real work, and know when to stop and ask. Built for your everyday tasks — not just demos.</p></div>
+      <div class="cap-ai"><div class="num">// 03</div><h3>In‑app helpers</h3><p>Help built into the screen your team already work in — not a separate chatbot they have to remember.</p></div>
+      <div class="cap-ai"><div class="num">// 04</div><h3>Quality checks</h3><p>We score what the AI says, catch slips before customers do, and treat smart features as seriously as the rest of the product.</p></div>
+      <div class="cap-ai"><div class="num">// 05</div><h3>Custom‑trained models</h3><p>When the off‑the‑shelf models stop being enough, we train smaller, cheaper ones for the specific job you have.</p></div>
+      <div class="cap-ai"><div class="num">// 06</div><h3>Voice, image &amp; documents</h3><p>Voice conversations, image understanding and document reading — built right into the apps your team already uses.</p></div>
     </div>
   </section>
 
   <section class="uc container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> Use cases</div>
-    <h2 style="margin-top: 14px;">Where it actually pays back.</h2>
+    <div class="section-eyebrow"><span class="dot"></span> Where it earns its keep</div>
+    <h2 style="margin-top: 14px;">Where smart tools really pay back.</h2>
 
     <div class="uc__row">
       <div class="uc__card">
         <span class="badge">Support</span>
-        <h3>Tier-1 deflection &amp; agent assist</h3>
-        <p>Cut handle time and ticket volume with a copilot that drafts, cites, and escalates only when it should.</p>
+        <h3>Customer support that scales</h3>
+        <p>Cut waiting times and ticket volume with a helper that drafts replies, points to sources, and only hands over to a human when it really should.</p>
         <div class="dots"></div>
       </div>
       <div class="uc__card">
         <span class="badge">Internal</span>
-        <h3>Knowledge copilots</h3>
-        <p>An assistant that knows your wiki, contracts, code, and Slack — and tells the truth about what it doesn't.</p>
+        <h3>An assistant for your team</h3>
+        <p>An in‑house helper that knows your handbook, contracts and chat history — and is honest about what it doesn't.</p>
         <div class="dots"></div>
       </div>
       <div class="uc__card">
         <span class="badge">Product</span>
-        <h3>Smart workflows &amp; automations</h3>
-        <p>Replace brittle rules with agents that handle exceptions, ask for help, and learn from corrections.</p>
+        <h3>Smarter day‑to‑day workflows</h3>
+        <p>Replace brittle rules with helpers that handle the unusual cases, ask for help, and learn from your team's feedback.</p>
         <div class="dots"></div>
       </div>
       <div class="uc__card">
-        <span class="badge">Data</span>
-        <h3>Document &amp; form intelligence</h3>
-        <p>Extract structured data from PDFs, contracts, and forms with confidence scoring and human-in-the-loop.</p>
+        <span class="badge">Paperwork</span>
+        <h3>Documents &amp; forms read for you</h3>
+        <p>Pull clean information out of PDFs, contracts and forms — with a real person stepping in when it matters most.</p>
         <div class="dots"></div>
       </div>
     </div>
   </section>
 
   <section class="models container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> Models &amp; tooling</div>
-    <h2 style="margin-top: 14px;">Provider-agnostic. Boring infra. Sharp evals.</h2>
+    <div class="section-eyebrow"><span class="dot"></span> Models we work with</div>
+    <h2 style="margin-top: 14px;">Whichever model fits. Boring plumbing. Real quality checks.</h2>
     <div class="models__cloud">
       <span class="model-chip"><strong>Anthropic</strong> Claude</span>
       <span class="model-chip"><strong>OpenAI</strong> GPT-class</span>
@@ -286,27 +342,56 @@
 
   <section class="evals container reveal">
     <div class="section-eyebrow"><span class="dot"></span> What "good" looks like</div>
-    <h2 style="margin-top: 14px;">A typical eval scorecard at handover.</h2>
+    <h2 style="margin-top: 14px;">A typical scorecard when we hand over.</h2>
     <div style="margin-top: 30px;">
-      <div class="eval"><div class="lbl">Groundedness</div><div class="bar"><i data-fill="94"></i></div><div class="num">94</div></div>
-      <div class="eval"><div class="lbl">Faithfulness</div><div class="bar"><i data-fill="91"></i></div><div class="num">91</div></div>
-      <div class="eval"><div class="lbl">Answer relevance</div><div class="bar"><i data-fill="88"></i></div><div class="num">88</div></div>
-      <div class="eval"><div class="lbl">Latency budget</div><div class="bar"><i data-fill="82"></i></div><div class="num">82</div></div>
-      <div class="eval"><div class="lbl">Cost / call</div><div class="bar"><i data-fill="76"></i></div><div class="num">76</div></div>
+      <div class="eval"><div class="lbl">Sticks to your data</div><div class="bar"><i data-fill="94"></i></div><div class="num">94</div></div>
+      <div class="eval"><div class="lbl">Accuracy</div><div class="bar"><i data-fill="91"></i></div><div class="num">91</div></div>
+      <div class="eval"><div class="lbl">On‑topic answers</div><div class="bar"><i data-fill="88"></i></div><div class="num">88</div></div>
+      <div class="eval"><div class="lbl">Speed</div><div class="bar"><i data-fill="82"></i></div><div class="num">82</div></div>
+      <div class="eval"><div class="lbl">Cost per use</div><div class="bar"><i data-fill="76"></i></div><div class="num">76</div></div>
     </div>
   </section>
 
   <div class="container">
     <div class="pager reveal">
-      <a href="mobile.html">← Mobile</a>
-      <a href="bespoke.html">Next: Bespoke →</a>
+      <a href="mobile.html">← Apps</a>
+      <a href="bespoke.html">Next: Made‑to‑order →</a>
     </div>
   </div>
 
   <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
+        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="web.html">Websites</a></li>
+          <li><a href="mobile.html">Apps</a></li>
+          <li><a href="ai.html">Smart tools</a></li>
+          <li><a href="bespoke.html">Made‑to‑order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../index.html#services">Process</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke · AI</span>
-      <span>Engineered, not enchanted.</span>
+      <span>© <span data-year></span> Cybespoke · Smart tools</span>
+      <span>Crafted in Belfast.</span>
     </div>
   </footer>
 

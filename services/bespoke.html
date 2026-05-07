@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bespoke — Cybespoke</title>
+  <title>Made‑to‑order — Cybespoke</title>
+  <meta name="description" content="One‑off projects — internal tools, in‑store screens, the work that doesn't fit a template. By Cybespoke, Belfast." />
   <meta name="description" content="One-of-one builds: internal tools, custom hardware UIs, niche integrations. Atelier-grade craft." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -194,16 +196,41 @@
     .nav__brand .logo { background: conic-gradient(from 0deg, var(--gold), var(--gold-soft), #6a4517, var(--gold)); }
     .nav__links a::after { background: var(--gold); }
     .btn--primary { background: linear-gradient(135deg, var(--gold), #b48246); }
+
+    @media (max-width: 720px) {
+      .b-hero { padding: 110px 0 50px; min-height: auto; }
+      .b-hero__inner { gap: 32px; }
+      .b-hero .lede { font-size: 16px; margin-top: 20px; }
+      .b-hero .ctas { gap: 10px; margin-top: 26px; }
+      .blob-stage { max-width: 86vw; }
+      .blob-stage .seal { width: 72px; height: 72px; font-size: 12px; }
+      .hair { margin-top: 50px; }
+      .philo { padding: 60px 0; }
+      .philo p { font-size: 15px; margin-top: 18px; }
+      .atelier { padding: 50px 0; }
+      .atelier__list { margin-top: 24px; }
+      .row { padding: 18px 0; gap: 12px; }
+      .row .desc { font-size: 13px; }
+      .engage { padding: 60px 0; }
+      .thread { margin-top: 30px; padding-left: 24px; }
+      .knot { padding: 18px 0 18px 18px; }
+      .knot h3 { font-size: 22px; }
+      .knot p { font-size: 14px; }
+      .quote { padding: 50px 0; }
+      .b-cta { margin-top: 50px; padding: 50px 22px; }
+      .b-cta p { margin: 14px auto 22px; }
+      .pager { margin-top: 60px; padding: 18px; gap: 10px; }
+      .pager a { font-size: 13px; }
+    }
   </style>
 </head>
 <body class="page-enter">
   <header class="nav">
     <a href="../index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
     <nav class="nav__links">
-      <a href="web.html">Web</a>
-      <a href="mobile.html">Mobile</a>
-      <a href="ai.html">AI</a>
-      <a href="bespoke.html" class="active">Bespoke</a>
+      <a href="web.html">Websites</a>
+      <a href="mobile.html">Apps</a>
+      <a href="ai.html">Smart tools</a>
     </nav>
     <a href="../index.html#contact" class="nav__cta">Commission a project</a>
   </header>
@@ -211,13 +238,13 @@
   <section class="b-hero">
     <div class="container b-hero__inner">
       <div>
-        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> Atelier · Bespoke</div>
+        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> Made‑to‑order</div>
         <h1 style="margin-top: 18px;">
           The work that<br/>
           <em>doesn't fit</em><br/>
           a template.
         </h1>
-        <p class="lede">Internal tools, custom hardware UIs, exotic integrations, one-off product experiments. The pieces every other studio politely declines — we open with.</p>
+        <p class="lede">Internal tools, in‑store screens, unusual integrations, one‑off product experiments — the projects most studios politely decline. We open with them.</p>
         <div class="ctas">
           <a class="btn btn--primary" href="../index.html#contact">Commission us →</a>
           <a class="btn btn--ghost" href="#atelier">See the atelier</a>
@@ -239,35 +266,35 @@
 
   <section class="philo container reveal">
     <h2>We design <em>once</em>, for one — never for the average of a thousand.</h2>
-    <p>Most software is shaped by what's reusable. Bespoke work is shaped by what's true for you: the obscure workflow, the hardware on your factory floor, the data model only your team needs. We build that layer with the same craft other people reserve for marketing pages.</p>
+    <p>Most software is shaped by what's reusable. Made‑to‑order work is shaped by what's true for you — the unusual workflow, the screen on your factory floor, the way your team really thinks. We build it with the same care most studios save for marketing pages.</p>
   </section>
 
   <section class="atelier container reveal" id="atelier">
     <div class="atelier__head">
       <div>
-        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> The atelier</div>
-        <h2 style="margin-top: 14px; font-size: clamp(32px, 4vw, 56px);">A short list of long projects.</h2>
+        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> The work</div>
+        <h2 style="margin-top: 14px; font-size: clamp(32px, 4vw, 56px);">A short list of bigger projects.</h2>
       </div>
-      <p style="max-width: 360px; font-family: 'Inter', sans-serif; color: rgba(244,236,216,0.65);">Hover for detail. Most engagements run 3 – 9 months.</p>
+      <p style="max-width: 360px; font-family: 'Inter', sans-serif; color: rgba(244,236,216,0.65);">Most projects run 3 to 9 months from first chat to launch.</p>
     </div>
 
     <div class="atelier__list">
       <div class="row reveal">
         <div class="num">i.</div>
-        <div class="title">Internal tools &amp; admin surfaces</div>
-        <div class="desc">Ops portals, finance back-offices, content workbenches — the unsexy software your team lives in.</div>
+        <div class="title">Internal tools &amp; admin panels</div>
+        <div class="desc">Operations portals, finance back‑offices, content tools — the unglamorous software your team lives in every day.</div>
         <div class="meta">3 – 6 mo</div>
       </div>
       <div class="row reveal">
         <div class="num">ii.</div>
-        <div class="title">Hardware-aware interfaces</div>
-        <div class="desc">Kiosks, point-of-sale, factory-floor dashboards, IoT companion apps. Built for ten-finger gloves and bright sun.</div>
+        <div class="title">In‑store &amp; on‑site screens</div>
+        <div class="desc">Kiosks, tills, factory‑floor dashboards, companion apps for connected devices — built for thick gloves and bright sunlight.</div>
         <div class="meta">4 – 9 mo</div>
       </div>
       <div class="row reveal">
         <div class="num">iii.</div>
-        <div class="title">Niche integrations &amp; pipelines</div>
-        <div class="desc">SAP, NetSuite, EHR systems, custom protocols, government APIs. The integrations no one else wants to own.</div>
+        <div class="title">Awkward integrations</div>
+        <div class="desc">SAP, NetSuite, healthcare systems, government services and any custom connection the rest of the market quietly avoids.</div>
         <div class="meta">2 – 5 mo</div>
       </div>
       <div class="row reveal">
@@ -328,7 +355,7 @@
     <div class="b-cta reveal">
       <h2>Tell us about the project no one else <em>quite</em> understands.</h2>
       <p>That's usually where we do our best work. We reply to every honest brief within a working day.</p>
-      <a class="btn btn--primary" href="mailto:hello@cybespoke.com">hello@cybespoke.com →</a>
+      <a class="btn btn--primary" href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk →</a>
     </div>
   </div>
 
@@ -340,9 +367,38 @@
   </div>
 
   <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
+        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="web.html">Web</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+          <li><a href="ai.html">AI</a></li>
+          <li><a href="bespoke.html">Bespoke</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="../index.html#services">Process</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="container footer__bottom">
       <span>© <span data-year></span> Cybespoke · Bespoke</span>
-      <span>By appointment.</span>
+      <span>Crafted in Belfast.</span>
     </div>
   </footer>
 
