@@ -3,8 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cybespoke — Tailor‑made websites, apps & smart tools</title>
+  <title>Cybespoke — Tailor‑made websites, apps & smart tools | Belfast studio</title>
   <meta name="description" content="Cybespoke is a Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams. Fast, friendly, made for your customers." />
+  <meta name="keywords" content="web design Belfast, app development Belfast, AI software Belfast, bespoke software, custom websites, mobile apps, SEO Belfast, digital marketing Belfast, Northern Ireland software studio" />
+  <meta name="author" content="Cybespoke" />
+  <link rel="canonical" href="https://cybespoke.co.uk/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cybespoke" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://cybespoke.co.uk/" />
+  <meta property="og:title" content="Cybespoke — Tailor‑made websites, apps &amp; smart tools" />
+  <meta property="og:description" content="A Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams." />
+  <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
+  <meta property="og:image:alt" content="Cybespoke — Belfast software studio" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cybespoke — Tailor‑made websites, apps &amp; smart tools" />
+  <meta name="twitter:description" content="A Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams." />
+  <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cybespoke",
+    "description": "A Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams.",
+    "url": "https://cybespoke.co.uk/",
+    "logo": "https://cybespoke.co.uk/assets/favicon.svg",
+    "image": "https://cybespoke.co.uk/assets/og-banner.svg",
+    "email": "hello@cybespoke.co.uk",
+    "areaServed": ["Belfast", "Northern Ireland", "United Kingdom", "Ireland"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Belfast",
+      "addressCountry": "GB"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/cybespoke"
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design and development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile app development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI assistants and automation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bespoke software" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO and digital marketing" } }
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -275,6 +325,31 @@
     .cta-section > * { position: relative; }
     .cta-section h2 { max-width: 720px; margin: 0 auto; }
     .cta-section p { max-width: 540px; margin: 16px auto 30px; }
+
+    /* SEO & marketing extra section */
+    .extra-section {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      padding: 100px 0 0;
+    }
+    @media (max-width: 820px) { .extra-section { grid-template-columns: 1fr; gap: 36px; padding: 60px 0 0; } }
+    .extra-bullets { display: grid; gap: 18px; }
+    .extra-bullet {
+      display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start;
+      padding: 18px; border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0));
+      border: 1px solid var(--line);
+      transition: transform .4s var(--easing-soft), border-color .4s var(--easing-soft);
+    }
+    .extra-bullet:hover { transform: translateY(-3px); border-color: var(--line-strong); }
+    .extra-tick {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #050508; font-weight: 700; font-size: 13px;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .extra-bullet strong { font-size: 15px; color: var(--text); display: block; }
+    .extra-bullet p { font-size: 13.5px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
   </style>
 </head>
 <body class="page-enter">
@@ -338,8 +413,8 @@
   <!-- MARQUEE -->
   <div class="marquee">
     <div class="marquee__track">
-      <span>Design</span><span>Build</span><span>Motion</span><span>Smart tools</span><span>Strategy</span><span>Made‑to‑order</span>
-      <span>Design</span><span>Build</span><span>Motion</span><span>Smart tools</span><span>Strategy</span><span>Made‑to‑order</span>
+      <span>Design</span><span>Build</span><span>SEO</span><span>Marketing</span><span>Smart tools</span><span>Strategy</span><span>Bespoke</span>
+      <span>Design</span><span>Build</span><span>SEO</span><span>Marketing</span><span>Smart tools</span><span>Strategy</span><span>Bespoke</span>
     </div>
   </div>
 
@@ -393,6 +468,24 @@
     </div>
   </section>
 
+  <!-- SEO & MARKETING -->
+  <section class="container reveal" id="marketing">
+    <div class="extra-section">
+      <div>
+        <div class="section-eyebrow"><span class="dot"></span> We also help with</div>
+        <h2 style="margin-top: 14px;">SEO &amp; marketing — so the website actually gets found.</h2>
+        <p style="margin-top: 18px; max-width: 580px; color: var(--muted);">A beautiful site is only half the job. We help you get found on Google, write words that convert, run ads on Google and Meta, and track what's working — all in plain English, all reported back to you weekly.</p>
+        <a href="services/seo.html" class="btn btn--ghost" style="margin-top: 28px;">See SEO &amp; marketing →</a>
+      </div>
+      <div class="extra-bullets">
+        <div class="extra-bullet"><span class="extra-tick">✓</span><div><strong>Search engine optimisation</strong><p>Page speed, structured data, the right keywords — built in from day one.</p></div></div>
+        <div class="extra-bullet"><span class="extra-tick">✓</span><div><strong>Words &amp; content</strong><p>Landing pages and copy that earn the click and tell your story properly.</p></div></div>
+        <div class="extra-bullet"><span class="extra-tick">✓</span><div><strong>Paid ads</strong><p>Google Ads and Meta Ads, set up and managed — without the agency markup.</p></div></div>
+        <div class="extra-bullet"><span class="extra-tick">✓</span><div><strong>Analytics &amp; reports</strong><p>Privacy‑friendly tracking and weekly reports you'll actually read.</p></div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- STATS -->
   <section class="stats container reveal">
     <div class="stat"><div class="num"><span data-count="40" data-suffix="+">0</span></div><div class="lbl">Products launched</div></div>
@@ -427,7 +520,8 @@
           <li><a href="services/web.html">Websites</a></li>
           <li><a href="services/mobile.html">Apps</a></li>
           <li><a href="services/ai.html">Smart tools</a></li>
-          <li><a href="services/bespoke.html">Made‑to‑order</a></li>
+          <li><a href="services/bespoke.html">Bespoke</a></li>
+          <li><a href="services/seo.html">SEO &amp; marketing</a></li>
         </ul>
       </div>
       <div>
