@@ -251,7 +251,6 @@
       <div class="q-intro">
         <div class="q-eyebrow"><span class="dot"></span> Start a project</div>
         <h1>Tell us about your <span class="grad">project</span>.</h1>
-        <p>A short, considered questionnaire — six questions, no more. We will reply within one working day with a considered response and clear next steps.</p>
       </div>
 
       <div class="q-progress" aria-hidden="true">
@@ -265,8 +264,8 @@
         <div class="q-step is-active" data-step="1" data-key="service">
           <div class="q-step__count">Question 1</div>
           <h2 class="q-step__title">What would you like to build?</h2>
-          <p class="q-step__hint">Select the option that best fits. You can refine this later in the conversation.</p>
-          <div class="q-options" role="radiogroup" data-input="single">
+          <p class="q-step__hint">Select all that apply. You can refine this later in the conversation.</p>
+          <div class="q-options" role="group" data-input="multi">
             <button type="button" class="q-option" data-value="Website"><span class="glyph">01</span><span>A website</span></button>
             <button type="button" class="q-option" data-value="Mobile app"><span class="glyph">02</span><span>A mobile app</span></button>
             <button type="button" class="q-option" data-value="AI tool"><span class="glyph">03</span><span>An AI tool</span></button>
@@ -445,11 +444,20 @@
       // Wire option chips
       form.querySelectorAll('.q-step').forEach((step) => {
         const key = step.dataset.key;
+        const optionsWrap = step.querySelector('.q-options');
+        const isMulti = optionsWrap && optionsWrap.dataset.input === 'multi';
         step.querySelectorAll('.q-option').forEach((opt) => {
           opt.addEventListener('click', () => {
-            step.querySelectorAll('.q-option').forEach((o) => o.classList.remove('is-selected'));
-            opt.classList.add('is-selected');
-            answers[key] = opt.dataset.value;
+            if (isMulti) {
+              opt.classList.toggle('is-selected');
+              const values = Array.from(step.querySelectorAll('.q-option.is-selected'))
+                .map((o) => o.dataset.value);
+              answers[key] = values.join(', ');
+            } else {
+              step.querySelectorAll('.q-option').forEach((o) => o.classList.remove('is-selected'));
+              opt.classList.add('is-selected');
+              answers[key] = opt.dataset.value;
+            }
             updateNextState();
           });
         });
