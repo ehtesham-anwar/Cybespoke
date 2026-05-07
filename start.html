@@ -359,8 +359,8 @@
         <div class="q-step" data-step="8" data-key="done">
           <div class="q-success">
             <div class="check">✓</div>
-            <h2 class="q-step__title" style="margin-top: 0;">Thank you — your brief is ready.</h2>
-            <p class="q-step__hint" style="max-width: 480px; margin: 14px auto 0;">Your default mail application should now be open with the details prepared. If it has not opened, you can copy the summary below and send it to <a href="mailto:hello@cybespoke.co.uk" style="color: var(--text); border-bottom: 1px solid var(--line-strong);">hello@cybespoke.co.uk</a>.</p>
+            <h2 class="q-step__title" style="margin-top: 0;">Thank you — your brief is on its way.</h2>
+            <p class="q-step__hint" style="max-width: 480px; margin: 14px auto 0;">We have received the details below and will respond within one working day. If anything is missing, write to <a href="mailto:hello@cybespoke.co.uk" style="color: var(--text); border-bottom: 1px solid var(--line-strong);">hello@cybespoke.co.uk</a>.</p>
             <div class="q-summary" data-summary-final style="text-align: left; max-width: 600px; margin: 28px auto 0;"></div>
           </div>
         </div>
@@ -415,8 +415,15 @@
   </footer>
 
   <script src="assets/js/global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({ publicKey: 'mefPyTyqE4ACTip7a' });
+  </script>
   <script>
     (function () {
+      const EMAILJS_SERVICE_ID = 'service_84hxsyw';
+      const EMAILJS_TEMPLATE_ID = 'template_bop51kk';
+
       const form = document.getElementById('q-form');
       if (!form) return;
 
@@ -550,8 +557,7 @@
           .replace(/'/g, '&#39;');
       }
 
-      function buildMailto() {
-        const subject = 'New project brief — ' + (answers.service || 'Cybespoke');
+      function buildBriefMessage() {
         const lines = [
           'A new project brief from the Cybespoke questionnaire.',
           '',
@@ -567,9 +573,45 @@
           'Company: ' + (answers.company || '—'),
           'Email: ' + answers.email
         ];
-        const body = lines.join('\n');
-        return 'mailto:hello@cybespoke.co.uk?subject=' + encodeURIComponent(subject) +
-               '&body=' + encodeURIComponent(body);
+        return lines.join('\n');
+      }
+
+      function buildTemplateParams() {
+        const subject = 'New project brief — ' + (answers.service || 'Cybespoke');
+        const message = buildBriefMessage();
+        return {
+          subject: subject,
+          message: message,
+          service: answers.service,
+          problem: answers.problem,
+          timeline: answers.timeline,
+          budget: answers.budget,
+          details: answers.details,
+          name: answers.name,
+          company: answers.company || '—',
+          email: answers.email,
+          from_name: answers.name,
+          from_email: answers.email,
+          reply_to: answers.email
+        };
+      }
+
+      function sendBrief() {
+        nextBtn.disabled = true;
+        const originalText = nextBtn.textContent;
+        nextBtn.textContent = 'Sending…';
+        return emailjs
+          .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, buildTemplateParams())
+          .then(() => {
+            renderSummary(summaryFinalEl);
+            setStep(steps.length);
+          })
+          .catch((err) => {
+            console.error('EmailJS send failed', err);
+            nextBtn.textContent = originalText;
+            nextBtn.disabled = false;
+            alert('Sorry — we could not send your brief. Please try again, or email hello@cybespoke.co.uk directly.');
+          });
       }
 
       backBtn.addEventListener('click', () => {
@@ -579,10 +621,7 @@
       nextBtn.addEventListener('click', () => {
         if (!isStepValid(current)) return;
         if (current === totalAnswerableSteps + 1) {
-          // Send brief: open mailto, render final summary, advance.
-          window.location.href = buildMailto();
-          renderSummary(summaryFinalEl);
-          setStep(steps.length);
+          sendBrief();
           return;
         }
         if (current < steps.length) setStep(current + 1);
