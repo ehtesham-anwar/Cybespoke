@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cybespoke — flyer (A4)</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== One-page A4 portrait flyer ===== */
+    :root {
+      --ink: #0c0c14;
+      --ink-soft: #4a4a5c;
+      --ink-mute: #6c6d80;
+      --line: #e5e6ee;
+      --paper: #ffffff;
+      --teal: #14b8a6;
+      --blue: #2152ff;
+      --violet: #7c3aed;
+      --gold: #b48246;
+      --lime: #65a30d;
+      --amber: #facc15;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page { size: A4 portrait; margin: 0; }
+
+    html, body {
+      background: #e8e8ee; color: var(--ink);
+      font-family: "Inter", "SF Pro Display", system-ui, sans-serif;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      line-height: 1.4;
+    }
+    body { padding: 24px 0; }
+
+    .toolbar {
+      position: fixed; top: 18px; right: 18px; z-index: 10;
+      display: flex; gap: 8px;
+      background: var(--paper); border: 1px solid var(--line);
+      padding: 8px; border-radius: 12px;
+      box-shadow: 0 8px 24px -12px rgba(0,0,0,0.2);
+      font-size: 13px;
+    }
+    .toolbar button {
+      font: inherit; cursor: pointer; border: 0;
+      padding: 8px 14px; border-radius: 8px;
+      background: var(--ink); color: var(--paper); font-weight: 600;
+    }
+    .toolbar button:hover { background: var(--blue); }
+    .toolbar a { color: var(--ink-soft); padding: 8px 12px; text-decoration: none; align-self: center; }
+
+    .sheet {
+      width: 210mm; height: 297mm;
+      background: var(--paper);
+      margin: 16px auto;
+      padding: 11mm 13mm 10mm;
+      box-shadow: 0 12px 40px -16px rgba(0,0,0,0.18);
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      gap: 4.5mm;
+    }
+    .sheet::before {
+      content: ""; position: absolute; right: -120px; top: -120px;
+      width: 360px; height: 360px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(20,184,166,0.20), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(124,58,237,0.18), transparent 60%);
+      filter: blur(8px); pointer-events: none;
+    }
+    .sheet::after {
+      content: ""; position: absolute; left: -100px; bottom: -100px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(101,163,13,0.10), transparent 65%);
+      filter: blur(6px); pointer-events: none;
+    }
+    .sheet > * { position: relative; z-index: 1; }
+
+    h1, h2, h3 { font-family: "Space Grotesk", "Inter", sans-serif; letter-spacing: -0.015em; line-height: 1; }
+
+    /* ===== Header ===== */
+    .header { display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; }
+    .brand-mark {
+      width: 30px; height: 30px; border-radius: 8px; position: relative;
+      background:
+        conic-gradient(from 0deg,
+          var(--teal) 0% 25%,
+          var(--blue) 25% 50%,
+          var(--violet) 50% 75%,
+          var(--gold) 75% 100%);
+    }
+    .brand-mark::after { content: ""; position: absolute; inset: 4.5px; border-radius: 4px; background: var(--paper); }
+    .header__url {
+      font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;
+      text-align: right;
+    }
+    .header__url strong { color: var(--ink); font-weight: 600; }
+
+    /* ===== Hero ===== */
+    .hero { margin-top: 2mm; }
+    .eyebrow {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); display: flex; align-items: center; gap: 8px;
+      font-weight: 600;
+    }
+    .eyebrow::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--violet));
+    }
+    .hero h1 {
+      font-size: 42px; font-weight: 700; margin-top: 6px;
+      letter-spacing: -0.03em;
+      line-height: 1.04;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--violet), var(--blue));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p.lead {
+      margin-top: 8px;
+      font-size: 12.5px; font-weight: 400;
+      color: var(--ink-soft); letter-spacing: -0.005em;
+      line-height: 1.5; max-width: 160mm;
+    }
+    .hero p.lead strong { color: var(--ink); font-weight: 600; }
+
+    /* ===== Why bespoke ===== */
+    .why {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm;
+    }
+    .why__card {
+      padding: 3mm 4mm; border: 1px solid var(--line); border-radius: 9px;
+      background: linear-gradient(180deg, rgba(33,82,255,0.025), var(--paper));
+    }
+    .why__card .num {
+      font-family: "Space Grotesk"; font-size: 11px; font-weight: 700;
+      color: var(--violet); letter-spacing: 0.1em;
+    }
+    .why__card h4 {
+      font-family: "Space Grotesk"; font-size: 14px; font-weight: 600;
+      margin-top: 2mm; letter-spacing: -0.01em; line-height: 1.15;
+    }
+    .why__card p {
+      font-size: 11px; color: var(--ink-soft); margin-top: 2mm; line-height: 1.45;
+    }
+
+    /* ===== Services ===== */
+    .what__label {
+      font-family: "Space Grotesk"; font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-mute); margin-bottom: 4mm;
+      padding-bottom: 3mm; border-bottom: 1px solid var(--line);
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .what__label span.tag-bespoke { color: var(--gold); font-weight: 600; letter-spacing: 0.14em; }
+    .services {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 8mm;
+    }
+    .service {
+      padding: 2mm 0; border-bottom: 1px solid var(--line);
+    }
+    .service__head { display: flex; align-items: center; gap: 3mm; }
+    .service__bar { height: 1mm; width: 8mm; border-radius: 2px; flex-shrink: 0; }
+    .service.s-web .service__bar  { background: linear-gradient(90deg, var(--teal), var(--blue)); }
+    .service.s-app .service__bar  { background: linear-gradient(90deg, var(--blue), var(--violet)); }
+    .service.s-ai  .service__bar  { background: linear-gradient(90deg, var(--violet), #ec4899); }
+    .service.s-bes .service__bar  { background: linear-gradient(90deg, var(--gold), #8c5a1f); }
+    .service.s-seo .service__bar  { background: linear-gradient(90deg, var(--lime), var(--amber)); }
+    .service.s-mkt .service__bar  { background: linear-gradient(90deg, var(--amber), #f97316); }
+    .service h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+    .service p { font-size: 10.5px; color: var(--ink-soft); margin-top: 1.5mm; line-height: 1.45; padding-left: 11mm; }
+
+    /* ===== Process ===== */
+    .process { }
+    .process__label {
+      font-family: "Space Grotesk"; font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-mute); margin-bottom: 4mm;
+      padding-bottom: 3mm; border-bottom: 1px solid var(--line);
+    }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+    .step { padding: 0; }
+    .step .dot {
+      font-family: "Space Grotesk"; font-size: 11px; font-weight: 700;
+      width: 7mm; height: 7mm; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--ink); color: var(--paper);
+    }
+    .step h5 {
+      font-family: "Space Grotesk"; font-size: 13px; font-weight: 600;
+      margin-top: 2.5mm; letter-spacing: -0.01em;
+    }
+    .step p { font-size: 10.5px; color: var(--ink-soft); margin-top: 1.5mm; line-height: 1.4; }
+
+    /* ===== Pricing strip ===== */
+    .strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm;
+      margin-top: auto;
+    }
+    .tier {
+      padding: 5mm 6mm; border: 1px solid var(--line); border-radius: 10px;
+      display: flex; flex-direction: column; gap: 2mm;
+      background: var(--paper);
+    }
+    .tier.is-featured {
+      border-color: var(--lime);
+      background: linear-gradient(180deg, rgba(101,163,13,0.05), var(--paper));
+    }
+    .tier .tag { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); }
+    .tier.is-featured .tag { color: var(--lime); font-weight: 600; }
+    .tier h4 { font-family: "Space Grotesk"; font-size: 16px; font-weight: 600; }
+    .tier .price {
+      font-family: "Space Grotesk"; font-size: 28px; font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .tier .price small { font-size: 12px; font-weight: 400; color: var(--ink-mute); }
+
+    /* ===== Contact band ===== */
+    .contact-band {
+      margin-top: auto;
+      padding: 5mm 6mm; border-radius: 10px;
+      background: linear-gradient(135deg, var(--ink), #1a1a26);
+      color: var(--paper);
+      position: relative; overflow: hidden;
+    }
+    .contact-band::before {
+      content: ""; position: absolute; right: 30mm; top: -40px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(124,58,237,0.30), transparent 60%);
+      filter: blur(10px); pointer-events: none;
+    }
+    .contact-band > * { position: relative; }
+    .contact-band .lead { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.65; font-weight: 600; }
+    .contact-band h3 { font-size: 16px; margin-top: 2px; font-weight: 600; letter-spacing: -0.01em; }
+    .contact-band .sub { font-size: 10.5px; opacity: 0.72; margin-top: 3px; line-height: 1.45; max-width: 110mm; }
+    .contact-band .meta {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 4px; font-size: 10.5px; opacity: 0.92;
+    }
+    .contact-band .meta strong { color: var(--amber); font-weight: 600; }
+    .contact-band .qr {
+      width: 22mm; height: 22mm;
+      background: var(--paper); border-radius: 5px;
+      display: grid; place-items: center; padding: 1.6mm;
+    }
+    .contact-band .qr svg { width: 100%; height: 100%; }
+    .contact-band .qr-cap { font-size: 8px; opacity: 0.7; margin-top: 3px; margin-bottom: 4mm; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; }
+
+    @media print { html, body { background: #fff; padding: 0; } .toolbar { display: none; } .sheet { box-shadow: none; margin: 0; } }
+    @media screen { body::before { content: "One A4 flyer · Cmd/Ctrl+P to print, or use the button. Already exported to cybespoke-pamphlet.pdf."; display: block; text-align: center; font-size: 12px; color: #666; padding: 12px; } }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="index.html">← Back to site</a>
+    <button onclick="window.print()">Print flyer</button>
+  </div>
+
+  <article class="sheet">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        Cybespoke
+      </div>
+      <div class="header__url">
+        <strong>cybespoke.co.uk</strong>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Bespoke software studio · Belfast, UK</div>
+      <h1>
+        <span class="grad">Bespoke</span> software,<br/>
+        built around <em style="font-style:normal;">your</em> business.
+      </h1>
+      <p class="lead">
+        We do not deal in templates, themes or off‑the‑shelf platforms.
+        Every website, application and AI tool we deliver is <strong>bespoke from the ground up</strong> —
+        engineered around the way your organisation operates,
+        the customers you serve, and the commercial challenges no packaged product has resolved for you.
+      </p>
+    </section>
+
+    <section class="why">
+      <div class="why__card">
+        <div class="num">01 — BESPOKE BY DEFAULT</div>
+        <h4>Never a template.</h4>
+        <p>Every line of code, every interface and every workflow is engineered specifically for your organisation — never lifted from a generic theme or framework.</p>
+      </div>
+      <div class="why__card">
+        <div class="num">02 — TAILORED TO YOUR PROCESSES</div>
+        <h4>Shaped to your operations.</h4>
+        <p>We consult first, then design bespoke software around your established processes — not the reverse. Your tools should adapt to your business.</p>
+      </div>
+      <div class="why__card">
+        <div class="num">03 — FULL OWNERSHIP</div>
+        <h4>Bespoke means yours.</h4>
+        <p>You retain ownership of the code, brand and data. No vendor lock‑in, no rented platforms, no recurring licence surprises — a bespoke build under your full control.</p>
+      </div>
+    </section>
+
+    <section class="what">
+      <div class="what__label">
+        <span>What we deliver — bespoke, end to end</span>
+        <span class="tag-bespoke">Made‑to‑measure</span>
+      </div>
+      <div class="services">
+        <div class="service s-web">
+          <div class="service__head"><div class="service__bar"></div><h3>Bespoke websites</h3></div>
+          <p>Individually designed websites that reflect your brand, perform reliably and convert visitors into customers — no page‑builders, no recycled themes.</p>
+        </div>
+        <div class="service s-app">
+          <div class="service__head"><div class="service__bar"></div><h3>Bespoke mobile applications</h3></div>
+          <p>Native iOS and Android applications engineered around your customer journey — booking, ordering, loyalty schemes and internal operations.</p>
+        </div>
+        <div class="service s-ai">
+          <div class="service__head"><div class="service__bar"></div><h3>Bespoke AI assistants</h3></div>
+          <p>Chatbots, internal copilots and intelligent automations trained on your own data and tone of voice — never a generic plug‑in.</p>
+        </div>
+        <div class="service s-bes">
+          <div class="service__head"><div class="service__bar"></div><h3>Bespoke business software</h3></div>
+          <p>Dashboards, CRMs, booking platforms and operational tools — bespoke systems that consolidate scattered spreadsheets into a single source of truth.</p>
+        </div>
+        <div class="service s-seo">
+          <div class="service__head"><div class="service__bar"></div><h3>Bespoke SEO strategy</h3></div>
+          <p>A tailored search strategy informed by your customers, competitors and locality — engineered to attract qualified enquiries, not vanity traffic.</p>
+        </div>
+        <div class="service s-mkt">
+          <div class="service__head"><div class="service__bar"></div><h3>Bespoke digital marketing</h3></div>
+          <p>Paid, email and social campaigns calibrated to your offer and margins — measured, refined and fully owned by your team.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="process__label">How a bespoke build works with us</div>
+      <div class="steps">
+        <div class="step">
+          <div class="dot">1</div>
+          <h5>Discover</h5>
+          <p>A complimentary consultation to understand your organisation, customers and commercial objectives.</p>
+        </div>
+        <div class="step">
+          <div class="dot">2</div>
+          <h5>Design</h5>
+          <p>A bespoke proposal and interactive prototype, scoped transparently to your budget and timescale.</p>
+        </div>
+        <div class="step">
+          <div class="dot">3</div>
+          <h5>Build</h5>
+          <p>Engineered in‑house in Belfast — robust code, regular progress reviews and full visibility throughout.</p>
+        </div>
+        <div class="step">
+          <div class="dot">4</div>
+          <h5>Support</h5>
+          <p>Considered launch, hands‑on training, and ongoing maintenance — bespoke aftercare for every bespoke build.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact-band">
+      <div>
+        <div class="lead">Complimentary, no‑obligation bespoke proposal</div>
+        <h3>Tell us what you'd like built — we'll tailor a proposal around it.</h3>
+        <div class="meta">
+          <span><strong>Email</strong> hello@cybespoke.co.uk</span>
+          <span><strong>Web</strong> cybespoke.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </article>
+</body>
+</html>
