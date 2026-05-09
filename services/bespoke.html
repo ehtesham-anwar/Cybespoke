@@ -117,23 +117,24 @@
     }
     .blob-stage .ornament {
       position: absolute; border-radius: 50%;
-      border: 1px solid rgba(244,236,216,0.18);
+      border: 1px solid rgba(244,236,216,0.45);
       pointer-events: none;
     }
     .blob-stage .ornament::before {
       content: "✦"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
       color: var(--gold); font-size: 16px;
+      text-shadow: 0 0 12px rgba(212,175,106,0.8);
     }
-    .blob-stage .ornament.r1 { inset: 6%;  animation: spinSlow 36s linear infinite; }
-    .blob-stage .ornament.r2 { inset: 14%; animation: spinSlow 28s linear infinite reverse; border-color: rgba(212,175,106,0.28); }
-    .blob-stage .ornament.r3 { inset: 22%; animation: spinSlow 22s linear infinite; border-style: dashed; border-color: rgba(244,236,216,0.14); }
+    .blob-stage .ornament.r1 { inset: 6%;  animation: spinSlow 36s linear infinite; border-color: rgba(244,236,216,0.42); }
+    .blob-stage .ornament.r2 { inset: 14%; animation: spinSlow 28s linear infinite reverse; border-color: rgba(212,175,106,0.55); }
+    .blob-stage .ornament.r3 { inset: 22%; animation: spinSlow 22s linear infinite; border-style: dashed; border-color: rgba(244,236,216,0.35); }
     .blob-stage .ornament.r4 {
       inset: 30%; animation: spinSlow 18s linear infinite reverse;
-      border-color: rgba(212,175,106,0.35);
+      border-color: rgba(212,175,106,0.65);
     }
     .blob-stage .ornament.r5 {
       inset: -2%; animation: spinSlow 48s linear infinite;
-      border-color: rgba(244,236,216,0.10); border-style: dotted;
+      border-color: rgba(244,236,216,0.28); border-style: dotted;
     }
     .blob-stage .ornament.r2::before { content: "◆"; font-size: 12px; color: var(--gold-soft); }
     .blob-stage .ornament.r3::before { content: "•"; font-size: 18px; color: var(--gold); top: -8px; }
@@ -141,19 +142,16 @@
     .blob-stage .ornament.r5::before { content: "◦"; font-size: 22px; color: var(--gold); top: -12px; }
     /* Tilted orbits — atomic feel */
     .blob-stage .orbit-tilt {
-      position: absolute; inset: 4%; border: 1px solid rgba(212,175,106,0.20);
+      position: absolute; inset: 4%;
+      border: 1px solid rgba(212,175,106,0.45);
       border-radius: 50%; pointer-events: none;
     }
-    .blob-stage .orbit-tilt.t1 { transform: rotate(60deg) scaleY(0.35); animation: spinSlow 24s linear infinite; }
-    .blob-stage .orbit-tilt.t2 { transform: rotate(-60deg) scaleY(0.35); animation: spinSlow 30s linear infinite reverse; border-color: rgba(244,236,216,0.14); }
-    .blob-stage .orbit-tilt.t3 { transform: rotate(0deg) scaleY(0.35); animation: spinSlow 36s linear infinite; border-color: rgba(212,175,106,0.16); }
+    .blob-stage .orbit-tilt.t1 { animation: spinTilt1 24s linear infinite; }
+    .blob-stage .orbit-tilt.t2 { animation: spinTilt2 30s linear infinite; border-color: rgba(244,236,216,0.32); }
+    .blob-stage .orbit-tilt.t3 { animation: spinTilt3 36s linear infinite; border-color: rgba(212,175,106,0.32); }
     @keyframes spinSlow { to { transform: rotate(360deg); } }
-    /* Tilted orbits need their own keyframes to preserve scale */
-    .blob-stage .orbit-tilt.t1 { animation-name: spinTilt1; }
-    .blob-stage .orbit-tilt.t2 { animation-name: spinTilt2; }
-    .blob-stage .orbit-tilt.t3 { animation-name: spinTilt3; }
     @keyframes spinTilt1 { from { transform: rotate(60deg) scaleY(0.35); } to { transform: rotate(420deg) scaleY(0.35); } }
-    @keyframes spinTilt2 { from { transform: rotate(-60deg) scaleY(0.35); } to { transform: rotate(300deg) scaleY(0.35); } }
+    @keyframes spinTilt2 { from { transform: rotate(-60deg) scaleY(0.35); } to { transform: rotate(-420deg) scaleY(0.35); } }
     @keyframes spinTilt3 { from { transform: rotate(0deg) scaleY(0.35); } to { transform: rotate(360deg) scaleY(0.35); } }
     .blob-stage .seal {
       position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
