@@ -3,38 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-<<<<<<< Updated upstream
-  <title>Bespoke software — Cybespoke Belfast</title>
-  <meta name="description" content="Bespoke software built around your business — internal tools, in‑store screens, complex integrations. By Cybespoke, Belfast." />
-  <meta name="keywords" content="bespoke software Belfast, custom software development, internal tools, EHR integration, SAP integration, software studio Northern Ireland" />
-=======
   <title>Bespoke software development — Cybespoke, Belfast</title>
-  <meta name="description" content="Bespoke software engineered in Belfast — custom internal platforms, on‑site interfaces, demanding integrations and one‑off product builds. Never templates, never themes." />
+  <meta name="description" content="Bespoke software engineered in Belfast — custom internal platforms, on‑site interfaces, demanding integrations and one‑off product builds. Built around your business, never from a template." />
   <meta name="keywords" content="bespoke software Belfast, custom software development, bespoke web applications, internal tools, SAP integration, EHR integration, bespoke software studio Northern Ireland" />
->>>>>>> Stashed changes
   <link rel="canonical" href="https://cybespoke.co.uk/services/bespoke.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://cybespoke.co.uk/services/bespoke.html" />
-<<<<<<< Updated upstream
-  <meta property="og:title" content="Bespoke software — Cybespoke Belfast" />
-  <meta property="og:description" content="Software built around your business — internal tools, in‑store screens, complex integrations." />
-  <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bespoke software — Cybespoke Belfast" />
-  <meta name="twitter:description" content="Software built around your business — internal tools, in‑store screens, complex integrations." />
-=======
   <meta property="og:title" content="Bespoke software development — Cybespoke, Belfast" />
-  <meta property="og:description" content="Bespoke software engineered to fit your business — internal platforms, on‑site interfaces and demanding integrations. Made‑to‑measure, in Belfast." />
+  <meta property="og:description" content="Bespoke software engineered to fit your business — internal platforms, on‑site interfaces and demanding integrations. Built around you, in Belfast." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Bespoke software development — Cybespoke, Belfast" />
-  <meta name="twitter:description" content="Bespoke software engineered to fit your business — internal platforms, on‑site interfaces and demanding integrations. Made‑to‑measure, in Belfast." />
->>>>>>> Stashed changes
+  <meta name="twitter:description" content="Bespoke software engineered to fit your business — internal platforms, on‑site interfaces and demanding integrations. Built around you, in Belfast." />
   <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
 
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
@@ -96,26 +80,81 @@
       position: relative; aspect-ratio: 1; max-width: 520px;
       margin-inline: auto; width: 100%;
     }
+    /* Nucleus */
     .blob {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, var(--gold), #8c5a1f 60%, #2d1a06);
-      filter: drop-shadow(0 30px 60px rgba(212,175,106,0.25));
-      animation: morph 14s var(--easing) infinite;
+      position: absolute; left: 50%; top: 50%;
+      width: 38%; aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,236,196,0.95) 0%, var(--gold) 28%, #8c5a1f 68%, #2d1a06 100%);
+      box-shadow:
+        0 0 0 1px rgba(244,236,216,0.18),
+        inset -10px -14px 30px rgba(45,26,6,0.55),
+        inset 6px 8px 24px rgba(255,236,196,0.35),
+        0 0 60px 6px rgba(212,175,106,0.45),
+        0 0 140px 30px rgba(212,175,106,0.18);
+      animation: nucleusPulse 6s var(--easing) infinite;
     }
-    @keyframes morph {
-      0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(0deg); }
-      33%      { border-radius: 30% 60% 70% 40% / 50% 60% 30% 50%; transform: rotate(120deg); }
-      66%      { border-radius: 50% 50% 40% 60% / 40% 60% 50% 60%; transform: rotate(240deg); }
+    .blob::before {
+      content: ""; position: absolute; inset: -18%; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,175,106,0.45), transparent 65%);
+      filter: blur(14px); z-index: -1;
+      animation: glowBreathe 5s var(--easing) infinite;
+    }
+    .blob::after {
+      content: ""; position: absolute; inset: 12%; border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,250,230,0.45), transparent 55%);
+      mix-blend-mode: screen; pointer-events: none;
+    }
+    @keyframes nucleusPulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50%      { transform: translate(-50%, -50%) scale(1.04); }
+    }
+    @keyframes glowBreathe {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50%      { opacity: 1;    transform: scale(1.08); }
     }
     .blob-stage .ornament {
-      position: absolute; inset: 14%; border: 1px solid rgba(244,236,216,0.18); border-radius: 50%;
-      animation: spinSlow 30s linear infinite;
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(244,236,216,0.18);
+      pointer-events: none;
     }
     .blob-stage .ornament::before {
       content: "✦"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-      color: var(--gold); font-size: 20px;
+      color: var(--gold); font-size: 16px;
     }
+    .blob-stage .ornament.r1 { inset: 6%;  animation: spinSlow 36s linear infinite; }
+    .blob-stage .ornament.r2 { inset: 14%; animation: spinSlow 28s linear infinite reverse; border-color: rgba(212,175,106,0.28); }
+    .blob-stage .ornament.r3 { inset: 22%; animation: spinSlow 22s linear infinite; border-style: dashed; border-color: rgba(244,236,216,0.14); }
+    .blob-stage .ornament.r4 {
+      inset: 30%; animation: spinSlow 18s linear infinite reverse;
+      border-color: rgba(212,175,106,0.35);
+    }
+    .blob-stage .ornament.r5 {
+      inset: -2%; animation: spinSlow 48s linear infinite;
+      border-color: rgba(244,236,216,0.10); border-style: dotted;
+    }
+    .blob-stage .ornament.r2::before { content: "◆"; font-size: 12px; color: var(--gold-soft); }
+    .blob-stage .ornament.r3::before { content: "•"; font-size: 18px; color: var(--gold); top: -8px; }
+    .blob-stage .ornament.r4::before { content: "✦"; font-size: 14px; color: var(--gold-soft); }
+    .blob-stage .ornament.r5::before { content: "◦"; font-size: 22px; color: var(--gold); top: -12px; }
+    /* Tilted orbits — atomic feel */
+    .blob-stage .orbit-tilt {
+      position: absolute; inset: 4%; border: 1px solid rgba(212,175,106,0.20);
+      border-radius: 50%; pointer-events: none;
+    }
+    .blob-stage .orbit-tilt.t1 { transform: rotate(60deg) scaleY(0.35); animation: spinSlow 24s linear infinite; }
+    .blob-stage .orbit-tilt.t2 { transform: rotate(-60deg) scaleY(0.35); animation: spinSlow 30s linear infinite reverse; border-color: rgba(244,236,216,0.14); }
+    .blob-stage .orbit-tilt.t3 { transform: rotate(0deg) scaleY(0.35); animation: spinSlow 36s linear infinite; border-color: rgba(212,175,106,0.16); }
     @keyframes spinSlow { to { transform: rotate(360deg); } }
+    /* Tilted orbits need their own keyframes to preserve scale */
+    .blob-stage .orbit-tilt.t1 { animation-name: spinTilt1; }
+    .blob-stage .orbit-tilt.t2 { animation-name: spinTilt2; }
+    .blob-stage .orbit-tilt.t3 { animation-name: spinTilt3; }
+    @keyframes spinTilt1 { from { transform: rotate(60deg) scaleY(0.35); } to { transform: rotate(420deg) scaleY(0.35); } }
+    @keyframes spinTilt2 { from { transform: rotate(-60deg) scaleY(0.35); } to { transform: rotate(300deg) scaleY(0.35); } }
+    @keyframes spinTilt3 { from { transform: rotate(0deg) scaleY(0.35); } to { transform: rotate(360deg) scaleY(0.35); } }
     .blob-stage .seal {
       position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
       width: 88px; height: 88px; border-radius: 50%; border: 1px solid rgba(244,236,216,0.4);
@@ -270,170 +309,59 @@
   <section class="b-hero">
     <div class="container b-hero__inner">
       <div>
-<<<<<<< Updated upstream
-        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> Custom built</div>
+        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> Bespoke software studio</div>
         <h1 style="margin-top: 18px;">
-          Software<br/>
+          Bespoke software,<br/>
           <em>built around</em><br/>
           your business.
         </h1>
-        <p class="lede">Internal tools, in‑store screens, tricky integrations, one‑off product ideas — the projects most studios turn away. We start with them.</p>
+        <p class="lede">Bespoke internal platforms, on‑site interfaces, demanding integrations and one‑off product builds — the commissions most studios politely decline. We open with them, and we engineer every line specifically for you.</p>
         <div class="ctas">
-          <a class="btn btn--primary" href="../start.html">Start a project →</a>
-          <a class="btn btn--ghost" href="#atelier">See what we build</a>
-=======
-        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> Made‑to‑measure software</div>
-        <h1 style="margin-top: 18px;">
-          The work that<br/>
-          <em>never fits</em><br/>
-          a template.
-        </h1>
-        <p class="lede">Bespoke internal platforms, on‑site interfaces, demanding integrations and one‑off product builds — the commissions most studios politely decline. We open with them.</p>
-        <div class="ctas">
-          <a class="btn btn--primary" href="../index.html#contact">Commission a bespoke build →</a>
-          <a class="btn btn--ghost" href="#atelier">View the atelier</a>
->>>>>>> Stashed changes
+          <a class="btn btn--primary" href="../start.html">Commission a bespoke build →</a>
+          <a class="btn btn--ghost" href="#process">See our process</a>
         </div>
       </div>
 
       <div class="blob-stage reveal">
+        <div class="orbit-tilt t1"></div>
+        <div class="orbit-tilt t2"></div>
+        <div class="orbit-tilt t3"></div>
+        <div class="ornament r5"></div>
+        <div class="ornament r1"></div>
+        <div class="ornament r2"></div>
+        <div class="ornament r3"></div>
+        <div class="ornament r4"></div>
         <div class="blob"></div>
-        <div class="ornament"></div>
       </div>
     </div>
   </section>
 
-<<<<<<< Updated upstream
-  <div class="container"><div class="hair">Software, tailored to your business</div></div>
+  <div class="container"><div class="hair">A bespoke studio of one‑of‑ones</div></div>
 
-  <section class="philo container reveal">
-    <h2>We design <em>once</em>, for you — never for the average of a thousand.</h2>
-    <p>Most software is shaped by what is reusable. Bespoke software is shaped by what is true for your organisation — the specific workflow, the screen on the factory floor, the way your team actually works. We build it with the same care that most studios reserve for their marketing pages.</p>
-=======
-  <div class="container"><div class="hair">A studio of one‑of‑ones</div></div>
-
-  <section class="philo container reveal">
-    <h2>We design <em>once</em>, for one — never for the average of a thousand.</h2>
->>>>>>> Stashed changes
-  </section>
-
-  <section class="atelier container reveal" id="atelier">
-    <div class="atelier__head">
-      <div>
-<<<<<<< Updated upstream
-        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> Our work</div>
-        <h2 style="margin-top: 14px; font-size: clamp(32px, 4vw, 56px);">A focused range of larger projects.</h2>
-      </div>
-      <p style="max-width: 360px; font-family: 'Inter', sans-serif; color: rgba(244,236,216,0.65);">Most engagements run from three to nine months, from initial brief through to launch.</p>
-=======
-        <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> The commissions</div>
-        <h2 style="margin-top: 14px; font-size: clamp(32px, 4vw, 56px);">A short list of bespoke commissions.</h2>
-      </div>
-      <p style="max-width: 360px; font-family: 'Inter', sans-serif; color: rgba(244,236,216,0.65);">Most bespoke engagements run between three and nine months, from first conversation to launch.</p>
->>>>>>> Stashed changes
-    </div>
-
-    <div class="atelier__list">
-      <div class="row reveal">
-<<<<<<< Updated upstream
-        <div class="num">1.</div>
-        <div class="title">Internal tools &amp; admin platforms</div>
-        <div class="desc">Operations portals, finance back‑offices and content management tools — the essential software your teams rely on every day.</div>
-        <div class="meta">3 – 6 months</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">2.</div>
-        <div class="title">In‑store &amp; on‑site screens</div>
-        <div class="desc">Kiosks, point‑of‑sale systems, factory‑floor dashboards and companion apps for connected devices — engineered for demanding environments.</div>
-        <div class="meta">4 – 9 months</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">3.</div>
-        <div class="title">Complex integrations</div>
-        <div class="desc">SAP, NetSuite, healthcare systems, government services and bespoke connections that other suppliers prefer to avoid.</div>
-        <div class="meta">2 – 5 months</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">4.</div>
-        <div class="title">Product prototypes &amp; pilots</div>
-        <div class="desc">Rigorously engineered prototypes that stand up to scrutiny from real users, stakeholders and investors.</div>
-        <div class="meta">4 – 10 weeks</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">5.</div>
-        <div class="title">Brand‑led microsites &amp; campaigns</div>
-        <div class="desc">Considered one‑pagers, launch sites and interactive experiences for occasions where standard templates simply will not do.</div>
-        <div class="meta">3 – 8 weeks</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">6.</div>
-        <div class="title">Migrations &amp; recovery projects</div>
-        <div class="desc">A stalled rebuild or a struggling rewrite? We step in, stabilise the work and deliver — preserving what already serves you well.</div>
-        <div class="meta">Flexible</div>
-=======
-        <div class="num">i.</div>
-        <div class="title">Internal platforms &amp; operational tools</div>
-        <div class="desc">Bespoke admin portals, finance back‑offices and content systems — the everyday software your team relies on, engineered around how they actually work.</div>
-        <div class="meta">3 – 6 mo</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">ii.</div>
-        <div class="title">On‑site &amp; in‑store interfaces</div>
-        <div class="desc">Kiosks, point‑of‑sale terminals, factory‑floor dashboards and companion apps for connected hardware — engineered for gloves, dim lighting and direct sun.</div>
-        <div class="meta">4 – 9 mo</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">iii.</div>
-        <div class="title">Demanding integrations</div>
-        <div class="desc">Bespoke connections into SAP, NetSuite, healthcare systems and government services — the integrations the wider market quietly avoids.</div>
-        <div class="meta">2 – 5 mo</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">iv.</div>
-        <div class="title">Prototypes &amp; product experiments</div>
-        <div class="desc">Investor‑ready and user‑ready prototypes, engineered to survive contact with real customers — not merely to populate a pitch deck.</div>
-        <div class="meta">4 – 10 wk</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">v.</div>
-        <div class="title">Brand‑led microsites &amp; campaigns</div>
-        <div class="desc">Hand‑crafted one‑pagers, launch sites and interactive editorial — for occasions where "good enough" would undermine the brand presenting it.</div>
-        <div class="meta">3 – 8 wk</div>
-      </div>
-      <div class="row reveal">
-        <div class="num">vi.</div>
-        <div class="title">Migrations &amp; rescues</div>
-        <div class="desc">A stalled rebuild? A faltering rewrite? We join mid‑project, stabilise the system and bring it to launch — without discarding the work already completed.</div>
-        <div class="meta">flexible</div>
->>>>>>> Stashed changes
-      </div>
-    </div>
-  </section>
-
-  <section class="engage container reveal">
-    <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> How we work together</div>
+  <section class="engage container reveal" id="process">
+    <div class="section-eyebrow"><span class="dot" style="background: var(--gold);"></span> How a bespoke engagement runs</div>
     <h2 style="margin-top: 14px; font-size: clamp(32px, 4vw, 56px);">A measured, considered process.</h2>
 
     <div class="thread">
       <div class="knot reveal">
         <div class="label">Step 1</div>
-        <h3>The conversation</h3>
-        <p>An initial discussion to understand your objectives, constraints and context. By the end, we will both know whether a bespoke approach is right — or whether an existing solution would serve you better.</p>
+        <h3>Discovery &amp; consultation</h3>
+        <p>We begin with an unhurried conversation to understand your organisation, your customers and the commercial outcome you intend to achieve. By its conclusion, we will both know with certainty whether a bespoke build is genuinely the correct course of action, or whether an existing product would serve you more sensibly.</p>
       </div>
       <div class="knot reveal">
         <div class="label">Step 2</div>
-        <h3>The proposal</h3>
-        <p>A concise, single‑page document setting out the problem, our recommended approach, the investment, the timeline and the team who will deliver the work. No slide decks.</p>
+        <h3>Bespoke proposal &amp; scope</h3>
+        <p>A single, plainly written document. It sets out the problem we have agreed, the bespoke approach we recommend, a transparent breakdown of the investment, a realistic timetable, and the named practitioners who will undertake the work. No marketing decks, no padding, no hidden assumptions.</p>
       </div>
       <div class="knot reveal">
         <div class="label">Step 3</div>
-        <h3>The build</h3>
-        <p>Weekly demonstrations, a staging environment from the first week and direct access to the engineers building your software. Senior practitioners on the work, not solely at the kick‑off.</p>
+        <h3>Design &amp; bespoke build</h3>
+        <p>Your bespoke software is engineered in‑house in Belfast, with weekly demonstrations, a live staging environment from the first week and direct access to the engineers writing the code. Senior craftspeople remain on the keyboard for the duration — not only at the kick‑off meeting.</p>
       </div>
       <div class="knot reveal">
         <div class="label">Step 4</div>
-        <h3>The handover</h3>
-        <p>Comprehensive documentation, structured walk‑throughs, a 30‑day warranty and a standing invitation to return. The majority of our clients do.</p>
+        <h3>Launch, handover &amp; ongoing care</h3>
+        <p>A considered launch, comprehensive documentation, hands‑on training for your team and a thirty‑day warranty as standard. We then look after your bespoke build for as long as you wish — with a standing invitation to return for further work, which most clients do.</p>
       </div>
     </div>
   </section>
