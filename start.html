@@ -231,6 +231,18 @@
       .q-controls { padding-top: 24px; }
       .q-btn { padding: 12px 18px; font-size: 13px; }
     }
+
+    /* ===== Light mode overrides ===== */
+    [data-theme="light"] .q-page__bg {
+      background:
+        radial-gradient(900px 600px at 80% 0%, rgba(139, 92, 246, 0.10), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(45, 212, 191, 0.08), transparent 60%);
+    }
+    [data-theme="light"] .q-card {
+      background:
+        linear-gradient(180deg, rgba(10, 12, 26, 0.02), rgba(10, 12, 26, 0)),
+        var(--bg-soft);
+    }
   </style>
 </head>
 <body class="page-enter">

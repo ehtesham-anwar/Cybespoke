@@ -249,6 +249,26 @@
       .pager { margin-top: 60px; padding: 18px; gap: 10px; }
       .pager a { font-size: 13px; }
     }
+
+    /* ===== Light mode overrides ===== */
+    [data-theme="light"] body { background: var(--bg); color: var(--text); }
+    [data-theme="light"] body::before {
+      background:
+        radial-gradient(900px 600px at 80% 0%, rgba(34,197,94,0.14), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(250,204,21,0.10), transparent 60%);
+    }
+    [data-theme="light"] .seo-hero h1 {
+      background: linear-gradient(120deg, #1a1a2a 10%, var(--seo-green) 55%, #b07b08);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    [data-theme="light"] .serp {
+      background: rgba(10, 12, 26, 0.03);
+      border-color: rgba(34, 197, 94, 0.28);
+    }
+    [data-theme="light"] .serp__bar {
+      background: rgba(10, 12, 26, 0.04);
+      border-color: rgba(10, 12, 26, 0.06);
+    }
   </style>
 </head>
 <body class="page-enter">

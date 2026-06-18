@@ -285,6 +285,38 @@
       .phone--1 { width: 190px; height: 380px; }
       .phone--2 { width: 160px; height: 320px; top: 50px; }
     }
+
+    /* ===== Light mode overrides ===== */
+    [data-theme="light"] body { background: var(--bg); color: var(--text); }
+    [data-theme="light"] body::before {
+      background:
+        radial-gradient(700px 500px at 80% 10%, rgba(124,92,255,0.16), transparent 60%),
+        radial-gradient(600px 400px at 0% 90%, rgba(255,93,143,0.14), transparent 60%);
+    }
+    [data-theme="light"] .m-hero h1 {
+      background: linear-gradient(135deg, #1a1a2a 10%, var(--m-purple) 55%, var(--m-pink));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    /* Capability rail cards: flip to light surface */
+    [data-theme="light"] .cap-card {
+      background: linear-gradient(180deg, rgba(10,12,26,0.04), rgba(10,12,26,0.01));
+      border-color: rgba(10,12,26,0.08);
+    }
+    [data-theme="light"] .cap-card:hover { border-color: rgba(124,92,255,0.55); }
+    [data-theme="light"] .cap-card p { color: var(--muted); }
+    /* Platform tiles already use var() — only the after blob colours need a touch */
+    [data-theme="light"] .plat__card { background: var(--bg-soft); border-color: var(--line); }
+    [data-theme="light"] .pager { border-color: var(--line); }
+    [data-theme="light"] .pager a { color: var(--muted); }
+    [data-theme="light"] .pager a:hover { color: var(--text); }
+    /* Phones stay dark by design — they're rendered devices.
+       Just soften their drop-shadow so they sit on a light background nicely. */
+    [data-theme="light"] .phone {
+      box-shadow:
+        0 50px 80px -30px rgba(124,92,255,0.35),
+        0 30px 50px -20px rgba(10,12,26,0.18),
+        inset 0 0 0 8px #0a0712;
+    }
   </style>
 </head>
 <body class="page-enter">

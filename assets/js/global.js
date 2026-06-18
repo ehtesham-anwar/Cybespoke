@@ -93,7 +93,7 @@
     window.addEventListener("mouseleave", () => ring.classList.add("is-hidden"));
     window.addEventListener("mouseenter", () => ring.classList.remove("is-hidden"));
 
-    const ACTIVE_SEL = 'a, button, .btn, .nav__cta, .service-card, .tile, .stat, [data-cursor]';
+    const ACTIVE_SEL = 'a, button, .btn, .nav__cta, .service-card, .hero-step, .stat, [data-cursor]';
     document.addEventListener("mouseover", (e) => {
       if (e.target.closest && e.target.closest(ACTIVE_SEL)) {
         ring.classList.add("is-active");

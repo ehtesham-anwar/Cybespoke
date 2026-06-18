@@ -248,6 +248,32 @@
       .eval { grid-template-columns: 100px 1fr 36px; gap: 8px; }
       .eval .lbl { font-size: 11px; }
     }
+
+    /* ===== Light mode overrides ===== */
+    [data-theme="light"] body { background: var(--bg); color: var(--text); }
+    [data-theme="light"] body::before {
+      background:
+        radial-gradient(900px 600px at 70% 0%, rgba(255,93,143,0.14), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(168,85,247,0.12), transparent 60%);
+    }
+    [data-theme="light"] .ai-hero h1 {
+      background: linear-gradient(120deg, #1a1a2a 10%, var(--ai-rose) 55%, var(--ai-amber));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    [data-theme="light"] .stream span {
+      background: rgba(10, 12, 26, 0.04);
+      border-color: rgba(10, 12, 26, 0.08);
+      color: var(--muted);
+    }
+    [data-theme="light"] .neural {
+      background: radial-gradient(circle at center, rgba(255,93,143,0.10), transparent 60%);
+    }
+    [data-theme="light"] .out {
+      background: rgba(10, 12, 26, 0.025);
+      border-color: var(--line);
+    }
+    [data-theme="light"] .out__text { color: var(--text); }
+    [data-theme="light"] .model-chip { background: rgba(10,12,26,0.04); border-color: rgba(10,12,26,0.08); }
   </style>
 </head>
 <body class="page-enter">

@@ -291,6 +291,33 @@
       .pager { margin-top: 60px; padding: 18px; gap: 10px; }
       .pager a { font-size: 13px; }
     }
+
+    /* ===== Light mode overrides ===== */
+    [data-theme="light"] body {
+      background: #fdfaf3;
+      color: #1f1810;
+    }
+    [data-theme="light"] body::before {
+      background:
+        radial-gradient(900px 600px at 80% 0%, rgba(212,175,106,0.22), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(212,175,106,0.14), transparent 60%);
+    }
+    [data-theme="light"] body::after {
+      background: radial-gradient(ellipse at center, transparent 55%, rgba(212,175,106,0.18) 100%);
+      mix-blend-mode: multiply;
+    }
+    [data-theme="light"] .b-hero .lede { color: rgba(31, 24, 16, 0.7); }
+    [data-theme="light"] .quote blockquote { color: #1f1810; }
+    [data-theme="light"] .b-cta p { color: rgba(31, 24, 16, 0.7); }
+    [data-theme="light"] .b-cta { border-top-color: rgba(212,175,106,0.45); border-bottom-color: rgba(212,175,106,0.45); }
+    [data-theme="light"] .pager { border-color: rgba(31, 24, 16, 0.12); }
+    [data-theme="light"] .pager a { color: rgba(31, 24, 16, 0.6); }
+    [data-theme="light"] .pager a:hover { color: #8c5a1f; }
+    [data-theme="light"] .blob-stage .ornament,
+    [data-theme="light"] .blob-stage .orbit-tilt { border-color: rgba(140, 90, 31, 0.45); }
+    [data-theme="light"] .blob-stage .ornament::before { color: #8c5a1f; text-shadow: 0 0 12px rgba(212,175,106,0.5); }
+    [data-theme="light"] .blob-stage .seal { border-color: rgba(31, 24, 16, 0.35); color: #1f1810; }
+    [data-theme="light"] .nav__cta { color: #1f1810; }
   </style>
 </head>
 <body class="page-enter">

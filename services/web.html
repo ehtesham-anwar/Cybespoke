@@ -199,6 +199,28 @@
       .pager { margin-top: 60px; padding: 18px; gap: 10px; }
       .pager a { font-size: 13px; }
     }
+
+    /* ===== Light mode overrides ===== */
+    [data-theme="light"] body::before {
+      background: repeating-linear-gradient(0deg, rgba(33,82,255,0.03) 0 2px, transparent 2px 4px);
+      mix-blend-mode: multiply;
+    }
+    [data-theme="light"] .web-hero__matrix {
+      background-image:
+        linear-gradient(rgba(33,82,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33,82,255,0.08) 1px, transparent 1px);
+    }
+    [data-theme="light"] .web-hero h1 .typed {
+      background: linear-gradient(90deg, #0566a3, #1a1a2a);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    [data-theme="light"] .caret { background: #0566a3; }
+    [data-theme="light"] .promise {
+      background: linear-gradient(180deg, rgba(33,212,253,0.06), rgba(33,82,255,0.02));
+      border-color: rgba(33,82,255,0.22);
+    }
+    [data-theme="light"] .promise__list li { border-bottom-color: rgba(10, 12, 26, 0.06); }
+    [data-theme="light"] .term-prompt { color: #0566a3; }
   </style>
 </head>
 <body class="page-enter">
