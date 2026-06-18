@@ -1,6 +1,57 @@
-/* Global behaviors: reveal, cursor glow, nav scroll, tile parallax, count-up */
+/* Global behaviors: reveal, cursor glow, nav scroll, tile parallax, count-up, theme toggle */
 (() => {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Apply stored theme as early as possible (script is at end of body, so this
+  // runs before reveal animations start; still might flash briefly — for a
+  // bullet-proof fix add the small inline head script to each page).
+  try {
+    const stored = localStorage.getItem("cybespoke-theme");
+    if (stored === "light" || stored === "dark") {
+      document.documentElement.setAttribute("data-theme", stored);
+    }
+  } catch (_) {}
+
+  const themeToggle = () => {
+    const nav = document.querySelector(".nav");
+    if (!nav || nav.querySelector(".nav__theme")) return;
+
+    const cta = nav.querySelector(".nav__cta");
+    let group = nav.querySelector(".nav__right");
+    if (!group) {
+      group = document.createElement("div");
+      group.className = "nav__right";
+      if (cta && cta.parentElement === nav) {
+        nav.insertBefore(group, cta);
+        group.appendChild(cta);
+      } else {
+        nav.appendChild(group);
+      }
+    }
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "nav__theme";
+    btn.setAttribute("aria-label", "Toggle colour theme");
+    btn.innerHTML =
+      '<svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<circle cx="12" cy="12" r="4.2"/>' +
+        '<path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/>' +
+      '</svg>' +
+      '<svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5 6.7 6.7 0 0 0 20.5 13.2z"/>' +
+      '</svg>';
+    group.insertBefore(btn, group.firstChild);
+
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.classList.add("theme-fade");
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("cybespoke-theme", next); } catch (_) {}
+      window.setTimeout(() => document.documentElement.classList.remove("theme-fade"), 600);
+    });
+  };
 
   const reveal = () => {
     const els = document.querySelectorAll(".reveal");
@@ -27,14 +78,134 @@
     const dot = document.createElement("div");
     dot.className = "cursor-glow";
     document.body.appendChild(dot);
+
+    const ring = document.createElement("div");
+    ring.className = "cursor-ring";
+    document.body.appendChild(ring);
+
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
     let tx = x, ty = y;
+    let rx = x, ry = y;
+    let scale = 1, scaleT = 1;
+
     window.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; });
+    window.addEventListener("mouseleave", () => ring.classList.add("is-hidden"));
+    window.addEventListener("mouseenter", () => ring.classList.remove("is-hidden"));
+
+    const ACTIVE_SEL = 'a, button, .btn, .nav__cta, .service-card, .tile, .stat, [data-cursor]';
+    document.addEventListener("mouseover", (e) => {
+      if (e.target.closest && e.target.closest(ACTIVE_SEL)) {
+        ring.classList.add("is-active");
+        scaleT = 1.18;
+      }
+    });
+    document.addEventListener("mouseout", (e) => {
+      if (e.target.closest && e.target.closest(ACTIVE_SEL)) {
+        ring.classList.remove("is-active");
+        scaleT = 1;
+      }
+    });
+
     const tick = () => {
-      x += (tx - x) * 0.08;
-      y += (ty - y) * 0.08;
-      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      x += (tx - x) * 0.10;
+      y += (ty - y) * 0.10;
+      rx += (tx - rx) * 0.22;
+      ry += (ty - ry) * 0.22;
+      scale += (scaleT - scale) * 0.12;
+      dot.style.setProperty("--cursor-scale", scale.toFixed(3));
+      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%) scale(${scale.toFixed(3)})`;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    };
+    tick();
+  };
+
+  const magneticButtons = () => {
+    if (window.matchMedia("(pointer: coarse)").matches || prefersReduced) return;
+    document.querySelectorAll(".btn, .nav__cta").forEach((btn) => {
+      let mx = 0, my = 0, tx = 0, ty = 0;
+      let active = false;
+      const onMove = (e) => {
+        const r = btn.getBoundingClientRect();
+        const cx = r.left + r.width / 2;
+        const cy = r.top + r.height / 2;
+        tx = (e.clientX - cx) * 0.28;
+        ty = (e.clientY - cy) * 0.45;
+        btn.style.setProperty("--sx", `${e.clientX - r.left}px`);
+        btn.style.setProperty("--sy", `${e.clientY - r.top}px`);
+      };
+      btn.addEventListener("mouseenter", () => { active = true; });
+      btn.addEventListener("mousemove", onMove);
+      btn.addEventListener("mouseleave", () => { active = false; tx = 0; ty = 0; });
+
+      const tick = () => {
+        mx += (tx - mx) * 0.18;
+        my += (ty - my) * 0.18;
+        btn.style.setProperty("--mx", `${mx.toFixed(2)}px`);
+        btn.style.setProperty("--my", `${my.toFixed(2)}px`);
+        requestAnimationFrame(tick);
+      };
+      tick();
+    });
+  };
+
+  const spotlightTracking = () => {
+    if (prefersReduced) return;
+    document.querySelectorAll("[data-spotlight]").forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--sx", `${e.clientX - r.left}px`);
+        el.style.setProperty("--sy", `${e.clientY - r.top}px`);
+      });
+    });
+  };
+
+  const cardTilt = () => {
+    if (window.matchMedia("(pointer: coarse)").matches || prefersReduced) return;
+    document.querySelectorAll("[data-tilt]").forEach((el) => {
+      let rx = 0, ry = 0, trx = 0, try_ = 0;
+      const onMove = (e) => {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        trx = py * -8;
+        try_ = px * 10;
+      };
+      const onLeave = () => { trx = 0; try_ = 0; };
+      el.addEventListener("mousemove", onMove);
+      el.addEventListener("mouseleave", onLeave);
+      const tick = () => {
+        rx += (trx - rx) * 0.12;
+        ry += (try_ - ry) * 0.12;
+        el.style.setProperty("--tilt-x", `${rx.toFixed(2)}deg`);
+        el.style.setProperty("--tilt-y", `${ry.toFixed(2)}deg`);
+        requestAnimationFrame(tick);
+      };
+      tick();
+    });
+  };
+
+  const marqueeVelocity = () => {
+    const marquees = document.querySelectorAll(".marquee");
+    if (!marquees.length || prefersReduced) return;
+    let lastY = window.scrollY;
+    let velocity = 0;
+    let smoothed = 0;
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      velocity = y - lastY;
+      lastY = y;
+    }, { passive: true });
+    const tick = () => {
+      smoothed += (velocity - smoothed) * 0.14;
+      velocity *= 0.9;
+      const clamped = Math.max(-1.8, Math.min(1.8, smoothed * 0.045));
+      marquees.forEach((m) => {
+        m.style.setProperty("--mq-skew", `${(clamped * 4).toFixed(2)}deg`);
+        const track = m.querySelector(".marquee__track");
+        if (track) track.style.setProperty("--mq-boost", `${(1 + Math.abs(clamped) * 1.2).toFixed(2)}`);
+      });
       requestAnimationFrame(tick);
     };
     tick();
@@ -144,6 +315,7 @@
   };
 
   document.addEventListener("DOMContentLoaded", () => {
+    themeToggle();
     reveal();
     cursorGlow();
     navScroll();
@@ -151,5 +323,9 @@
     countUp();
     yearStamp();
     whatsappFab();
+    magneticButtons();
+    spotlightTracking();
+    cardTilt();
+    marqueeVelocity();
   });
 })();
