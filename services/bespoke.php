@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bespoke software development — Cybespoke, Belfast</title>
   <meta name="description" content="Bespoke software engineered in Belfast — custom internal platforms, on‑site interfaces, demanding integrations and one‑off product builds. Built around your business, never from a template." />

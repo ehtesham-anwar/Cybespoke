@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SEO &amp; marketing — Cybespoke Belfast</title>
   <meta name="description" content="SEO and digital marketing in Belfast — search rankings, content, paid ads and weekly reports. Plain English, no jargon, no agency markup. By Cybespoke." />

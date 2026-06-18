@@ -2,15 +2,17 @@
 (() => {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Apply stored theme as early as possible (script is at end of body, so this
-  // runs before reveal animations start; still might flash briefly — for a
-  // bullet-proof fix add the small inline head script to each page).
+  // Apply stored theme as early as possible. Each page also has a tiny
+  // synchronous head script that sets data-theme to "light" by default
+  // (or the user's stored preference) before paint, so we shouldn't see
+  // a flash. This is just defence-in-depth.
   try {
     const stored = localStorage.getItem("cybespoke-theme");
-    if (stored === "light" || stored === "dark") {
-      document.documentElement.setAttribute("data-theme", stored);
-    }
-  } catch (_) {}
+    const theme = stored === "dark" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (_) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
 
   const themeToggle = () => {
     const nav = document.querySelector(".nav");
