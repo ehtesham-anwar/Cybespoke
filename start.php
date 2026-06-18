@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact us — Cybespoke Belfast</title>
   <meta name="description" content="Drop us a line — name, email, a few notes about your idea. Cybespoke will respond within one working day." />
-  <link rel="canonical" href="https://cybespoke.co.uk/start.html" />
+  <link rel="canonical" href="https://cybespoke.co.uk/start.php" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:url" content="https://cybespoke.co.uk/start.html" />
+  <meta property="og:url" content="https://cybespoke.co.uk/start.php" />
   <meta property="og:title" content="Contact us — Cybespoke Belfast" />
   <meta property="og:description" content="Drop us a line. We respond within one working day with honest first thoughts and a clear next step." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
@@ -246,16 +246,7 @@
   </style>
 </head>
 <body class="page-enter">
-  <header class="nav">
-    <a href="index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
-    <nav class="nav__links">
-      <a href="services/web.html">Websites</a>
-      <a href="services/mobile.html">Apps</a>
-      <a href="services/ai.html">Smart tools</a>
-      <a href="services/bespoke.html">Bespoke</a>
-    </nav>
-    <a href="start.html" class="nav__cta active">Contact us</a>
-  </header>
+  <?php include __DIR__ . '/header.php'; ?>
 
   <div class="q-page__bg"></div>
 
@@ -304,46 +295,7 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services/web.html">Websites</a></li>
-          <li><a href="services/mobile.html">Apps</a></li>
-          <li><a href="services/ai.html">Smart tools</a></li>
-          <li><a href="services/bespoke.html">Bespoke</a></li>
-          <li><a href="services/seo.html">SEO &amp; marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="start.html">Contact us</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="index.html#services">Process</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy notice</a></li>
-          <li><a href="cookies.html">Cookie policy</a></li>
-          <li><a href="terms.html">Terms of use</a></li>
-          <li><a href="accessibility.html">Accessibility</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke · Belfast</span>
-      <span>Crafted in Belfast.</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/footer.php'; ?>
 
   <script src="assets/js/global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

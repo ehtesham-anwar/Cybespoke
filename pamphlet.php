@@ -258,7 +258,7 @@
 </head>
 <body>
   <div class="toolbar">
-    <a href="index.html">← Back to site</a>
+    <a href="index.php">← Back to site</a>
     <button onclick="window.print()">Print flyer</button>
   </div>
 

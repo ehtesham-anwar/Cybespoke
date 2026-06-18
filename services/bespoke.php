@@ -7,12 +7,12 @@
   <title>Bespoke software development — Cybespoke, Belfast</title>
   <meta name="description" content="Bespoke software engineered in Belfast — custom internal platforms, on‑site interfaces, demanding integrations and one‑off product builds. Built around your business, never from a template." />
   <meta name="keywords" content="bespoke software Belfast, custom software development, bespoke web applications, internal tools, SAP integration, EHR integration, bespoke software studio Northern Ireland" />
-  <link rel="canonical" href="https://cybespoke.co.uk/services/bespoke.html" />
+  <link rel="canonical" href="https://cybespoke.co.uk/services/bespoke.php" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:url" content="https://cybespoke.co.uk/services/bespoke.html" />
+  <meta property="og:url" content="https://cybespoke.co.uk/services/bespoke.php" />
   <meta property="og:title" content="Bespoke software development — Cybespoke, Belfast" />
   <meta property="og:description" content="Bespoke software engineered to fit your business — internal platforms, on‑site interfaces and demanding integrations. Built around you, in Belfast." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
@@ -321,16 +321,7 @@
   </style>
 </head>
 <body class="page-enter">
-  <header class="nav">
-    <a href="../index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
-    <nav class="nav__links">
-      <a href="web.html">Websites</a>
-      <a href="mobile.html">Apps</a>
-      <a href="ai.html">Smart tools</a>
-      <a href="bespoke.html" class="active">Bespoke</a>
-    </nav>
-    <a href="../start.html" class="nav__cta">Contact us</a>
-  </header>
+  <?php $active = 'services'; $sub = 'bespoke'; include __DIR__ . '/../header.php'; ?>
 
   <section class="b-hero">
     <div class="container b-hero__inner">
@@ -343,7 +334,7 @@
         </h1>
         <p class="lede">Bespoke internal platforms, on‑site interfaces, demanding integrations and one‑off product builds — the commissions most studios politely decline. We open with them, and we engineer every line specifically for you.</p>
         <div class="ctas">
-          <a class="btn btn--primary" href="../start.html">Commission a bespoke build →</a>
+          <a class="btn btn--primary" href="../start.php">Commission a bespoke build →</a>
           <a class="btn btn--ghost" href="#process">See our process</a>
         </div>
       </div>
@@ -401,57 +392,18 @@
     <div class="b-cta reveal">
       <h2>Tell us about the project that no one else <em>quite</em> understands.</h2>
       <p>That is typically where our work is at its strongest. We respond to every considered enquiry within one working day.</p>
-      <a class="btn btn--primary" href="../start.html">Start your brief →</a>
+      <a class="btn btn--primary" href="../start.php">Start your brief →</a>
     </div>
   </div>
 
   <div class="container">
     <div class="pager reveal">
-      <a href="ai.html">← AI</a>
-      <a href="../index.html">Back to home →</a>
+      <a href="ai.php">← AI</a>
+      <a href="../index.php">Back to home →</a>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: var(--bone, #f4ecd8); opacity: 0.6;">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="web.html">Websites</a></li>
-          <li><a href="mobile.html">Apps</a></li>
-          <li><a href="ai.html">Smart tools</a></li>
-          <li><a href="bespoke.html">Bespoke</a></li>
-          <li><a href="seo.html">SEO &amp; marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="../index.html#contact">Contact</a></li>
-          <li><a href="../index.html#services">Process</a></li>
-          <li><a href="../start.html">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="../privacy.html">Privacy notice</a></li>
-          <li><a href="../cookies.html">Cookie policy</a></li>
-          <li><a href="../terms.html">Terms of use</a></li>
-          <li><a href="../accessibility.html">Accessibility</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke · Bespoke</span>
-      <span>Crafted in Belfast.</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/../footer.php'; ?>
 
   <script src="../assets/js/global.js"></script>
 </body>

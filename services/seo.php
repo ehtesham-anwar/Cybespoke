@@ -7,12 +7,12 @@
   <title>SEO &amp; marketing — Cybespoke Belfast</title>
   <meta name="description" content="SEO and digital marketing in Belfast — search rankings, content, paid ads and weekly reports. Plain English, no jargon, no agency markup. By Cybespoke." />
   <meta name="keywords" content="SEO Belfast, digital marketing Belfast, Google Ads Belfast, Meta Ads Belfast, local SEO Northern Ireland, content marketing, SEO agency UK" />
-  <link rel="canonical" href="https://cybespoke.co.uk/services/seo.html" />
+  <link rel="canonical" href="https://cybespoke.co.uk/services/seo.php" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:url" content="https://cybespoke.co.uk/services/seo.html" />
+  <meta property="og:url" content="https://cybespoke.co.uk/services/seo.php" />
   <meta property="og:title" content="SEO &amp; marketing — Cybespoke Belfast" />
   <meta property="og:description" content="SEO, content, paid ads and weekly reports — plain English, no agency markup." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
@@ -272,16 +272,7 @@
   </style>
 </head>
 <body class="page-enter">
-  <header class="nav">
-    <a href="../index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
-    <nav class="nav__links">
-      <a href="web.html">Websites</a>
-      <a href="mobile.html">Apps</a>
-      <a href="ai.html">Smart tools</a>
-      <a href="bespoke.html">Bespoke</a>
-    </nav>
-    <a href="../index.html#contact" class="nav__cta">Get a free quote</a>
-  </header>
+  <?php $active = 'services'; $sub = 'seo'; include __DIR__ . '/../header.php'; ?>
 
   <section class="seo-hero">
     <div class="container seo-hero__inner">
@@ -290,7 +281,7 @@
         <h1 style="margin-top: 18px;">Get found on Google. Get the click. Grow.</h1>
         <p class="lede">A beautiful website is only half the job. We help you climb search results, write words that convert, and run paid ads on Google and Meta — all in plain English, with weekly reports you'll actually read.</p>
         <div class="ctas">
-          <a class="btn btn--primary" href="../index.html#contact">Get a free SEO audit →</a>
+          <a class="btn btn--primary" href="../index.php#contact">Get a free SEO audit →</a>
           <a class="btn btn--ghost" href="#capabilities">What we do</a>
         </div>
       </div>
@@ -396,7 +387,7 @@
           <li>Local citations &amp; review prompts</li>
           <li>Monthly report</li>
         </ul>
-        <a href="../index.html#contact" class="btn btn--ghost">Start with Local →</a>
+        <a href="../index.php#contact" class="btn btn--ghost">Start with Local →</a>
       </div>
       <div class="seo-tier is-featured">
         <span class="badge">Most popular</span>
@@ -410,7 +401,7 @@
           <li>Google Ads management (£500 budget incl.)</li>
           <li>Conversion tracking &amp; weekly reports</li>
         </ul>
-        <a href="../index.html#contact" class="btn btn--primary">Choose Growth →</a>
+        <a href="../index.php#contact" class="btn btn--primary">Choose Growth →</a>
       </div>
       <div class="seo-tier">
         <span class="badge">Bespoke</span>
@@ -424,7 +415,7 @@
           <li>Conversion rate optimisation</li>
           <li>Direct line to your strategist</li>
         </ul>
-        <a href="../index.html#contact" class="btn btn--ghost">Talk to us →</a>
+        <a href="../index.php#contact" class="btn btn--ghost">Talk to us →</a>
       </div>
     </div>
   </section>
@@ -452,7 +443,7 @@
       </details>
       <details>
         <summary>Do we need a new website to work with you?</summary>
-        <p>Not always. We start with what you've got. If your current site is fundamentally holding you back, we'll say so — and we can rebuild it (see our <a href="web.html" style="color: var(--seo-lime);">Websites</a> service).</p>
+        <p>Not always. We start with what you've got. If your current site is fundamentally holding you back, we'll say so — and we can rebuild it (see our <a href="web.php" style="color: var(--seo-lime);">Websites</a> service).</p>
       </details>
       <details>
         <summary>Will we own everything you do?</summary>
@@ -463,51 +454,12 @@
 
   <div class="container">
     <div class="pager reveal">
-      <a href="../index.html">← Back to home</a>
-      <a href="../index.html#contact">Get a free quote →</a>
+      <a href="../index.php">← Back to home</a>
+      <a href="../index.php#contact">Get a free quote →</a>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="web.html">Websites</a></li>
-          <li><a href="mobile.html">Apps</a></li>
-          <li><a href="ai.html">Smart tools</a></li>
-          <li><a href="bespoke.html">Bespoke</a></li>
-          <li><a href="seo.html">SEO &amp; marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="../index.html#contact">Contact</a></li>
-          <li><a href="../index.html#services">Process</a></li>
-          <li><a href="../start.html">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="../privacy.html">Privacy notice</a></li>
-          <li><a href="../cookies.html">Cookie policy</a></li>
-          <li><a href="../terms.html">Terms of use</a></li>
-          <li><a href="../accessibility.html">Accessibility</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke · SEO &amp; marketing</span>
-      <span>Crafted in Belfast.</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/../footer.php'; ?>
 
   <script src="../assets/js/global.js"></script>
 </body>

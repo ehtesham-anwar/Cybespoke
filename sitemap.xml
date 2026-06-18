@@ -6,52 +6,77 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/start.html</loc>
+    <loc>https://cybespoke.co.uk/work.php</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://cybespoke.co.uk/start.php</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/services/web.html</loc>
+    <loc>https://cybespoke.co.uk/services/web.php</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/services/mobile.html</loc>
+    <loc>https://cybespoke.co.uk/services/mobile.php</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/services/ai.html</loc>
+    <loc>https://cybespoke.co.uk/services/ecommerce.php</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/services/bespoke.html</loc>
+    <loc>https://cybespoke.co.uk/services/crm.php</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/services/seo.html</loc>
+    <loc>https://cybespoke.co.uk/services/ai.php</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/privacy.html</loc>
+    <loc>https://cybespoke.co.uk/services/workflows.php</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cybespoke.co.uk/services/data.php</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cybespoke.co.uk/services/bespoke.php</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cybespoke.co.uk/services/seo.php</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cybespoke.co.uk/privacy.php</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/cookies.html</loc>
+    <loc>https://cybespoke.co.uk/cookies.php</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/terms.html</loc>
+    <loc>https://cybespoke.co.uk/terms.php</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://cybespoke.co.uk/accessibility.html</loc>
+    <loc>https://cybespoke.co.uk/accessibility.php</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

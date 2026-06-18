@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Terms of use — Cybespoke</title>
   <meta name="description" content="The terms governing your use of the Cybespoke website. Please read them carefully." />
-  <link rel="canonical" href="https://cybespoke.co.uk/terms.html" />
+  <link rel="canonical" href="https://cybespoke.co.uk/terms.php" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:url" content="https://cybespoke.co.uk/terms.html" />
+  <meta property="og:url" content="https://cybespoke.co.uk/terms.php" />
   <meta property="og:title" content="Terms of use — Cybespoke" />
   <meta property="og:description" content="The terms governing your use of the Cybespoke website." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
@@ -38,16 +38,7 @@
   </style>
 </head>
 <body class="page-enter">
-  <header class="nav">
-    <a href="index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
-    <nav class="nav__links">
-      <a href="services/web.html">Websites</a>
-      <a href="services/mobile.html">Apps</a>
-      <a href="services/ai.html">Smart tools</a>
-      <a href="services/bespoke.html">Bespoke</a>
-    </nav>
-    <a href="start.html" class="nav__cta">Contact us</a>
-  </header>
+  <?php include __DIR__ . '/header.php'; ?>
 
   <main class="legal container">
     <div class="legal__head">
@@ -94,7 +85,7 @@
       <p>Nothing in these terms limits or excludes our liability for death or personal injury caused by negligence, for fraud, or for any other liability that cannot lawfully be limited or excluded.</p>
 
       <h2>7. Privacy and cookies</h2>
-      <p>Your use of this website is also governed by our <a href="privacy.html">Privacy notice</a> and <a href="cookies.html">Cookie policy</a>, which form part of these terms.</p>
+      <p>Your use of this website is also governed by our <a href="privacy.php">Privacy notice</a> and <a href="cookies.php">Cookie policy</a>, which form part of these terms.</p>
 
       <h2>8. Changes to these terms</h2>
       <p>We may update these terms from time to time. The "last updated" date at the top of the page will always show when they were last revised. By continuing to use the website after we make changes, you agree to the revised terms.</p>
@@ -107,45 +98,7 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services/web.html">Websites</a></li>
-          <li><a href="services/mobile.html">Apps</a></li>
-          <li><a href="services/ai.html">Smart tools</a></li>
-          <li><a href="services/bespoke.html">Bespoke</a></li>
-          <li><a href="services/seo.html">SEO &amp; marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="start.html">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy notice</a></li>
-          <li><a href="cookies.html">Cookie policy</a></li>
-          <li><a href="terms.html">Terms of use</a></li>
-          <li><a href="accessibility.html">Accessibility</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke. All rights reserved.</span>
-      <span>Crafted in Belfast.</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/footer.php'; ?>
 
   <script src="assets/js/global.js"></script>
 </body>

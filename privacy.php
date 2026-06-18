@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy notice — Cybespoke</title>
   <meta name="description" content="How Cybespoke collects, uses and protects your personal information under the UK GDPR and the Data Protection Act 2018." />
-  <link rel="canonical" href="https://cybespoke.co.uk/privacy.html" />
+  <link rel="canonical" href="https://cybespoke.co.uk/privacy.php" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:url" content="https://cybespoke.co.uk/privacy.html" />
+  <meta property="og:url" content="https://cybespoke.co.uk/privacy.php" />
   <meta property="og:title" content="Privacy notice — Cybespoke" />
   <meta property="og:description" content="How we collect, use and protect your personal information." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
@@ -48,16 +48,7 @@
   </style>
 </head>
 <body class="page-enter">
-  <header class="nav">
-    <a href="index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
-    <nav class="nav__links">
-      <a href="services/web.html">Websites</a>
-      <a href="services/mobile.html">Apps</a>
-      <a href="services/ai.html">Smart tools</a>
-      <a href="services/bespoke.html">Bespoke</a>
-    </nav>
-    <a href="start.html" class="nav__cta">Contact us</a>
-  </header>
+  <?php include __DIR__ . '/header.php'; ?>
 
   <main class="legal container">
     <div class="legal__head">
@@ -97,7 +88,7 @@
         <li><strong>Enquiry information</strong> — your name, email address, organisation, the message you send us, and any project details you choose to share through our contact form, our project brief form, or by email.</li>
         <li><strong>Client information</strong> — if you become a client, we may also process invoicing details, contractual contacts, and information you provide for the purpose of delivering the work commissioned.</li>
         <li><strong>Technical information</strong> — when you visit our website we automatically collect a small amount of technical data (such as pages viewed, approximate location derived from your IP address, browser type and referrer). Where possible we use privacy‑friendly analytics that do not identify individual visitors.</li>
-        <li><strong>Cookies and similar technologies</strong> — see our <a href="cookies.html">Cookie policy</a> for full details.</li>
+        <li><strong>Cookies and similar technologies</strong> — see our <a href="cookies.php">Cookie policy</a> for full details.</li>
       </ul>
       <p>We do not knowingly collect special category data (such as health or biometric data). Please do not send us this information unless we have explicitly agreed it is necessary for a project.</p>
 
@@ -178,45 +169,7 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services/web.html">Websites</a></li>
-          <li><a href="services/mobile.html">Apps</a></li>
-          <li><a href="services/ai.html">Smart tools</a></li>
-          <li><a href="services/bespoke.html">Bespoke</a></li>
-          <li><a href="services/seo.html">SEO &amp; marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="start.html">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy notice</a></li>
-          <li><a href="cookies.html">Cookie policy</a></li>
-          <li><a href="terms.html">Terms of use</a></li>
-          <li><a href="accessibility.html">Accessibility</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke. All rights reserved.</span>
-      <span>Crafted in Belfast.</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/footer.php'; ?>
 
   <script src="assets/js/global.js"></script>
 </body>

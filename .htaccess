@@ -1,0 +1,31 @@
+# Cybespoke — Apache config
+# Treat the site as PHP; index.php is the default document.
+
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect old .html URLs to the new .php equivalents (301 = permanent).
+  # Keeps any existing external links / bookmarks working.
+  RewriteRule ^(.+)\.html$ /$1.php [R=301,L]
+</IfModule>
+
+# Cache static assets aggressively.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 30 days"
+  ExpiresByType application/javascript  "access plus 30 days"
+  ExpiresByType image/svg+xml           "access plus 30 days"
+  ExpiresByType image/png               "access plus 30 days"
+  ExpiresByType image/jpeg              "access plus 30 days"
+  ExpiresByType font/woff2              "access plus 365 days"
+</IfModule>
+
+# Don't serve hidden files.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# Sensible 404 page (falls back if missing).
+ErrorDocument 404 /index.php

@@ -7,12 +7,12 @@
   <title>Websites &amp; SEO — Cybespoke Belfast</title>
   <meta name="description" content="Beautiful, fast websites and search‑engine optimisation by Cybespoke — a Belfast studio. Marketing sites, customer dashboards, online shops, SEO and content." />
   <meta name="keywords" content="web design Belfast, website development, SEO Belfast, Shopify Belfast, ecommerce, customer dashboard, website agency Northern Ireland" />
-  <link rel="canonical" href="https://cybespoke.co.uk/services/web.html" />
+  <link rel="canonical" href="https://cybespoke.co.uk/services/web.php" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
-  <meta property="og:url" content="https://cybespoke.co.uk/services/web.html" />
+  <meta property="og:url" content="https://cybespoke.co.uk/services/web.php" />
   <meta property="og:title" content="Websites &amp; SEO — Cybespoke Belfast" />
   <meta property="og:description" content="Beautiful, fast websites with SEO baked in. By Cybespoke, Belfast." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
@@ -224,16 +224,7 @@
   </style>
 </head>
 <body class="page-enter">
-  <header class="nav">
-    <a href="../index.html" class="nav__brand"><span class="logo"></span> Cybespoke</a>
-    <nav class="nav__links">
-      <a href="web.html" class="active">Websites</a>
-      <a href="mobile.html">Apps</a>
-      <a href="ai.html">Smart tools</a>
-      <a href="bespoke.html">Bespoke</a>
-    </nav>
-    <a href="../index.html#contact" class="nav__cta">Contact us</a>
-  </header>
+  <?php $active = 'services'; $sub = 'web'; include __DIR__ . '/../header.php'; ?>
 
   <section class="web-hero">
     <div class="web-hero__bg"></div>
@@ -247,7 +238,7 @@
         </h1>
         <p>From a homepage that wins customers to a full back‑office dashboard for your team — we build the website your business runs on.</p>
         <div style="display:flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
-          <a class="btn btn--primary" href="../index.html#contact">Brief us →</a>
+          <a class="btn btn--primary" href="../index.php#contact">Brief us →</a>
           <a class="btn btn--ghost" href="#process">Our process</a>
         </div>
       </div>
@@ -340,51 +331,12 @@
 
   <div class="container">
     <div class="pager reveal">
-      <a href="../index.html">← Back to home</a>
-      <a href="mobile.html">Next: Apps →</a>
+      <a href="../index.php">← Back to home</a>
+      <a href="mobile.php">Next: Apps →</a>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-        <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="web.html">Websites</a></li>
-          <li><a href="mobile.html">Apps</a></li>
-          <li><a href="ai.html">Smart tools</a></li>
-          <li><a href="bespoke.html">Bespoke</a></li>
-          <li><a href="seo.html">SEO &amp; marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="../index.html#contact">Contact</a></li>
-          <li><a href="../index.html#services">Process</a></li>
-          <li><a href="../start.html">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="../privacy.html">Privacy notice</a></li>
-          <li><a href="../cookies.html">Cookie policy</a></li>
-          <li><a href="../terms.html">Terms of use</a></li>
-          <li><a href="../accessibility.html">Accessibility</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer__bottom">
-      <span>© <span data-year></span> Cybespoke · Websites</span>
-      <span>Crafted in Belfast.</span>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/../footer.php'; ?>
 
   <script src="../assets/js/global.js"></script>
   <script>
