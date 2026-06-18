@@ -9,7 +9,7 @@
 
 $reviews = [
     [
-        'quote'   => 'Cybespoke rebuilt our booking platform end‑to‑end and we\'ve not had to chase them once. Direct bookings are up 38% and our reception team finally has their evenings back.',
+        'quote'   => 'Cybespoke built our whole platform end‑to‑end — the form, the AI that assembles the document, the Stripe checkout, the signed PDF, the receipt email. Clients go from "I need a document" to "paid and downloaded" in under a minute. They understood our business before they wrote a single line of code.',
         'role'    => 'Owner',
         'company' => 'France Duerp',
         'rating'  => 5,
