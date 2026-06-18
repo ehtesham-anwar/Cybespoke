@@ -120,6 +120,47 @@
     }
     .project:hover .project__device { transform: translate(-50%, -54%) scale(1.04); }
 
+    /* ===== Live-iframe variant: the actual website fills the card background ===== */
+    a.project { color: inherit; text-decoration: none; cursor: pointer; }
+    .project--live { aspect-ratio: 16 / 11; }
+    .project__live {
+      position: absolute; inset: 0;
+      width: 166.67%; height: 166.67%;     /* scaled-down preview shows more content */
+      border: 0;
+      background: #fff;                     /* graceful fallback if framing is blocked */
+      transform: scale(0.6);
+      transform-origin: 0 0;
+      pointer-events: none;                 /* clicks pass through to the wrapping <a> */
+      z-index: 0;
+      transition: transform .6s var(--easing-soft), filter .5s var(--easing-soft);
+      filter: saturate(105%);
+    }
+    .project--live:hover .project__live {
+      transform: scale(0.62);
+      filter: saturate(120%) brightness(1.04);
+    }
+    /* Floating "Visit live site" badge — top right */
+    .project__visit {
+      position: absolute; top: 22px; right: 22px;
+      z-index: 3;
+      padding: 9px 14px 9px 16px;
+      border-radius: 999px;
+      background: rgba(5, 5, 8, 0.72);
+      backdrop-filter: blur(10px) saturate(140%);
+      -webkit-backdrop-filter: blur(10px) saturate(140%);
+      color: #fff;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: transform .45s var(--easing-spring), background .3s;
+    }
+    .project__visit svg { width: 13px; height: 13px; }
+    .project--live:hover .project__visit {
+      transform: translate(-3px, -3px);
+      background: rgba(5, 5, 8, 0.88);
+    }
+
     .project__overlay {
       position: absolute; left: 0; right: 0; bottom: 0;
       padding: 30px 32px 28px;
@@ -258,169 +299,7 @@
         <p>A small slice of the platforms, apps and smart tools we've built for teams across hospitality, healthcare, retail and beyond — all from the studio in Belfast.</p>
       </div>
 
-      <div class="filters reveal" role="tablist" aria-label="Filter projects">
-        <button type="button" class="filters__btn is-active" data-filter="all">All</button>
-        <button type="button" class="filters__btn" data-filter="web">Web apps</button>
-        <button type="button" class="filters__btn" data-filter="mobile">Mobile</button>
-        <button type="button" class="filters__btn" data-filter="ai">AI &amp; tools</button>
-        <button type="button" class="filters__btn" data-filter="ecom">E‑commerce</button>
-        <button type="button" class="filters__btn" data-filter="data">Data</button>
-      </div>
-
-      <div class="projects">
-        <article class="project project--a reveal" data-tags="web ecom" data-spotlight>
-          <div class="project__bg"></div>
-          <div class="project__device" aria-hidden="true">
-            <div class="mockup-browser">
-              <div class="mockup-browser__bar"><i></i><i></i><i></i></div>
-              <div class="mockup-browser__body">
-                <div class="mockup-line w-50 accent"></div>
-                <div class="mockup-line w-70"></div>
-                <div class="mockup-line w-30"></div>
-                <div class="mockup-row">
-                  <div class="mockup-tile"></div><div class="mockup-tile"></div><div class="mockup-tile"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project__overlay">
-            <span class="project__tag"><i></i>Web platform</span>
-            <h2 class="project__title">Booking platform for a hotel group</h2>
-            <div class="project__client">Hospitality · 2025</div>
-            <p class="project__desc">A direct‑booking platform replacing three legacy tools — one calendar, one inbox, one source of truth across eight properties.</p>
-            <div class="project__metrics">
-              <div class="project__metric"><strong>+38%</strong><span>direct bookings</span></div>
-              <div class="project__metric"><strong>−65%</strong><span>admin time</span></div>
-              <div class="project__metric"><strong>4.9★</strong><span>guest rating</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="project project--b reveal" data-tags="mobile" data-spotlight>
-          <div class="project__bg"></div>
-          <div class="project__device" aria-hidden="true">
-            <div class="mockup-phone">
-              <div class="mockup-phone__screen">
-                <div class="mockup-phone__hello">GOOD MORNING</div>
-                <div class="mockup-phone__feed">
-                  <div class="mockup-phone__row"></div>
-                  <div class="mockup-phone__row"></div>
-                  <div class="mockup-phone__row"></div>
-                </div>
-                <div class="mockup-phone__tabs"><i class="active"></i><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="project__overlay">
-            <span class="project__tag"><i></i>Mobile app</span>
-            <h2 class="project__title">Loyalty &amp; orders app for a coffee chain</h2>
-            <div class="project__client">Retail · 2025</div>
-            <p class="project__desc">iOS &amp; Android app with stamps, mobile orders and push offers — designed to be opened twice a week without nagging.</p>
-            <div class="project__metrics">
-              <div class="project__metric"><strong>92k</strong><span>installs</span></div>
-              <div class="project__metric"><strong>2.4×</strong><span>repeat orders</span></div>
-              <div class="project__metric"><strong>4.8★</strong><span>App Store</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="project project--c reveal" data-tags="ai" data-spotlight>
-          <div class="project__bg"></div>
-          <div class="project__device" aria-hidden="true">
-            <div class="mockup-chat">
-              <div class="mockup-bubble in">how do I refund order #4821?</div>
-              <div class="mockup-bubble out">Refunded £42.50 to •••• 4242. Anything else?</div>
-              <div class="mockup-bubble in">thanks ✓</div>
-            </div>
-          </div>
-          <div class="project__overlay">
-            <span class="project__tag"><i></i>AI assistant</span>
-            <h2 class="project__title">Support copilot for an e‑commerce team</h2>
-            <div class="project__client">DTC brand · 2025</div>
-            <p class="project__desc">An assistant that reads orders, drafts replies and quietly handles refunds and address changes — escalates the tricky stuff to a human.</p>
-            <div class="project__metrics">
-              <div class="project__metric"><strong>74%</strong><span>tickets auto‑resolved</span></div>
-              <div class="project__metric"><strong>−3min</strong><span>first reply</span></div>
-              <div class="project__metric"><strong>£18k</strong><span>monthly saving</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="project project--d reveal" data-tags="data web" data-spotlight>
-          <div class="project__bg"></div>
-          <div class="project__device" aria-hidden="true">
-            <div class="mockup-dash">
-              <div class="mockup-dash__top">
-                <div class="mockup-dash__pill"></div>
-                <div class="mockup-dash__num">+12.4%</div>
-              </div>
-              <div class="mockup-dash__chart"></div>
-            </div>
-          </div>
-          <div class="project__overlay">
-            <span class="project__tag"><i></i>Data &amp; dashboards</span>
-            <h2 class="project__title">Operations dashboard for a logistics SME</h2>
-            <div class="project__client">Logistics · 2024</div>
-            <p class="project__desc">Live data from three carriers and the warehouse system, in one screen — finally answering "where is the order?" without three phone calls.</p>
-            <div class="project__metrics">
-              <div class="project__metric"><strong>22</strong><span>sources unified</span></div>
-              <div class="project__metric"><strong>&lt;2s</strong><span>refresh</span></div>
-              <div class="project__metric"><strong>−40%</strong><span>customer calls</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="project project--e reveal" data-tags="ecom web" data-spotlight>
-          <div class="project__bg"></div>
-          <div class="project__device" aria-hidden="true">
-            <div class="mockup-browser">
-              <div class="mockup-browser__bar"><i></i><i></i><i></i></div>
-              <div class="mockup-browser__body">
-                <div class="mockup-row">
-                  <div class="mockup-tile"></div><div class="mockup-tile"></div><div class="mockup-tile"></div>
-                </div>
-                <div class="mockup-line w-70 accent"></div>
-                <div class="mockup-line w-50"></div>
-              </div>
-            </div>
-          </div>
-          <div class="project__overlay">
-            <span class="project__tag"><i></i>E‑commerce</span>
-            <h2 class="project__title">Headless shop for an artisan food brand</h2>
-            <div class="project__client">Food &amp; drink · 2024</div>
-            <p class="project__desc">A custom storefront, subscription engine and integration with the warehouse — built to handle Christmas without melting.</p>
-            <div class="project__metrics">
-              <div class="project__metric"><strong>3.4×</strong><span>conversion</span></div>
-              <div class="project__metric"><strong>1.1s</strong><span>p95 load</span></div>
-              <div class="project__metric"><strong>£0</strong><span>downtime</span></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="project project--f reveal" data-tags="data ai" data-spotlight>
-          <div class="project__bg"></div>
-          <div class="project__device" aria-hidden="true">
-            <div class="mockup-dash">
-              <div class="mockup-dash__top">
-                <div class="mockup-dash__pill"></div>
-                <div class="mockup-dash__num">98.7%</div>
-              </div>
-              <div class="mockup-dash__chart"></div>
-            </div>
-          </div>
-          <div class="project__overlay">
-            <span class="project__tag"><i></i>Pipelines</span>
-            <h2 class="project__title">Patient data pipeline for a clinic group</h2>
-            <div class="project__client">Healthcare · 2024</div>
-            <p class="project__desc">A GDPR‑safe ETL pipeline pulling from four EHR systems into a single warehouse — clinicians get one search box, IT gets one audit log.</p>
-            <div class="project__metrics">
-              <div class="project__metric"><strong>4</strong><span>EHRs unified</span></div>
-              <div class="project__metric"><strong>15min</strong><span>refresh</span></div>
-              <div class="project__metric"><strong>0</strong><span>data leaks</span></div>
-            </div>
-          </div>
-        </article>
-      </div>
+      <?php include __DIR__ . '/components/projects.php'; ?>
 
       <div class="work-cta reveal">
         <div class="section-eyebrow"><span class="dot"></span> Your project next</div>

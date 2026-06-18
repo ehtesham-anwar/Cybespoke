@@ -9,13 +9,10 @@
 
 $reviews = [
     [
-        'quote'       => 'Cybespoke rebuilt our booking platform end‑to‑end and we\'ve not had to chase them once. Direct bookings are up 38% and our reception team finally has their evenings back.',
-        'initial'     => 'F',
-        'role'        => 'Owner',
-        'company'     => 'France Duerp',
-        'avatar_from' => '#2dd4bf',
-        'avatar_to'   => '#38bdf8',
-        'rating'      => 5,
+        'quote'   => 'Cybespoke rebuilt our booking platform end‑to‑end and we\'ve not had to chase them once. Direct bookings are up 38% and our reception team finally has their evenings back.',
+        'role'    => 'Owner',
+        'company' => 'France Duerp',
+        'rating'  => 5,
     ],
 ];
 
@@ -42,7 +39,6 @@ $is_solo = count($reviews) === 1;
       </div>
       <blockquote><?= htmlspecialchars($review['quote'], ENT_QUOTES, 'UTF-8') ?></blockquote>
       <figcaption>
-        <span class="review__avatar" style="--av-from:<?= htmlspecialchars($review['avatar_from']) ?>; --av-to:<?= htmlspecialchars($review['avatar_to']) ?>;"><?= htmlspecialchars($review['initial']) ?></span>
         <div>
           <strong><?= htmlspecialchars($review['role']) ?></strong>
           <span><?= htmlspecialchars($review['company']) ?></span>
