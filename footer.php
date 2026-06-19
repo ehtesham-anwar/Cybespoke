@@ -41,6 +41,7 @@
         <li><a href="/cookies.php">Cookie policy</a></li>
         <li><a href="/terms.php">Terms of use</a></li>
         <li><a href="/accessibility.php">Accessibility</a></li>
+        <li><button type="button" class="footer__cookie-btn" data-cookie-settings>Cookie settings</button></li>
       </ul>
     </div>
   </div>
@@ -49,3 +50,4 @@
     <span>Crafted in Belfast.</span>
   </div>
 </footer>
+<?php include __DIR__ . '/components/cookie-consent.php'; ?>
