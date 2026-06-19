@@ -500,14 +500,16 @@
 .hero-step__body h3 {
   font-size: 19px;
   letter-spacing: -0.01em;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-family: "Fraunces", "Inter Tight", serif;
 }
 
 .hero-step__body p {
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.6;
+  max-width: 34ch;
+  text-wrap: pretty;
 }
 
 @media (max-width: 980px) {
