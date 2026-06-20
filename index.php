@@ -131,9 +131,6 @@
   <!-- PROCESS -->
   <?php include __DIR__ . '/components/process.php'; ?>
 
-  <!-- TESTIMONIAL -->
-  <?php include __DIR__ . '/components/reviews.php'; ?>
-
   <!-- STATS -->
   <?php include __DIR__ . '/components/stats.php'; ?>
 
