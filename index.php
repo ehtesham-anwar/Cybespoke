@@ -131,9 +131,6 @@
   <!-- PROCESS -->
   <?php include __DIR__ . '/components/process.php'; ?>
 
-  <!-- STATS -->
-  <?php include __DIR__ . '/components/stats.php'; ?>
-
   <!-- CONTACT-CTA -->
   <?php include __DIR__ . '/components/contact-cta.php'; ?>
 

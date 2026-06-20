@@ -8,12 +8,21 @@
       <p style="max-width: 380px;">Every project follows the same five phases — written down, sized up front, and visible to you the whole way through.</p>
     </div>
 
-    <ol class="process__list">
-      <li class="phase phase--01" data-spotlight>
-        <span class="phase__num">01</span>
+    <ol class="process__list" data-process-timeline>
+      <span class="process__line" aria-hidden="true">
+        <span class="process__line-fill"></span>
+      </span>
+
+      <li class="phase phase--01" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
         <div class="phase__body">
-          <h3>Discover</h3>
-          <p>We sit with you (in person or on a call) and learn the business — who uses what you build, where the friction is, what success actually looks like. You leave the first session with a written brief and a fixed‑price proposal.</p>
+          <span class="phase__label">Phase one</span>
+          <h3>Discovery</h3>
+          <p class="phase__subline">Listening before we sketch a single line.</p>
+          <p>We sit with you — in person or on a call — and learn the business. Who uses what you build, where the friction lives, what success actually looks like. You leave with a written brief and a fixed‑price proposal.</p>
           <ul>
             <li>Stakeholder interviews</li>
             <li>Goals &amp; success metrics</li>
@@ -22,11 +31,16 @@
         </div>
       </li>
 
-      <li class="phase phase--02" data-spotlight>
-        <span class="phase__num">02</span>
+      <li class="phase phase--02" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
         <div class="phase__body">
+          <span class="phase__label">Phase two</span>
           <h3>Design</h3>
-          <p>Wireframes first, then a click‑through prototype. You see the product before a single line of code is written — and we iterate until you're nodding, not just polite.</p>
+          <p class="phase__subline">See the product before a line of code is written.</p>
+          <p>Wireframes first, then a click‑through prototype your team can actually poke at. We iterate together until you're nodding — not just being polite — and only then do we open the editor.</p>
           <ul>
             <li>Wireframes &amp; user flows</li>
             <li>Interactive Figma prototype</li>
@@ -35,11 +49,16 @@
         </div>
       </li>
 
-      <li class="phase phase--03" data-spotlight>
-        <span class="phase__num">03</span>
+      <li class="phase phase--03" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
         <div class="phase__body">
+          <span class="phase__label">Phase three</span>
           <h3>Build</h3>
-          <p>Weekly demos on a staging URL you can poke at. No black‑box "we'll show you in three months" — you see real progress, give feedback, and steer where it goes.</p>
+          <p class="phase__subline">Weekly demos on a live staging URL — never a black box.</p>
+          <p>No "we'll show you in three months". Each week you get a working staging link, a short Loom walk‑through and a fresh set of changes to steer. Feedback in, fix out, every Friday.</p>
           <ul>
             <li>Weekly demos &amp; staging access</li>
             <li>Code review on every change</li>
@@ -48,11 +67,16 @@
         </div>
       </li>
 
-      <li class="phase phase--04" data-spotlight>
-        <span class="phase__num">04</span>
+      <li class="phase phase--04" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
         <div class="phase__body">
+          <span class="phase__label">Phase four</span>
           <h3>Ship</h3>
-          <p>We launch when it's ready, not on an arbitrary date. We handle the deployment, the domain, the certificates, the analytics — and we're on hand for the first week of real use.</p>
+          <p class="phase__subline">We launch when it's ready — not on an arbitrary date.</p>
+          <p>Deployment, domain, certificates, analytics — we handle the lot. We're on hand through the first week of real use, watching the logs and fixing anything that wobbles before you have to notice.</p>
           <ul>
             <li>Production deployment &amp; monitoring</li>
             <li>Documentation &amp; team training</li>
@@ -61,11 +85,16 @@
         </div>
       </li>
 
-      <li class="phase phase--05" data-spotlight>
-        <span class="phase__num">05</span>
+      <li class="phase phase--05" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
         <div class="phase__body">
+          <span class="phase__label">Phase five</span>
           <h3>Care</h3>
-          <p>We don't disappear after launch. Choose a maintenance plan and we'll watch the logs, ship updates, patch security and quietly improve things in the background — for a flat monthly fee.</p>
+          <p class="phase__subline">Quietly improving in the background, for a flat monthly fee.</p>
+          <p>We don't disappear after launch. Pick a care plan and we watch the logs, ship updates, patch security and tidy up the corners — so the thing you commissioned keeps getting better, not worse.</p>
           <ul>
             <li>24/7 uptime monitoring &amp; alerts</li>
             <li>Security patches &amp; dependency updates</li>
