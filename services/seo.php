@@ -379,7 +379,7 @@
         <span class="badge">Starter</span>
         <h3>Local SEO</h3>
         <div class="price">£450<small> /month</small></div>
-        <p class="lede">For small businesses in Belfast and Northern Ireland who want to be found locally.</p>
+        <p class="lede">For small businesses who want to be found locally.</p>
         <ul>
           <li>SEO audit &amp; quick‑win fixes</li>
           <li>Google Business Profile setup</li>

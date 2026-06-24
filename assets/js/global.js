@@ -316,8 +316,143 @@
     });
   };
 
+  const cookieConsent = () => {
+    const banner = document.getElementById("cookie-consent");
+    const STORAGE_KEY = "cybespoke_consent";
+    const COOKIE_NAME = "cybespoke_consent";
+    const VERSION = 1;
+    const MAX_AGE = 60 * 60 * 24 * 365; // 12 months, in seconds
+
+    const readStored = () => {
+      // Cookie is the source of truth; localStorage is a resilient mirror.
+      let raw = null;
+      try {
+        const match = document.cookie.match(/(?:^|;\s*)cybespoke_consent=([^;]+)/);
+        if (match) raw = decodeURIComponent(match[1]);
+      } catch (_) {}
+      if (!raw) {
+        try { raw = localStorage.getItem(STORAGE_KEY); } catch (_) {}
+      }
+      if (!raw) return null;
+      try {
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.v === VERSION) return parsed;
+      } catch (_) {}
+      return null;
+    };
+
+    const persist = (consent) => {
+      const payload = JSON.stringify(consent);
+      try {
+        document.cookie =
+          COOKIE_NAME + "=" + encodeURIComponent(payload) +
+          ";path=/;max-age=" + MAX_AGE + ";SameSite=Lax";
+      } catch (_) {}
+      try { localStorage.setItem(STORAGE_KEY, payload); } catch (_) {}
+    };
+
+    const apply = (consent) => {
+      document.documentElement.setAttribute(
+        "data-consent-analytics",
+        consent.analytics ? "granted" : "denied"
+      );
+      // Other scripts can listen for this to (de)activate analytics loaders.
+      window.dispatchEvent(new CustomEvent("cybespoke:consent", { detail: consent }));
+    };
+
+    // No banner markup on the page — nothing to wire up, but still honour any
+    // previously stored choice so dependent scripts behave consistently.
+    const existing = readStored();
+    if (existing) apply(existing);
+    if (!banner) return;
+
+    const prefs = banner.querySelector(".cookie-consent__prefs");
+    const analyticsInput = banner.querySelector('[data-cookie-category="analytics"]');
+    const manageBtn = banner.querySelector('[data-cookie-action="manage"]');
+    const saveBtn = banner.querySelector('[data-cookie-action="save"]');
+    const prefersReducedMotion = prefersReduced;
+    let lastFocus = null;
+
+    const dnt = () => {
+      const v = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      return v === "1" || v === "yes";
+    };
+
+    const open = (showPrefs) => {
+      lastFocus = document.activeElement;
+      if (analyticsInput) {
+        const stored = readStored();
+        analyticsInput.checked = stored ? !!stored.analytics : !dnt();
+      }
+      togglePrefs(!!showPrefs);
+      banner.hidden = false;
+      banner.classList.remove("is-out");
+      if (!prefersReducedMotion) banner.classList.add("is-in");
+      const firstBtn = banner.querySelector(".cookie-consent__btn:not([hidden])");
+      if (firstBtn) firstBtn.focus();
+    };
+
+    const close = () => {
+      const finish = () => { banner.hidden = true; banner.classList.remove("is-out", "is-in"); };
+      if (prefersReducedMotion) { finish(); }
+      else {
+        banner.classList.remove("is-in");
+        banner.classList.add("is-out");
+        banner.addEventListener("animationend", finish, { once: true });
+      }
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        try { lastFocus.focus(); } catch (_) {}
+      }
+    };
+
+    const togglePrefs = (show) => {
+      if (prefs) prefs.hidden = !show;
+      if (manageBtn) manageBtn.hidden = show;
+      if (saveBtn) saveBtn.hidden = !show;
+    };
+
+    const save = (analytics) => {
+      const consent = {
+        v: VERSION,
+        necessary: true,
+        analytics: !!analytics,
+        ts: new Date().toISOString(),
+      };
+      persist(consent);
+      apply(consent);
+      close();
+    };
+
+    banner.addEventListener("click", (e) => {
+      const trigger = e.target.closest("[data-cookie-action]");
+      if (!trigger) return;
+      const action = trigger.getAttribute("data-cookie-action");
+      if (action === "accept") save(true);
+      else if (action === "reject") save(false);
+      else if (action === "manage") togglePrefs(true);
+      else if (action === "save") save(analyticsInput ? analyticsInput.checked : false);
+    });
+
+    banner.addEventListener("keydown", (e) => {
+      // Esc dismisses without consenting to optional cookies (treated as reject).
+      if (e.key === "Escape") save(false);
+    });
+
+    // Footer / in-page "Cookie settings" links reopen the banner.
+    document.querySelectorAll("[data-cookie-settings]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        open(true);
+      });
+    });
+
+    // First visit (no stored choice): show the banner.
+    if (!existing) open(false);
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
     themeToggle();
+    cookieConsent();
     reveal();
     cursorGlow();
     navScroll();
