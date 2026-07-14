@@ -11,7 +11,8 @@
   <meta property="og:title" content="CRM &amp; internal tools — Cybespoke Belfast" />
   <meta property="og:description" content="Custom CRMs and internal tools built around your workflow." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
-  <link rel="icon" type="image/png" href="/logo-initials.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/files/cybespoke-mark_square_32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />

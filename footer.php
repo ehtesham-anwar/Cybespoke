@@ -8,7 +8,7 @@
 <footer class="footer">
   <div class="container footer__grid">
     <div>
-      <div class="nav__brand" aria-label="Cybespoke"><img src="/logo-initials.png" alt="Cybespoke" class="logo" width="32" height="32" /></div>
+      <div class="nav__brand" aria-label="Cybespoke"><img src="/files/cybespoke-mark_256.png" alt="Cybespoke" class="logo" width="44" height="44" /></div>
       <p class="footer__lede">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
       <p class="footer__meta">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
     </div>

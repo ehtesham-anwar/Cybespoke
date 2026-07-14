@@ -107,7 +107,7 @@ button { font: inherit; cursor: pointer; border: 0; background: transparent; col
 }
 .nav__brand:hover { opacity: 0.85; }
 .nav__brand .logo {
-  width: 32px; height: 32px;
+  width: 44px; height: 44px;
   display: block;
   object-fit: contain;
 }
