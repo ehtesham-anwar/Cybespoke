@@ -253,7 +253,12 @@ button { font: inherit; cursor: pointer; border: 0; background: transparent; col
 .footer h4 { color: var(--text); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
 .footer ul { list-style: none; display: grid; gap: 8px; }
 .footer ul a:hover { color: var(--text); }
-.footer__lede { margin-top: 12px; max-width: 320px; }
+.footer__brand { display: inline-block; line-height: 0; }
+.footer__logo { width: 120px; height: auto; display: block; }
+.footer__logo--light { display: none; }
+[data-theme="light"] .footer__logo--dark { display: none; }
+[data-theme="light"] .footer__logo--light { display: block; }
+.footer__lede { margin-top: 18px; max-width: 320px; }
 .footer__meta { margin-top: 10px; font-size: 13px; color: var(--muted); }
 .footer__bottom {
   margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line);
