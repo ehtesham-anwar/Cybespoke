@@ -36,7 +36,8 @@
     @media (max-width: 820px) { .features__grid { grid-template-columns: 1fr; } }
     .feature { padding: 28px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-soft); transition: transform .4s var(--easing-soft), border-color .35s; }
     .feature:hover { transform: translateY(-4px); border-color: var(--line-strong); }
-    .feature__icon { width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--p-from), var(--p-to)); display: grid; place-items: center; color: #fff; margin-bottom: 16px; }
+    .feature__icon { width: 40px; height: 40px; border-radius: 10px; background: var(--tint-soft); border: 1px solid var(--line); display: grid; place-items: center; color: var(--p-from); margin-bottom: 16px; transition: border-color .35s var(--easing-soft), background .35s var(--easing-soft); }
+    .feature:hover .feature__icon { border-color: var(--line-strong); background: var(--tint-mid); }
     .feature__icon svg { width: 20px; height: 20px; }
     .feature h3 { font-size: 17px; margin-bottom: 8px; font-family: "Inter Tight", sans-serif; font-weight: 600; }
     .feature p { font-size: 14px; color: var(--muted); line-height: 1.6; }

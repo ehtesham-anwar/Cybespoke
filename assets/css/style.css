@@ -421,65 +421,32 @@
 }
 
 .hero-step__icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  color: #050508;
+  color: var(--accent);
   position: relative;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 10px 28px -10px rgba(45, 212, 191, 0.5);
+  background: var(--tint-soft);
+  border: 1px solid var(--line);
   grid-row: 1;
   grid-column: 1;
   justify-self: center;
   margin-left: 16px;
-  transition: transform .5s var(--easing-spring);
+  transition: border-color .35s var(--easing-soft), background .35s var(--easing-soft);
 }
 
 .hero-step:hover .hero-step__icon {
-  transform: rotate(-6deg) scale(1.06);
-}
-
-.hero-step__icon::before {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  border: 1.5px dashed rgba(45, 212, 191, 0.32);
-  animation: heroRing 16s linear infinite;
-}
-
-@keyframes heroRing {
-  to {
-    transform: rotate(360deg);
-  }
+  border-color: var(--line-strong);
+  background: var(--tint-mid);
 }
 
 .hero-step__icon svg {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   position: relative;
   z-index: 1;
-}
-
-.hero-step--b .hero-step__icon {
-  background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
-  box-shadow: 0 10px 28px -10px rgba(139, 92, 246, 0.5);
-}
-
-.hero-step--b .hero-step__icon::before {
-  border-color: rgba(139, 92, 246, 0.32);
-}
-
-.hero-step--c .hero-step__icon {
-  background: linear-gradient(135deg, var(--accent-3), #f472b6);
-  box-shadow: 0 10px 28px -10px rgba(244, 114, 182, 0.5);
-  color: #fff;
-}
-
-.hero-step--c .hero-step__icon::before {
-  border-color: rgba(244, 114, 182, 0.32);
 }
 
 .hero-step__num {
@@ -524,14 +491,15 @@
   }
 
   .hero-step__icon {
-    width: 54px;
-    height: 54px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     margin-left: 12px;
   }
 
   .hero-step__icon svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 
   .hero-step__body h3 {
@@ -1035,19 +1003,21 @@
 }
 
 .cap__icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #050508;
-  margin-bottom: 18px;
-  transition: transform .45s var(--easing-spring);
+  background: var(--tint-soft);
+  border: 1px solid var(--line);
+  color: var(--accent);
+  margin-bottom: 20px;
+  transition: border-color .35s var(--easing-soft), background .35s var(--easing-soft), color .35s var(--easing-soft);
 }
 
 .cap:hover .cap__icon {
-  transform: rotate(-4deg) scale(1.06);
+  border-color: var(--line-strong);
+  background: var(--tint-mid);
 }
 
 .cap__icon svg {
@@ -1086,47 +1056,8 @@
 
 .cap:hover .cap__arrow {
   transform: translate(4px, -4px);
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  border-color: transparent;
-  color: #050508;
-}
-
-/* Distinct icon palettes per capability */
-.cap:nth-child(1) .cap__icon {
-  background: linear-gradient(135deg, #2dd4bf, #38bdf8);
-}
-
-.cap:nth-child(2) .cap__icon {
-  background: linear-gradient(135deg, #38bdf8, #8b5cf6);
-}
-
-.cap:nth-child(3) .cap__icon {
-  background: linear-gradient(135deg, #f59e0b, #ef4444);
-  color: #fff;
-}
-
-.cap:nth-child(4) .cap__icon {
-  background: linear-gradient(135deg, #06b6d4, #6366f1);
-  color: #fff;
-}
-
-.cap:nth-child(5) .cap__icon {
-  background: linear-gradient(135deg, #8b5cf6, #f472b6);
-  color: #fff;
-}
-
-.cap:nth-child(6) .cap__icon {
-  background: linear-gradient(135deg, #14b8a6, #6366f1);
-  color: #fff;
-}
-
-.cap:nth-child(7) .cap__icon {
-  background: linear-gradient(135deg, #22c55e, #84cc16);
-}
-
-.cap:nth-child(8) .cap__icon {
-  background: linear-gradient(135deg, #f472b6, #a855f7);
-  color: #fff;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 [data-theme="light"] .cap {
@@ -1494,8 +1425,9 @@
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #050508;
+  background: var(--tint-soft);
+  border: 1px solid var(--line);
+  color: var(--accent);
   margin-bottom: 14px;
 }
 
