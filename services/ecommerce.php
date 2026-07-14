@@ -11,10 +11,10 @@
   <meta property="og:title" content="E‑commerce — Cybespoke Belfast" />
   <meta property="og:description" content="Custom online shops, marketplaces and checkouts." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="/logo-initials.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/global.css" />
   <style>
     :root { --p-from: #f59e0b; --p-to: #ef4444; }
@@ -40,7 +40,7 @@
     .feature:hover .feature__icon { border-color: var(--line-strong); background: var(--tint-mid); }
     .feature__icon svg { width: 20px; height: 20px; }
     .feature h3 { font-size: 17px; margin-bottom: 8px; font-family: "Inter Tight", sans-serif; font-weight: 600; }
-    .feature p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .feature p { font-size: 15px; color: var(--muted); line-height: 1.6; }
     .svc-cta { margin: 80px 0 0; padding: 70px 44px; border-radius: 28px; background: radial-gradient(900px 460px at 0% 0%, rgba(245,158,11,0.25), transparent 60%), radial-gradient(700px 440px at 100% 100%, rgba(239,68,68,0.22), transparent 60%), var(--bg-soft); border: 1px solid var(--line); text-align: center; position: relative; overflow: hidden; }
     .svc-cta h2 { max-width: 700px; margin: 0 auto; }
     .svc-cta p { max-width: 540px; margin: 16px auto 28px; color: var(--muted); }

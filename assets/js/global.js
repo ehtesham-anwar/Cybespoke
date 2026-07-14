@@ -75,54 +75,6 @@
     els.forEach((el) => io.observe(el));
   };
 
-  const cursorGlow = () => {
-    if (window.matchMedia("(pointer: coarse)").matches || prefersReduced) return;
-    const dot = document.createElement("div");
-    dot.className = "cursor-glow";
-    document.body.appendChild(dot);
-
-    const ring = document.createElement("div");
-    ring.className = "cursor-ring";
-    document.body.appendChild(ring);
-
-    let x = window.innerWidth / 2;
-    let y = window.innerHeight / 2;
-    let tx = x, ty = y;
-    let rx = x, ry = y;
-    let scale = 1, scaleT = 1;
-
-    window.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; });
-    window.addEventListener("mouseleave", () => ring.classList.add("is-hidden"));
-    window.addEventListener("mouseenter", () => ring.classList.remove("is-hidden"));
-
-    const ACTIVE_SEL = 'a, button, .btn, .nav__cta, .service-card, .hero-step, .stat, [data-cursor]';
-    document.addEventListener("mouseover", (e) => {
-      if (e.target.closest && e.target.closest(ACTIVE_SEL)) {
-        ring.classList.add("is-active");
-        scaleT = 1.18;
-      }
-    });
-    document.addEventListener("mouseout", (e) => {
-      if (e.target.closest && e.target.closest(ACTIVE_SEL)) {
-        ring.classList.remove("is-active");
-        scaleT = 1;
-      }
-    });
-
-    const tick = () => {
-      x += (tx - x) * 0.10;
-      y += (ty - y) * 0.10;
-      rx += (tx - rx) * 0.22;
-      ry += (ty - ry) * 0.22;
-      scale += (scaleT - scale) * 0.12;
-      dot.style.setProperty("--cursor-scale", scale.toFixed(3));
-      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%) scale(${scale.toFixed(3)})`;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      requestAnimationFrame(tick);
-    };
-    tick();
-  };
-
   const magneticButtons = () => {
     if (window.matchMedia("(pointer: coarse)").matches || prefersReduced) return;
     document.querySelectorAll(".btn, .nav__cta").forEach((btn) => {
@@ -319,7 +271,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     themeToggle();
     reveal();
-    cursorGlow();
     navScroll();
     tileParallax();
     countUp();

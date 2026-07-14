@@ -1,13 +1,9 @@
   <!-- HERO -->
   <section class="hero">
-    <canvas class="hero__canvas" aria-hidden="true"></canvas>
-    <div class="hero__orb hero__orb--a" aria-hidden="true"></div>
-    <div class="hero__orb hero__orb--b" aria-hidden="true"></div>
-    <div class="hero__grid"></div>
-    <div class="hero__noise" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
     <div class="container hero__inner">
       <div>
-        <h1 style="margin-top: 20px;">
+        <h1>
           <span class="word">Tailor‑made</span>
           <span class="word grad" data-text="websites,">websites,</span>
           <span class="word">apps,</span>

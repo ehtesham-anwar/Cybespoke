@@ -8,9 +8,9 @@
 <footer class="footer">
   <div class="container footer__grid">
     <div>
-      <div class="nav__brand"><span class="logo"></span> Cybespoke</div>
-      <p style="margin-top: 12px; max-width: 320px;">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
-      <p style="margin-top: 10px; font-size: 13px; color: var(--muted);">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
+      <div class="nav__brand" aria-label="Cybespoke"><img src="/logo-initials.png" alt="Cybespoke" class="logo" width="32" height="32" /></div>
+      <p class="footer__lede">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
+      <p class="footer__meta">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
     </div>
     <div>
       <h4>Services</h4>

@@ -3,9 +3,9 @@
     <div class="process__head">
       <div>
         <div class="section-eyebrow"><span class="dot"></span> How we approach it</div>
-        <h2 style="margin-top: 14px;">A clear path from first call to long after launch.</h2>
+        <h2>A clear path from first call to long after launch.</h2>
       </div>
-      <p style="max-width: 380px;">Every project follows the same five phases — written down, sized up front, and visible to you the whole way through.</p>
+      <p>Every project follows the same five phases — written down, sized up front, and visible to you the whole way through.</p>
     </div>
 
     <ol class="process__list" data-process-timeline>

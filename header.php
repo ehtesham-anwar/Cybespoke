@@ -12,7 +12,7 @@ $active = $active ?? '';
 $sub    = $sub ?? '';
 ?>
 <header class="nav">
-  <a href="/index.php" class="nav__brand"><span class="logo"></span> Cybespoke</a>
+  <a href="/index.php" class="nav__brand" aria-label="Cybespoke — home"><img src="/logo-initials.png" alt="Cybespoke" class="logo" width="32" height="32" /></a>
   <nav class="nav__links" aria-label="Primary">
     <a href="/index.php"<?= $active === 'home' ? ' class="active"' : '' ?>>Home</a>
     <div class="nav__group<?= $active === 'services' ? ' is-active' : '' ?>">

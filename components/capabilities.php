@@ -3,9 +3,9 @@
     <div class="capabilities__head reveal">
       <div>
         <div class="section-eyebrow"><span class="dot"></span> What we do</div>
-        <h2 style="margin-top: 14px;">From a one‑page site to a full platform.<br /><span style="color: var(--muted);">We build the digital tools your business runs on.</span></h2>
+        <h2>From a one‑page site to a full platform.<br /><span class="soft">We build the digital tools your business runs on.</span></h2>
       </div>
-      <p style="max-width: 380px;">Pick a capability to see how we approach it, what you get, and how we work — first call to launch.</p>
+      <p>Pick a capability to see how we approach it, what you get, and how we work — first call to launch.</p>
     </div>
 
     <div class="capabilities__grid">
@@ -74,7 +74,7 @@
           </svg>
         </span>
         <h3>AI &amp; smart tools</h3>
-        <p>Assistants, copilots and data‑aware automations — useful day one, no science‑fair feel.</p>
+        <p>Assistants, copilots and data‑aware automations — practical from day one, built for real work.</p>
         <span class="cap__arrow" aria-hidden="true">→</span>
       </a>
 
@@ -113,7 +113,7 @@
           </svg>
         </span>
         <h3>Bespoke builds</h3>
-        <p>The work that doesn't fit a template — in‑store screens, kiosks, devices, the unusual asks.</p>
+        <p>The work that doesn't fit a template — in‑store screens, kiosks, connected devices, and everything in between.</p>
         <span class="cap__arrow" aria-hidden="true">→</span>
       </a>
     </div>

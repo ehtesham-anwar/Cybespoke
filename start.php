@@ -21,10 +21,10 @@
   <meta name="twitter:description" content="Drop us a line. We respond within one working day with honest first thoughts and a clear next step." />
   <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="/logo-initials.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/global.css" />
   <style>
     .q-page { position: relative; padding: 140px 0 80px; min-height: 100vh; }
