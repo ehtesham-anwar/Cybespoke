@@ -100,7 +100,7 @@
 
       <div class="pager reveal">
         <a href="workflows.php">← Workflow automation</a>
-        <a href="bespoke.php">Bespoke →</a>
+        <a href="security.php">Server security →</a>
       </div>
     </section>
   </main>

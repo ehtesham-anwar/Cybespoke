@@ -25,6 +25,7 @@
         <li><a href="/services/ai.php">AI &amp; smart tools</a></li>
         <li><a href="/services/workflows.php">Workflow automation</a></li>
         <li><a href="/services/data.php">Data pipelines</a></li>
+        <li><a href="/services/security.php">Server security</a></li>
         <li><a href="/services/bespoke.php">Bespoke</a></li>
         <li><a href="/services/seo.php">SEO &amp; marketing</a></li>
       </ul>

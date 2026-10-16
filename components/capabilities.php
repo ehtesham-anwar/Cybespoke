@@ -106,6 +106,18 @@
         <span class="cap__arrow" aria-hidden="true">→</span>
       </a>
 
+      <a href="services/security.php" class="cap reveal" data-spotlight>
+        <span class="cap__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+        </span>
+        <h3>Server security &amp; management</h3>
+        <p>Hardening, managed hosting, monitoring, backups and patching — kept secure, fast and online.</p>
+        <span class="cap__arrow" aria-hidden="true">→</span>
+      </a>
+
       <a href="services/bespoke.php" class="cap reveal" data-spotlight>
         <span class="cap__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
