@@ -305,7 +305,7 @@
   </script>
   <script>
     (function () {
-      const EMAILJS_SERVICE_ID = 'service_84hxsyw';
+      const EMAILJS_SERVICE_ID = 'service_3u15b9i';
       const EMAILJS_TEMPLATE_ID = 'template_bop51kk';
 
       const form = document.getElementById('contact-form');
