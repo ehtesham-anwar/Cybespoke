@@ -6,7 +6,7 @@
  *   <?php $active = 'work'; include __DIR__ . '/../header.php'; ?>
  *
  * Optional $active values: home, services, work, contact.
- * For dropdown items, set $sub (one of: web, mobile, ecommerce, crm, ai, workflows, data, bespoke, seo).
+ * For dropdown items, set $sub (one of: web, mobile, ecommerce, crm, ai, workflows, data, security, bespoke, seo).
  */
 $active = $active ?? '';
 $sub    = $sub ?? '';
@@ -45,6 +45,10 @@ $sub    = $sub ?? '';
         <a href="/services/data.php" class="m--mob<?= $sub === 'data' ? ' active' : '' ?>" role="menuitem">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="2.5"/><path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5"/><path d="M4 11v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6"/></svg></span>
           <span><strong>Data pipelines</strong><span class="desc">ETL, warehousing, integrations</span></span>
+        </a>
+        <a href="/services/security.php" class="m--mob<?= $sub === 'security' ? ' active' : '' ?>" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span><strong>Server security</strong><span class="desc">Hardening, hosting, monitoring</span></span>
         </a>
         <a href="/services/bespoke.php" class="m--bes<?= $sub === 'bespoke' ? ' active' : '' ?>" role="menuitem">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5a4 4 0 0 0-5.4 5.2L4 14.9a1.7 1.7 0 1 0 2.4 2.4l5.3-5.2a4 4 0 0 0 5.2-5.4l-2.6 2.6-2-2 2.2-2.8z"/></svg></span>
