@@ -80,20 +80,6 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="eyebrow">Start with a 30‑min call</p>
-          <h2>Tell us how your team works today.</h2>
-          <p>We'll come back with a sketch of how a custom CRM could fit — and a fixed‑price quote to build it.</p>
-        </header>
-        <div class="hero__actions reveal">
-          <a class="button button--primary" href="../start.php">Start a project <span aria-hidden="true">→</span></a>
-          <a class="button button--secondary" href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a>
-        </div>
-      </div>
-    </section>
-
     <div class="wrap">
       <nav class="pager" aria-label="More services">
         <a href="ecommerce.php">← E‑commerce</a>
@@ -101,7 +87,21 @@
       </nav>
     </div>
 
-    <?php include __DIR__ . '/../components/contact-cta.php'; ?>
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <p class="eyebrow eyebrow--light">Start with a 30‑min call</p>
+            <h2>Tell us how your team works today.</h2>
+            <p>We'll come back with a sketch of how a custom CRM could fit — and a fixed‑price quote to build it.</p>
+          </div>
+          <div class="cta__actions">
+          <a class="button button--primary" href="../start.php">Start a project <span aria-hidden="true">→</span></a>
+          <a class="button button--on-dark" href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a>
+        </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <?php include __DIR__ . '/../footer.php'; ?>

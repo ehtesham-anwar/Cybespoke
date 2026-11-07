@@ -80,20 +80,6 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <header class="section__head reveal">
-          <p class="eyebrow">Pay back in weeks, not years</p>
-          <h2>What's the most annoying repetitive task?</h2>
-          <p>Tell us about one and we'll quote a fixed price to automate it. If it doesn't save more than it costs in 6 months, it's not worth doing.</p>
-        </header>
-        <div class="hero__actions reveal">
-          <a class="button button--primary" href="../start.php">Start a project <span aria-hidden="true">→</span></a>
-          <a class="button button--secondary" href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a>
-        </div>
-      </div>
-    </section>
-
     <div class="wrap">
       <nav class="pager" aria-label="More services">
         <a href="ai.php">← AI &amp; smart tools</a>
@@ -101,7 +87,21 @@
       </nav>
     </div>
 
-    <?php include __DIR__ . '/../components/contact-cta.php'; ?>
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <p class="eyebrow eyebrow--light">Pay back in weeks, not years</p>
+            <h2>What's the most annoying repetitive task?</h2>
+            <p>Tell us about one and we'll quote a fixed price to automate it. If it doesn't save more than it costs in 6 months, it's not worth doing.</p>
+          </div>
+          <div class="cta__actions">
+          <a class="button button--primary" href="../start.php">Start a project <span aria-hidden="true">→</span></a>
+          <a class="button button--on-dark" href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a>
+        </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <?php include __DIR__ . '/../footer.php'; ?>

@@ -432,4 +432,5 @@ body.menu-open { overflow: hidden; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+.section--soft + .wrap > .pager { margin-top: 48px; }
 .wrap > .pager { margin-bottom: 8px; }

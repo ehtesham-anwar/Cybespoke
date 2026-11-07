@@ -101,7 +101,6 @@
       </nav>
     </div>
 
-    <?php include __DIR__ . '/../components/contact-cta.php'; ?>
   </main>
 
   <?php include __DIR__ . '/../footer.php'; ?>
