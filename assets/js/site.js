@@ -7,7 +7,7 @@
 
   // "Start a project" inside the mobile menu (the header CTA is hidden on small screens).
   const cta = document.createElement("a");
-  cta.href = "/start.php";
+  cta.href = "/start";
   cta.className = "button button--primary nav__mobile-cta";
   cta.textContent = "Start a project →";
   links.appendChild(cta);

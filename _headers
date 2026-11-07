@@ -1,0 +1,18 @@
+# Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# CSS and JS have no version in their URL, so browsers re-check them (fast, uses ETag).
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Images and icons rarely change — cache for 30 days.
+/files/*
+  Cache-Control: public, max-age=2592000
+/favicon/*
+  Cache-Control: public, max-age=2592000

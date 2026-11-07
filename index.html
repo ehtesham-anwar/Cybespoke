@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem("cybespoke-theme");
+        document.documentElement.setAttribute("data-theme", t === "dark" ? "dark" : "light");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cybespoke — Tailor‑made websites, apps & smart tools | Belfast studio</title>
+  <meta name="description" content="Cybespoke is a Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams. Fast, friendly, made for your customers." />
+  <meta name="keywords" content="web design Belfast, app development Belfast, AI software Belfast, bespoke software, custom websites, mobile apps, SEO Belfast, digital marketing Belfast, Northern Ireland software studio" />
+  <meta name="author" content="Cybespoke" />
+  <link rel="canonical" href="https://cybespoke.co.uk/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Cybespoke" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://cybespoke.co.uk/" />
+  <meta property="og:title" content="Cybespoke — Tailor‑made websites, apps &amp; smart tools" />
+  <meta property="og:description" content="A Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams." />
+  <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
+  <meta property="og:image:alt" content="Cybespoke — Belfast software studio" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cybespoke — Tailor‑made websites, apps &amp; smart tools" />
+  <meta name="twitter:description" content="A Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams." />
+  <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Cybespoke",
+      "description": "A Belfast studio building tailor‑made websites, apps and AI helpers for ambitious teams.",
+      "url": "https://cybespoke.co.uk/",
+      "logo": "https://cybespoke.co.uk/assets/favicon.svg",
+      "image": "https://cybespoke.co.uk/assets/og-banner.svg",
+      "email": "hello@cybespoke.co.uk",
+      "areaServed": ["Belfast", "Northern Ireland", "United Kingdom", "Ireland"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belfast",
+        "addressCountry": "GB"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "hello@cybespoke.co.uk",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/cybespoke"
+      ],
+      "makesOffer": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website design and development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobile app development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI assistants and automation"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bespoke software"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO and digital marketing"
+          }
+        }
+      ]
+    }
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/files/cybespoke-mark_square_32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+  <a href="/" class="nav__brand" aria-label="Cybespoke — home"><img src="/files/cybespoke-mark_256.png" alt="Cybespoke" class="logo" /></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="/" class="active">Home</a>
+    <div class="nav__group">
+      <button type="button" class="nav__trigger" aria-haspopup="true" aria-expanded="false">Services <span class="nav__caret" aria-hidden="true"></span></button>
+      <div class="nav__mega" role="menu">
+        <a href="/services/web" class="m--web" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><circle cx="5.5" cy="6" r="0.6" fill="currentColor"/><circle cx="7.6" cy="6" r="0.6" fill="currentColor"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></span>
+          <span><strong>Web applications</strong><span class="desc">Marketing sites, dashboards, shops</span></span>
+        </a>
+        <a href="/services/mobile" class="m--mob" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18.5" r="0.7" fill="currentColor"/></svg></span>
+          <span><strong>Mobile apps</strong><span class="desc">iPhone &amp; Android, end‑to‑end</span></span>
+        </a>
+        <a href="/services/ecommerce" class="m--web" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2 12h11l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg></span>
+          <span><strong>E‑commerce</strong><span class="desc">Online shops &amp; checkouts</span></span>
+        </a>
+        <a href="/services/crm" class="m--bes" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="6.5" r="2.5"/><path d="M21 14c0-2.2-1.8-4-4-4"/></svg></span>
+          <span><strong>CRM &amp; internal tools</strong><span class="desc">Built around your workflow</span></span>
+        </a>
+        <a href="/services/ai" class="m--ai" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></span>
+          <span><strong>AI &amp; smart tools</strong><span class="desc">Assistants &amp; automations</span></span>
+        </a>
+        <a href="/services/workflows" class="m--bes" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h10M5 8v8M19 8v8M7 18h10"/></svg></span>
+          <span><strong>Workflow automation</strong><span class="desc">Stitch your tools together</span></span>
+        </a>
+        <a href="/services/data" class="m--mob" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="2.5"/><path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5"/><path d="M4 11v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6"/></svg></span>
+          <span><strong>Data pipelines</strong><span class="desc">ETL, warehousing, integrations</span></span>
+        </a>
+        <a href="/services/security" class="m--mob" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span><strong>Server security</strong><span class="desc">Hardening, hosting, monitoring</span></span>
+        </a>
+        <a href="/services/bespoke" class="m--bes" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5a4 4 0 0 0-5.4 5.2L4 14.9a1.7 1.7 0 1 0 2.4 2.4l5.3-5.2a4 4 0 0 0 5.2-5.4l-2.6 2.6-2-2 2.2-2.8z"/></svg></span>
+          <span><strong>Bespoke</strong><span class="desc">One‑off builds &amp; integrations</span></span>
+        </a>
+        <a href="/services/seo" class="m--seo" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9.5 10.5 13.5 14.5 21 7"/><polyline points="15 7 21 7 21 13"/></svg></span>
+          <span><strong>SEO &amp; marketing</strong><span class="desc">Get found, get clicks, grow</span></span>
+        </a>
+      </div>
+    </div>
+    <a href="/work">Work</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <a href="/start" class="nav__cta">Start a project</a>
+</header>
+
+  <!-- HERO -->
+    <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Belfast software studio</p>
+        <h1>Tailor‑made <span class="accent">websites</span>, apps &amp; smart tools.</h1>
+        <p class="hero__lede">A small Belfast studio building websites, apps, and AI helpers for ambitious teams. Every detail thought through, every screen made for your customers.</p>
+        <div class="hero__actions">
+          <a href="/start" class="button button--primary">Contact us <span aria-hidden="true">→</span></a>
+          <a href="#services" class="button button--secondary">See what we make</a>
+        </div>
+        <ul class="hero__proof">
+          <li>Fixed‑price quotes</li>
+          <li>90‑day warranty</li>
+          <li>You own the code</li>
+        </ul>
+      </div>
+
+      <div class="hero__card">
+        <p class="hero__card-title">How to get started</p>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <div>
+              <h3>Send us your requirement</h3>
+              <p>A few sentences about your idea — no twenty‑page brief.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <div>
+              <h3>One‑to‑one session</h3>
+              <p>A 30‑minute call to dig into the detail and sketch the approach.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <div>
+              <h3>Get a free quote</h3>
+              <p>Within one working day — clear, no‑obligation, next steps spelt out.</p>
+            </div>
+          </li>
+        </ol>
+        <a href="/start" class="hero__card-link">Start now <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+    <!-- WHAT WE DO -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <header class="section__head reveal">
+        <p class="eyebrow">What we do</p>
+        <h2>From a one‑page site to a full platform.</h2>
+        <p>We build the digital tools your business runs on. Pick a capability to see how we approach it, what you get, and how we work — first call to launch.</p>
+      </header>
+
+      <div class="cards">
+                  <a href="/services/web" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg>
+            </span>
+            <h3>Web applications</h3>
+            <p>Custom platforms, customer portals and admin dashboards that scale with your business.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/mobile" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18.5" r="0.8" fill="currentColor"/></svg>
+            </span>
+            <h3>Mobile apps</h3>
+            <p>iPhone and Android apps with sign‑up, payments and notifications — built to be used daily.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/ecommerce" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2 12h11l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+            </span>
+            <h3>E‑commerce</h3>
+            <p>Online shops, marketplaces and checkouts — fast, secure, and tuned to convert.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/crm" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="6.5" r="2.5"/><path d="M21 14c0-2.2-1.8-4-4-4"/></svg>
+            </span>
+            <h3>CRM &amp; internal tools</h3>
+            <p>Custom CRMs, ops dashboards and back‑office tools that fit your team's actual workflow.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/ai" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/><path d="M19 14.5l.6 1.7 1.7.6-1.7.6L19 19l-.6-1.6-1.7-.6 1.7-.6.6-1.7z"/></svg>
+            </span>
+            <h3>AI &amp; smart tools</h3>
+            <p>Assistants, copilots and data‑aware automations — practical from day one, built for real work.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/workflows" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h10M5 8v8M19 8v8M7 18h10"/></svg>
+            </span>
+            <h3>Workflow automation</h3>
+            <p>Stitch together your tools, remove the manual steps and let the business run itself.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/data" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="2.5"/><path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5"/><path d="M4 11v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6"/></svg>
+            </span>
+            <h3>Data pipelines</h3>
+            <p>ETL, warehousing and integrations — get the right data to the right place, reliably.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/security" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <h3>Server security &amp; management</h3>
+            <p>Hardening, managed hosting, monitoring, backups and patching — kept secure, fast and online.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+                  <a href="/services/bespoke" class="card reveal">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5a4 4 0 0 0-5.4 5.2L4 14.9a1.7 1.7 0 1 0 2.4 2.4l5.3-5.2a4 4 0 0 0 5.2-5.4l-2.6 2.6-2-2 2.2-2.8z"/></svg>
+            </span>
+            <h3>Bespoke builds</h3>
+            <p>The work that doesn't fit a template — in‑store screens, kiosks, connected devices, and everything in between.</p>
+            <span class="card__more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+              </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+    <!-- PROCESS / APPROACH -->
+  <section class="section section--soft" id="process">
+    <div class="wrap process">
+      <header class="process__intro reveal">
+        <p class="eyebrow">How we approach it</p>
+        <h2>A clear path from first call to long after launch.</h2>
+        <p>Every project follows the same five phases — written down, sized up front, and visible to you the whole way through.</p>
+        <a href="/start" class="button button--primary">Start a project <span aria-hidden="true">→</span></a>
+      </header>
+
+      <ol class="phases">
+                  <li class="phase reveal">
+            <span class="phase__num">01</span>
+            <div class="phase__body">
+              <h3>Discovery</h3>
+              <p class="phase__subline">Listening before we sketch a single line.</p>
+              <p>We sit with you — in person or on a call — and learn the business. Who uses what you build, where the friction lives, what success actually looks like. You leave with a written brief and a fixed‑price proposal.</p>
+              <ul class="tags">
+                <li>Stakeholder interviews</li><li>Goals &amp; success metrics</li><li>Scope, timeline &amp; fixed quote</li>              </ul>
+            </div>
+          </li>
+                  <li class="phase reveal">
+            <span class="phase__num">02</span>
+            <div class="phase__body">
+              <h3>Design</h3>
+              <p class="phase__subline">See the product before a line of code is written.</p>
+              <p>Wireframes first, then a click‑through prototype your team can actually poke at. We iterate together until you're nodding — not just being polite — and only then do we open the editor.</p>
+              <ul class="tags">
+                <li>Wireframes &amp; user flows</li><li>Interactive Figma prototype</li><li>Brand &amp; visual system</li>              </ul>
+            </div>
+          </li>
+                  <li class="phase reveal">
+            <span class="phase__num">03</span>
+            <div class="phase__body">
+              <h3>Build</h3>
+              <p class="phase__subline">Weekly demos on a live staging URL — never a black box.</p>
+              <p>No "we'll show you in three months". Each week you get a working staging link, a short Loom walk‑through and a fresh set of changes to steer. Feedback in, fix out, every Friday.</p>
+              <ul class="tags">
+                <li>Weekly demos &amp; staging access</li><li>Code review on every change</li><li>Automated tests &amp; CI from day one</li>              </ul>
+            </div>
+          </li>
+                  <li class="phase reveal">
+            <span class="phase__num">04</span>
+            <div class="phase__body">
+              <h3>Ship</h3>
+              <p class="phase__subline">We launch when it's ready — not on an arbitrary date.</p>
+              <p>Deployment, domain, certificates, analytics — we handle the lot. We're on hand through the first week of real use, watching the logs and fixing anything that wobbles before you have to notice.</p>
+              <ul class="tags">
+                <li>Production deployment &amp; monitoring</li><li>Documentation &amp; team training</li><li>90‑day post‑launch warranty</li>              </ul>
+            </div>
+          </li>
+                  <li class="phase reveal">
+            <span class="phase__num">05</span>
+            <div class="phase__body">
+              <h3>Care</h3>
+              <p class="phase__subline">Quietly improving in the background, for a flat monthly fee.</p>
+              <p>We don't disappear after launch. Pick a care plan and we watch the logs, ship updates, patch security and tidy up the corners — so the thing you commissioned keeps getting better, not worse.</p>
+              <ul class="tags">
+                <li>24/7 uptime monitoring &amp; alerts</li><li>Security patches &amp; dependency updates</li><li>Monthly progress report, plain English</li>              </ul>
+            </div>
+          </li>
+              </ol>
+    </div>
+  </section>
+
+  <!-- ASSURANCES -->
+  <section class="section">
+    <div class="wrap assurances">
+              <div class="assurance reveal">
+          <span class="assurance__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3>Fixed‑price quotes</h3>
+          <p>What we quote is what you pay. No surprise invoices, no scope‑creep upcharges.</p>
+        </div>
+              <div class="assurance reveal">
+          <span class="assurance__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <h3>90‑day warranty</h3>
+          <p>If a defect shows up in the first 90 days, we fix it — no quibbles, no extra invoice.</p>
+        </div>
+              <div class="assurance reveal">
+          <span class="assurance__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3>You own the code</h3>
+          <p>Source code, designs, accounts and infrastructure — all transferred to you at launch.</p>
+        </div>
+              <div class="assurance reveal">
+          <span class="assurance__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </span>
+          <h3>One‑working‑day reply</h3>
+          <p>Slack us, email us, call us — someone gets back within a working day. Often within the hour.</p>
+        </div>
+          </div>
+  </section>
+
+  <!-- CONTACT-CTA -->
+    <!-- CTA -->
+  <section class="section section--tight" id="contact">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div>
+          <p class="eyebrow eyebrow--light">Get in touch</p>
+          <h2>Got something in mind?</h2>
+          <p>Tell us about it — even if it's still a rough idea. We'll get back to you within a working day with honest first thoughts, a clear next step, and a free, no‑obligation quote.</p>
+        </div>
+        <div class="cta__actions">
+          <a href="/start" class="button button--primary">Contact us <span aria-hidden="true">→</span></a>
+          <a href="mailto:hello@cybespoke.co.uk" class="button button--on-dark">hello@cybespoke.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand" aria-label="Cybespoke">
+        <img src="/files/cybespoke-full-fordark_1000.png" alt="Cybespoke" class="footer__logo footer__logo--dark" width="120" />
+        <img src="/files/cybespoke-full-forlight_1000.png" alt="Cybespoke" class="footer__logo footer__logo--light" width="120" />
+      </div>
+      <p class="footer__lede">A bespoke digital studio in Belfast, building web, mobile and AI products with care.</p>
+      <p class="footer__meta">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/web">Web applications</a></li>
+        <li><a href="/services/mobile">Mobile apps</a></li>
+        <li><a href="/services/ecommerce">E‑commerce</a></li>
+        <li><a href="/services/crm">CRM &amp; internal tools</a></li>
+        <li><a href="/services/ai">AI &amp; smart tools</a></li>
+        <li><a href="/services/workflows">Workflow automation</a></li>
+        <li><a href="/services/data">Data pipelines</a></li>
+        <li><a href="/services/security">Server security</a></li>
+        <li><a href="/services/bespoke">Bespoke</a></li>
+        <li><a href="/services/seo">SEO &amp; marketing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/start">Start a project</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy">Privacy notice</a></li>
+        <li><a href="/cookies">Cookie policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+        <li><a href="/accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span data-year>2026</span> Cybespoke. All rights reserved.</span>
+    <span>Crafted in Belfast.</span>
+  </div>
+</footer>
+
+  <script src="/assets/js/global.js"></script>
+  <script src="/assets/js/site.js"></script>
+</body>
+
+</html>
