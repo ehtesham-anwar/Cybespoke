@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site.css?v=<?= filemtime(__DIR__ . '/assets/css/site.css') ?>" />
+  <link rel="stylesheet" href="../assets/css/site.css?v=<?= filemtime(__DIR__ . '/../assets/css/site.css') ?>" />
 </head>
 <body>
   <?php $active = 'services'; $sub = 'workflows'; include __DIR__ . '/../header.php'; ?>
@@ -26,7 +26,7 @@
       <div class="wrap hero__inner">
         <div class="hero__copy">
           <p class="eyebrow">Workflow automation</p>
-          <h1>Stop copying‑and‑pasting. <span class="accent">Let it run itself.</span></h1>
+          <h1>Stop copying‑<wbr>and‑<wbr>pasting. <span class="accent">Let it run itself.</span></h1>
           <p class="hero__lede">Connect your tools, remove the manual steps and free up your team's time. From a single Zap that saves an hour a day to a full custom orchestration that runs the back office.</p>
           <div class="hero__actions">
             <a class="button button--primary" href="../start.php">Start a project <span aria-hidden="true">→</span></a>

@@ -28,204 +28,106 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/site.css?v=<?= filemtime(__DIR__ . '/../assets/css/site.css') ?>" />
+  <style>
+    /* Five-up scorecard (site.css .stats is four-up) */
+    @media (min-width: 1025px) { .stats--5 { grid-template-columns: repeat(5, 1fr); } }
+    .tags strong { color: var(--text); font-weight: 600; }
+  </style>
 </head>
 <body>
   <?php $active = 'services'; $sub = 'ai'; include __DIR__ . '/../header.php'; ?>
 
-  <section class="ai-hero">
-    <div class="container ai-hero__inner">
-      <div>
-        <div class="section-eyebrow"><span class="dot"></span> Smart tools</div>
-        <h1 style="margin-top: 18px;">Intelligence, woven into your product.</h1>
-        <p class="lede">Smart assistants and automations built into the apps your team already uses. We focus on the unflashy parts — the bits that make AI actually reliable, not just impressive.</p>
-        <div class="ctas">
-          <a class="btn btn--primary" href="../index.php#contact">Talk to us →</a>
-          <a class="btn btn--ghost" href="#capabilities">What we build</a>
+  <main>
+    <section class="hero page-hero page-hero--simple">
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Smart tools</p>
+          <h1>Intelligence, <span class="accent">woven into your product.</span></h1>
+          <p class="hero__lede">Smart assistants and automations built into the apps your team already uses. We focus on the unflashy parts — the bits that make AI actually reliable, not just impressive.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="../start.php">Talk to us <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="#capabilities">What we build</a>
+          </div>
         </div>
-
-        <div class="out reveal">
-          <div class="out__bar"><i></i> assistant · thinking</div>
-          <div class="out__text">Reading 12,408 documents · checking the answer · adding sources…</div>
-        </div>
-      </div>
-
-      <div class="neural reveal">
-        <canvas id="net" width="600" height="600" aria-hidden="true"></canvas>
-        <div class="stream">
-          <span>looking up · your handbook</span>
-          <span>found · 6 matches</span>
-          <span>quality · 94%</span>
-          <span>cost · £0.004</span>
-          <span>reply in · 0.4s</span>
+        <div class="hero__badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/><path d="M5 16l.6 1.4L7 18l-1.4.6L5 20l-.6-1.4L3 18l1.4-.6z"/></svg>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="caps container reveal" id="capabilities">
-    <div class="section-eyebrow"><span class="dot"></span> What we build</div>
-    <h2 style="margin-top: 14px;">From idea to live in your product.</h2>
-
-    <div class="caps__grid">
-      <div class="cap-ai"><div class="num">// 01</div><h3>Smart search &amp; answers</h3><p>Search that finds the right answer, shows where it came from, and stays current as your data changes.</p></div>
-      <div class="cap-ai"><div class="num">// 02</div><h3>Assistants that take action</h3><p>Helpers that plan, do real work, and know when to stop and ask. Built for your everyday tasks — not just demos.</p></div>
-      <div class="cap-ai"><div class="num">// 03</div><h3>In‑app helpers</h3><p>Help built into the screen your team already work in — not a separate chatbot they have to remember.</p></div>
-      <div class="cap-ai"><div class="num">// 04</div><h3>Quality checks</h3><p>We score what the AI says, catch slips before customers do, and treat smart features as seriously as the rest of the product.</p></div>
-      <div class="cap-ai"><div class="num">// 05</div><h3>Custom‑trained models</h3><p>When the off‑the‑shelf models stop being enough, we train smaller, cheaper ones for the specific job you have.</p></div>
-      <div class="cap-ai"><div class="num">// 06</div><h3>Voice, image &amp; documents</h3><p>Voice conversations, image understanding and document reading — built right into the apps your team already uses.</p></div>
-    </div>
-  </section>
-
-  <section class="uc container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> Where it earns its keep</div>
-    <h2 style="margin-top: 14px;">Where smart tools really pay back.</h2>
-
-    <div class="uc__row">
-      <div class="uc__card">
-        <span class="badge">Support</span>
-        <h3>Customer support that scales</h3>
-        <p>Cut waiting times and ticket volume with a helper that drafts replies, points to sources, and only hands over to a human when it really should.</p>
-        <div class="dots"></div>
+    <section class="section section--soft" id="capabilities">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">What we build</p>
+          <h2>From idea to live in your product.</h2>
+        </header>
+        <div class="cards">
+          <div class="card card--static reveal"><p class="card__num">01</p><h3>Smart search &amp; answers</h3><p>Search that finds the right answer, shows where it came from, and stays current as your data changes.</p></div>
+          <div class="card card--static reveal"><p class="card__num">02</p><h3>Assistants that take action</h3><p>Helpers that plan, do real work, and know when to stop and ask. Built for your everyday tasks — not just demos.</p></div>
+          <div class="card card--static reveal"><p class="card__num">03</p><h3>In‑app helpers</h3><p>Help built into the screen your team already work in — not a separate chatbot they have to remember.</p></div>
+          <div class="card card--static reveal"><p class="card__num">04</p><h3>Quality checks</h3><p>We score what the AI says, catch slips before customers do, and treat smart features as seriously as the rest of the product.</p></div>
+          <div class="card card--static reveal"><p class="card__num">05</p><h3>Custom‑trained models</h3><p>When the off‑the‑shelf models stop being enough, we train smaller, cheaper ones for the specific job you have.</p></div>
+          <div class="card card--static reveal"><p class="card__num">06</p><h3>Voice, image &amp; documents</h3><p>Voice conversations, image understanding and document reading — built right into the apps your team already uses.</p></div>
+        </div>
       </div>
-      <div class="uc__card">
-        <span class="badge">Internal</span>
-        <h3>An assistant for your team</h3>
-        <p>An in‑house helper that knows your handbook, contracts and chat history — and is honest about what it doesn't.</p>
-        <div class="dots"></div>
-      </div>
-      <div class="uc__card">
-        <span class="badge">Product</span>
-        <h3>Smarter day‑to‑day workflows</h3>
-        <p>Replace brittle rules with helpers that handle the unusual cases, ask for help, and learn from your team's feedback.</p>
-        <div class="dots"></div>
-      </div>
-      <div class="uc__card">
-        <span class="badge">Paperwork</span>
-        <h3>Documents &amp; forms read for you</h3>
-        <p>Pull clean information out of PDFs, contracts and forms — with a real person stepping in when it matters most.</p>
-        <div class="dots"></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="models container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> Models we work with</div>
-    <h2 style="margin-top: 14px;">Whichever model fits. Boring plumbing. Real quality checks.</h2>
-    <div class="models__cloud">
-      <span class="model-chip"><strong>Anthropic</strong> Claude</span>
-      <span class="model-chip"><strong>OpenAI</strong> GPT-class</span>
-      <span class="model-chip"><strong>Google</strong> Gemini</span>
-      <span class="model-chip"><strong>Meta</strong> Llama</span>
-      <span class="model-chip"><strong>Mistral</strong></span>
-      <span class="model-chip">LangGraph</span>
-      <span class="model-chip">LlamaIndex</span>
-      <span class="model-chip">Pinecone</span>
-      <span class="model-chip">pgvector</span>
-      <span class="model-chip">Weaviate</span>
-      <span class="model-chip">Modal</span>
-      <span class="model-chip">Replicate</span>
-      <span class="model-chip">Braintrust</span>
-      <span class="model-chip">LangSmith</span>
-    </div>
-  </section>
+    <section class="section" id="use-cases">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Where it earns its keep</p>
+          <h2>Where smart tools really pay back.</h2>
+        </header>
+        <div class="cards cards--2">
+          <div class="card card--static reveal"><p class="card__num">Support</p><h3>Customer support that scales</h3><p>Cut waiting times and ticket volume with a helper that drafts replies, points to sources, and only hands over to a human when it really should.</p></div>
+          <div class="card card--static reveal"><p class="card__num">Internal</p><h3>An assistant for your team</h3><p>An in‑house helper that knows your handbook, contracts and chat history — and is honest about what it doesn't.</p></div>
+          <div class="card card--static reveal"><p class="card__num">Product</p><h3>Smarter day‑to‑day workflows</h3><p>Replace brittle rules with helpers that handle the unusual cases, ask for help, and learn from your team's feedback.</p></div>
+          <div class="card card--static reveal"><p class="card__num">Paperwork</p><h3>Documents &amp; forms read for you</h3><p>Pull clean information out of PDFs, contracts and forms — with a real person stepping in when it matters most.</p></div>
+        </div>
+      </div>
+    </section>
 
-  <section class="evals container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> What "good" looks like</div>
-    <h2 style="margin-top: 14px;">A typical scorecard when we hand over.</h2>
-    <div style="margin-top: 30px;">
-      <div class="eval"><div class="lbl">Sticks to your data</div><div class="bar"><i data-fill="94"></i></div><div class="num">94</div></div>
-      <div class="eval"><div class="lbl">Accuracy</div><div class="bar"><i data-fill="91"></i></div><div class="num">91</div></div>
-      <div class="eval"><div class="lbl">On‑topic answers</div><div class="bar"><i data-fill="88"></i></div><div class="num">88</div></div>
-      <div class="eval"><div class="lbl">Speed</div><div class="bar"><i data-fill="82"></i></div><div class="num">82</div></div>
-      <div class="eval"><div class="lbl">Cost per use</div><div class="bar"><i data-fill="76"></i></div><div class="num">76</div></div>
-    </div>
-  </section>
+    <section class="section section--soft">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Models we work with</p>
+          <h2>Whichever model fits. Boring plumbing. Real quality checks.</h2>
+        </header>
+        <ul class="tags tags--lg reveal">
+          <li><strong>Anthropic</strong> Claude</li><li><strong>OpenAI</strong> GPT-class</li><li><strong>Google</strong> Gemini</li><li><strong>Meta</strong> Llama</li><li><strong>Mistral</strong></li><li>LangGraph</li><li>LlamaIndex</li><li>Pinecone</li><li>pgvector</li><li>Weaviate</li><li>Modal</li><li>Replicate</li><li>Braintrust</li><li>LangSmith</li>
+        </ul>
+      </div>
+    </section>
 
-  <div class="container">
-    <div class="pager reveal">
-      <a href="mobile.php">← Apps</a>
-      <a href="bespoke.php">Next: Made‑to‑order →</a>
+    <section class="section" id="scorecard">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">What "good" looks like</p>
+          <h2>A typical scorecard when we hand over.</h2>
+        </header>
+        <div class="stats stats--5 reveal">
+          <div class="stat"><strong>94</strong><span>Sticks to your data</span></div>
+          <div class="stat"><strong>91</strong><span>Accuracy</span></div>
+          <div class="stat"><strong>88</strong><span>On‑topic answers</span></div>
+          <div class="stat"><strong>82</strong><span>Speed</span></div>
+          <div class="stat"><strong>76</strong><span>Cost per use</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="pager" aria-label="More services">
+        <a href="mobile.php">← Apps</a>
+        <a href="bespoke.php">Next: Made‑to‑order →</a>
+      </nav>
     </div>
-  </div>
+
+    <?php include __DIR__ . '/../components/contact-cta.php'; ?>
+  </main>
 
   <?php include __DIR__ . '/../footer.php'; ?>
 
   <script src="../assets/js/global.js"></script>
-  <script>
-    /* Animated neural network on canvas */
-    (() => {
-      const canvas = document.getElementById("net");
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d");
-      const W = canvas.width, H = canvas.height;
-      const cx = W / 2, cy = H / 2;
-
-      const layers = [4, 6, 6, 4, 1];
-      const xs = layers.map((_, i) => (i + 1) * (W / (layers.length + 1)));
-      const nodes = [];
-      layers.forEach((count, li) => {
-        for (let n = 0; n < count; n++) {
-          const y = (n + 1) * (H / (count + 1));
-          nodes.push({ x: xs[li], y, layer: li, idx: n, pulse: Math.random() });
-        }
-      });
-
-      // Build edges between adjacent layers
-      const edges = [];
-      for (let li = 0; li < layers.length - 1; li++) {
-        const fromLayer = nodes.filter(n => n.layer === li);
-        const toLayer = nodes.filter(n => n.layer === li + 1);
-        fromLayer.forEach(a => toLayer.forEach(b => edges.push({ a, b, t: Math.random() })));
-      }
-
-      let t = 0;
-      const draw = () => {
-        ctx.clearRect(0, 0, W, H);
-        // edges
-        edges.forEach(e => {
-          const wave = (Math.sin(t * 0.04 + e.t * 6) + 1) / 2;
-          const alpha = 0.05 + wave * 0.18;
-          ctx.strokeStyle = `rgba(255, 93, 143, ${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.beginPath();
-          ctx.moveTo(e.a.x, e.a.y);
-          ctx.lineTo(e.b.x, e.b.y);
-          ctx.stroke();
-        });
-        // nodes
-        nodes.forEach(n => {
-          const p = (Math.sin(t * 0.05 + n.pulse * 6) + 1) / 2;
-          const r = 4 + p * 4;
-          const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 4);
-          grd.addColorStop(0, `rgba(255, 138, 60, ${0.7 + p * 0.3})`);
-          grd.addColorStop(1, "rgba(255, 138, 60, 0)");
-          ctx.fillStyle = grd;
-          ctx.beginPath(); ctx.arc(n.x, n.y, r * 4, 0, Math.PI * 2); ctx.fill();
-          ctx.fillStyle = "#ffffff";
-          ctx.beginPath(); ctx.arc(n.x, n.y, r * 0.7, 0, Math.PI * 2); ctx.fill();
-        });
-        t++;
-        requestAnimationFrame(draw);
-      };
-      draw();
-    })();
-
-    /* Animate eval bars when visible */
-    (() => {
-      const bars = document.querySelectorAll(".eval .bar i");
-      if (!bars.length) return;
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const fill = el.getAttribute("data-fill");
-            requestAnimationFrame(() => el.style.width = fill + "%");
-            io.unobserve(el);
-          }
-        });
-      }, { threshold: 0.4 });
-      bars.forEach(b => io.observe(b));
-    })();
-  </script>
+  <script src="../assets/js/site.js"></script>
 </body>
 </html>

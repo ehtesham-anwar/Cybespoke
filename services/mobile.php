@@ -32,128 +32,83 @@
 <body>
   <?php $active = 'services'; $sub = 'mobile'; include __DIR__ . '/../header.php'; ?>
 
-  <section class="m-hero">
-    <div class="container m-hero__inner">
-      <div>
-        <div class="section-eyebrow"><span class="dot"></span> Apps</div>
-        <h1 style="margin-top: 18px;">Apps people actually keep on their home screen.</h1>
-        <p class="lede">iPhone and Android apps that feel polished, work offline when the signal drops, and welcome people in without losing them.</p>
-        <div class="ctas">
-          <a class="btn btn--primary" href="../index.php#contact">Build with us →</a>
-          <a class="btn btn--ghost" href="#capabilities">What we ship</a>
-        </div>
-      </div>
-
-      <div class="stage reveal">
-        <!-- Phone 1 — Main app -->
-        <div class="phone phone--1">
-          <div class="phone__screen">
-            <div class="status"><span>9:41</span><div class="icons"><i></i><i></i><i></i></div></div>
-            <div class="app__head">
-              <div class="app__greeting">Good morning,</div>
-              <div class="app__title">Alex 👋</div>
-            </div>
-            <div class="balance">
-              <div class="label">Balance</div>
-              <div class="amount">£12,840.20</div>
-            </div>
-            <div class="feed">
-              <div class="feed__title">Activity</div>
-              <div class="notif"><div class="av"></div><div class="body"><div class="name">Sofia M.</div><div class="msg">sent you £42.00 · Coffee</div></div><div class="time">2m</div></div>
-              <div class="notif"><div class="av" style="background:linear-gradient(135deg,#21d4fd,#7c5cff);"></div><div class="body"><div class="name">Stripe</div><div class="msg">Payout completed · £3,200</div></div><div class="time">1h</div></div>
-              <div class="notif"><div class="av" style="background:linear-gradient(135deg,#ffd166,#ff5d8f);"></div><div class="body"><div class="name">Lola</div><div class="msg">Want to grab dinner Friday?</div></div><div class="time">3h</div></div>
-            </div>
-            <div class="tabs">
-              <i class="active"></i><i></i><i></i><i></i>
-            </div>
+  <main>
+    <section class="hero page-hero page-hero--simple">
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Apps</p>
+          <h1>Apps people actually keep <span class="accent">on their home screen.</span></h1>
+          <p class="hero__lede">iPhone and Android apps that feel polished, work offline when the signal drops, and welcome people in without losing them.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="../start.php">Build with us <span aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="#capabilities">What we ship</a>
           </div>
         </div>
+        <div class="hero__badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></svg>
+        </div>
+      </div>
+    </section>
 
-        <!-- Phone 2 — onboarding -->
-        <div class="phone phone--2">
-          <div class="phone__screen">
-            <div class="status"><span>9:41</span><div class="icons"><i></i><i></i><i></i></div></div>
-            <div class="onb">
-              <div class="onb__hero"></div>
-              <div class="onb__title">Welcome aboard.</div>
-              <div class="onb__sub">Your money, finally feeling lightweight.</div>
-              <div class="onb__btn">Get started</div>
-              <div class="onb__dots"><i></i><i class="active"></i><i></i></div>
-            </div>
+    <section class="section section--soft" id="capabilities">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">What we build</p>
+          <h2>From first launch screen to App Store.</h2>
+        </header>
+        <div class="cards">
+          <div class="card card--static reveal"><p class="card__num">01 — Welcome</p><h3>First impressions</h3><p>The first 60 seconds matter most. We design sign‑up and welcome flows that don't lose people.</p></div>
+          <div class="card card--static reveal"><p class="card__num">02 — Money</p><h3>Payments &amp; subscriptions</h3><p>Apple Pay, Google Pay, free trials, paywalls and receipts — handled cleanly.</p></div>
+          <div class="card card--static reveal"><p class="card__num">03 — Reliability</p><h3>Works offline</h3><p>Saves your work locally and syncs when signal comes back. Works on the train, in the lift, on the Tube.</p></div>
+          <div class="card card--static reveal"><p class="card__num">04 — Engagement</p><h3>Notifications &amp; links</h3><p>Targeted push messages and clever links that open the right screen. Respectful by default.</p></div>
+          <div class="card card--static reveal"><p class="card__num">05 — Ship</p><h3>Releases &amp; updates</h3><p>App Store and Play Store releases, crash reports and instant fixes when something slips through.</p></div>
+          <div class="card card--static reveal"><p class="card__num">06 — Feel</p><h3>Smooth &amp; tactile</h3><p>Buttery animations, gesture‑driven screens and tiny vibrations that make the app feel alive.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="platforms">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">Platforms</p>
+          <h2>iPhone, Android, or both at once.</h2>
+        </header>
+        <div class="cards">
+          <div class="card card--static reveal">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg></div>
+            <p class="card__num">iPhone &amp; iPad</p>
+            <h3>Native iOS</h3>
+            <p>For apps where every tap needs to feel just right. Best when widgets, watch apps and the wider Apple world matter.</p>
+          </div>
+          <div class="card card--static reveal">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="5" y1="7" x2="19" y2="7"/><line x1="5" y1="17" x2="19" y2="17"/></svg></div>
+            <p class="card__num">Android</p>
+            <h3>Native Android</h3>
+            <p>Modern Android done properly. Great if your audience is Android‑first or you need to support a wide range of devices.</p>
+          </div>
+          <div class="card card--static reveal">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="9" height="15" rx="2"/><rect x="13" y="3" width="9" height="15" rx="2"/></svg></div>
+            <p class="card__num">Both at once</p>
+            <h3>Cross‑platform</h3>
+            <p>One codebase, both stores, faster updates. We pick the right approach to match your team and how native you need it to feel.</p>
           </div>
         </div>
-
-        <div class="swipe-hint"><i></i><span>swipe to explore</span><i></i></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="caps container reveal" id="capabilities">
-    <div class="section-eyebrow"><span class="dot"></span> What we build</div>
-    <h2 style="margin-top: 14px;">From first launch screen to App Store.</h2>
-    <p style="max-width: 540px; margin-top: 12px;">Drag the cards →</p>
-
-    <div class="caps__rail">
-      <div class="cap-card"><div><div class="glyph">⌘</div><h3>First impressions</h3><p>The first 60 seconds matter most. We design sign‑up and welcome flows that don't lose people.</p></div><span style="font-size:12px;color:var(--muted);">01 — Welcome</span></div>
-      <div class="cap-card"><div><div class="glyph">£</div><h3>Payments &amp; subscriptions</h3><p>Apple Pay, Google Pay, free trials, paywalls and receipts — handled cleanly.</p></div><span style="font-size:12px;color:var(--muted);">02 — Money</span></div>
-      <div class="cap-card"><div><div class="glyph">↻</div><h3>Works offline</h3><p>Saves your work locally and syncs when signal comes back. Works on the train, in the lift, on the Tube.</p></div><span style="font-size:12px;color:var(--muted);">03 — Reliability</span></div>
-      <div class="cap-card"><div><div class="glyph">!</div><h3>Notifications &amp; links</h3><p>Targeted push messages and clever links that open the right screen. Respectful by default.</p></div><span style="font-size:12px;color:var(--muted);">04 — Engagement</span></div>
-      <div class="cap-card"><div><div class="glyph">↗</div><h3>Releases &amp; updates</h3><p>App Store and Play Store releases, crash reports and instant fixes when something slips through.</p></div><span style="font-size:12px;color:var(--muted);">05 — Ship</span></div>
-      <div class="cap-card"><div><div class="glyph">∿</div><h3>Smooth &amp; tactile</h3><p>Buttery animations, gesture‑driven screens and tiny vibrations that make the app feel alive.</p></div><span style="font-size:12px;color:var(--muted);">06 — Feel</span></div>
+    <div class="wrap">
+      <nav class="pager" aria-label="More services">
+        <a href="web.php">← Websites</a>
+        <a href="ai.php">Next: Smart tools →</a>
+      </nav>
     </div>
-  </section>
 
-  <section class="plat container reveal">
-    <div class="section-eyebrow"><span class="dot"></span> Platforms</div>
-    <h2 style="margin-top: 14px;">iPhone, Android, or both at once.</h2>
-    <div class="plat__row">
-      <div class="plat__card plat__card--ios">
-        <div class="head">iPhone &amp; iPad</div>
-        <h3>Native iOS</h3>
-        <p>For apps where every tap needs to feel just right. Best when widgets, watch apps and the wider Apple world matter.</p>
-      </div>
-      <div class="plat__card plat__card--and">
-        <div class="head">Android</div>
-        <h3>Native Android</h3>
-        <p>Modern Android done properly. Great if your audience is Android‑first or you need to support a wide range of devices.</p>
-      </div>
-      <div class="plat__card plat__card--rn">
-        <div class="head">Both at once</div>
-        <h3>Cross‑platform</h3>
-        <p>One codebase, both stores, faster updates. We pick the right approach to match your team and how native you need it to feel.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <div class="pager reveal">
-      <a href="web.php">← Websites</a>
-      <a href="ai.php">Next: Smart tools →</a>
-    </div>
-  </div>
+    <?php include __DIR__ . '/../components/contact-cta.php'; ?>
+  </main>
 
   <?php include __DIR__ . '/../footer.php'; ?>
 
   <script src="../assets/js/global.js"></script>
-  <script>
-    /* Subtle phone parallax on mouse move */
-    (() => {
-      const phones = document.querySelectorAll(".phone");
-      if (!phones.length) return;
-      const stage = document.querySelector(".stage");
-      stage.addEventListener("mousemove", (e) => {
-        const rect = stage.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        phones.forEach((p, i) => {
-          const factor = i === 0 ? 8 : -6;
-          p.style.translate = `${x * factor}px ${y * factor}px`;
-        });
-      });
-      stage.addEventListener("mouseleave", () => {
-        phones.forEach((p) => p.style.translate = "0 0");
-      });
-    })();
-  </script>
+  <script src="../assets/js/site.js"></script>
 </body>
 </html>

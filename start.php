@@ -27,60 +27,72 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css?v=<?= filemtime(__DIR__ . '/assets/css/site.css') ?>" />
+  <style>
+    /* Contact form steps (tokens from site.css only) */
+    .q-step { display: none; }
+    .q-step.is-active { display: block; }
+    .q-fields { display: grid; gap: 20px; }
+    .q-controls { display: flex; justify-content: flex-end; margin-top: 24px; }
+    .button[disabled] { opacity: .45; pointer-events: none; }
+    .q-note { margin-top: 28px; font-size: 15px; color: var(--muted); }
+    .q-note a, .q-success a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .q-success { padding: 24px 0; text-align: center; }
+    .q-success__check { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 24px; font-weight: 700; }
+    .q-success h2 { font-size: 26px; }
+    .q-success p { max-width: 420px; margin: 12px auto 0; color: var(--muted); }
+  </style>
 </head>
 <body>
   <?php include __DIR__ . '/header.php'; ?>
 
-  <div class="q-page__bg"></div>
+  <main>
+    <section class="hero page-hero">
+      <div class="wrap hero__inner">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Contact us</p>
+          <h1>Tell us about your <span class="accent">idea</span>.</h1>
+          <p class="hero__lede">Three quick fields. We'll respond within one working day with honest first thoughts and a clear next step.</p>
+          <p class="q-note">Prefer email? Write to <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a> directly.</p>
+        </div>
 
-  <main class="q-page">
-    <div class="q-shell container">
-      <div class="q-intro">
-        <div class="q-eyebrow"><span class="dot"></span> Contact us</div>
-        <h1>Tell us about your <span class="grad">idea</span>.</h1>
-        <p>Three quick fields. We'll respond within one working day with honest first thoughts and a clear next step.</p>
+        <form class="hero__card" id="contact-form" novalidate>
+          <div class="q-step is-active">
+            <div class="q-fields">
+              <div class="field">
+                <label for="c-name">Your name</label>
+                <input class="input" id="c-name" name="name" type="text" autocomplete="name" required placeholder="Jane Smith" />
+              </div>
+              <div class="field">
+                <label for="c-email">Email address</label>
+                <input class="input" id="c-email" name="email" type="email" autocomplete="email" required placeholder="jane@acme.co.uk" />
+              </div>
+              <div class="field">
+                <label for="c-notes">Notes</label>
+                <textarea class="textarea" id="c-notes" name="notes" required placeholder="A few lines about your idea — what you're trying to build, who it's for, what's on your mind."></textarea>
+              </div>
+            </div>
+
+            <div class="q-controls">
+              <button type="submit" class="button button--primary" data-send>Send message →</button>
+            </div>
+          </div>
+
+          <div class="q-step" data-done>
+            <div class="q-success">
+              <div class="q-success__check" aria-hidden="true">✓</div>
+              <h2>Thank you — your message is on its way.</h2>
+              <p>We'll get back to you within one working day. If anything is missing, write to <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a>.</p>
+            </div>
+          </div>
+        </form>
       </div>
-
-      <form class="q-card" id="contact-form" novalidate>
-        <div class="q-step is-active">
-          <div class="q-fields">
-            <div class="q-field">
-              <label for="c-name">Your name</label>
-              <input id="c-name" name="name" type="text" autocomplete="name" required placeholder="Jane Smith" />
-            </div>
-            <div class="q-field">
-              <label for="c-email">Email address</label>
-              <input id="c-email" name="email" type="email" autocomplete="email" required placeholder="jane@acme.co.uk" />
-            </div>
-            <div class="q-field">
-              <label for="c-notes">Notes</label>
-              <textarea id="c-notes" name="notes" required placeholder="A few lines about your idea — what you're trying to build, who it's for, what's on your mind."></textarea>
-            </div>
-          </div>
-
-          <div class="q-controls" style="justify-content: flex-end;">
-            <button type="submit" class="q-btn q-btn--primary" data-send>Send message →</button>
-          </div>
-        </div>
-
-        <div class="q-step" data-done>
-          <div class="q-success">
-            <div class="check">✓</div>
-            <h2 class="q-step__title" style="margin-top: 0;">Thank you — your message is on its way.</h2>
-            <p class="q-step__hint" style="max-width: 480px; margin: 14px auto 0;">We'll get back to you within one working day. If anything is missing, write to <a href="mailto:hello@cybespoke.co.uk" style="color: var(--text); border-bottom: 1px solid var(--line-strong);">hello@cybespoke.co.uk</a>.</p>
-          </div>
-        </div>
-      </form>
-
-      <p style="text-align: center; margin-top: 28px; font-size: 13px; color: var(--muted);">
-        Prefer email? Write to <a href="mailto:hello@cybespoke.co.uk" style="color: var(--text); border-bottom: 1px solid var(--line-strong);">hello@cybespoke.co.uk</a> directly.
-      </p>
-    </div>
+    </section>
   </main>
 
   <?php include __DIR__ . '/footer.php'; ?>
 
   <script src="assets/js/global.js"></script>
+  <script src="assets/js/site.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     emailjs.init({ publicKey: 'mefPyTyqE4ACTip7a' });
