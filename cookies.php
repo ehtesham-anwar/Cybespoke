@@ -23,6 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css?v=<?= filemtime(__DIR__ . '/assets/css/site.css') ?>" />
   <style>
+    .legal > .prose { min-width: 0; }
     @media (max-width: 640px) { .prose table { display: block; overflow-x: auto; } .prose th, .prose td { min-width: 130px; } }
   </style>
 </head>
