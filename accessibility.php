@@ -20,90 +20,96 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/global.css?v=<?= filemtime(__DIR__ . '/assets/css/global.css') ?>" />
-  <style>
-    .legal { padding: 160px 0 80px; position: relative; z-index: 2; }
-    .legal__head { max-width: 760px; margin-bottom: 48px; }
-    .legal__head h1 { font-family: "Space Grotesk", sans-serif; font-size: clamp(40px, 6vw, 68px); letter-spacing: -0.02em; line-height: 1.05; }
-    .legal__head .meta { color: var(--muted); font-size: 14px; margin-top: 14px; letter-spacing: 0.04em; }
-    .legal__body { max-width: 760px; }
-    .legal__body h2 { font-family: "Space Grotesk", sans-serif; font-size: 24px; margin: 48px 0 14px; letter-spacing: -0.01em; }
-    .legal__body p, .legal__body li { color: var(--muted); font-size: 16px; line-height: 1.75; }
-    .legal__body p { margin-bottom: 14px; }
-    .legal__body ul { margin: 8px 0 18px 22px; }
-    .legal__body li { margin-bottom: 6px; }
-    .legal__body a { color: var(--accent); border-bottom: 1px dotted rgba(45,212,191,0.5); }
-    .legal__body a:hover { color: var(--accent-2); border-bottom-color: var(--accent-2); }
-    .legal__body strong { color: var(--text); font-weight: 600; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=<?= filemtime(__DIR__ . '/assets/css/site.css') ?>" />
 </head>
-<body class="page-enter">
+<body>
   <?php include __DIR__ . '/header.php'; ?>
 
-  <main class="legal container">
-    <div class="legal__head">
-      <div class="section-eyebrow"><span class="dot"></span> Legal</div>
-      <h1 style="margin-top: 14px;">Accessibility statement</h1>
-      <p class="meta">Last updated: 9 May 2026</p>
-    </div>
+  <main>
+    <header class="page-header">
+      <div class="wrap">
+        <p class="eyebrow">Legal</p>
+        <h1>Accessibility statement</h1>
+        <p>Last updated: 9 May 2026</p>
+      </div>
+    </header>
 
-    <div class="legal__body">
-      <p>Cybespoke is committed to making <a href="https://cybespoke.co.uk/">cybespoke.co.uk</a> as accessible as possible. We believe a well‑built website should work for everyone, regardless of how they read, navigate or interact with it.</p>
+    <section class="section">
+      <div class="wrap legal">
+        <nav class="toc" aria-label="On this page">
+          <p>On this page</p>
+          <ul>
+            <li><a href="#our-standard">Our standard</a></li>
+            <li><a href="#what-we-do">What we do</a></li>
+            <li><a href="#conformance-status">Conformance status</a></li>
+            <li><a href="#known-limitations">Known limitations</a></li>
+            <li><a href="#compatibility">Compatibility</a></li>
+            <li><a href="#reporting-an-accessibility-issue">Reporting an accessibility issue</a></li>
+            <li><a href="#how-this-statement-was-prepared">How this statement was prepared</a></li>
+            <li><a href="#enforcement">Enforcement</a></li>
+          </ul>
+        </nav>
 
-      <h2>Our standard</h2>
-      <p>We aim to meet the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, level AA</strong> — the standard recommended by the UK government and the World Wide Web Consortium (W3C). We design and develop our own marketing pages and our clients' projects against the same standard.</p>
+        <article class="prose reveal">
+          <p>Cybespoke is committed to making <a href="https://cybespoke.co.uk/">cybespoke.co.uk</a> as accessible as possible. We believe a well‑built website should work for everyone, regardless of how they read, navigate or interact with it.</p>
 
-      <h2>What we do</h2>
-      <ul>
-        <li>Use semantic HTML and a logical heading structure on every page.</li>
-        <li>Provide visible focus styles so the website is fully usable with a keyboard.</li>
-        <li>Maintain sufficient colour contrast and avoid conveying meaning by colour alone.</li>
-        <li>Add descriptive text alternatives for meaningful images.</li>
-        <li>Ensure forms and interactive components are labelled and announce changes to assistive technology.</li>
-        <li>Support browser zoom up to 200% without loss of content or functionality.</li>
-        <li>Respect the <em>prefers‑reduced‑motion</em> setting and avoid animation that flashes or scrolls aggressively.</li>
-      </ul>
+          <h2 id="our-standard">Our standard</h2>
+          <p>We aim to meet the <strong>Web Content Accessibility Guidelines (WCAG) 2.1, level AA</strong> — the standard recommended by the UK government and the World Wide Web Consortium (W3C). We design and develop our own marketing pages and our clients' projects against the same standard.</p>
 
-      <h2>Conformance status</h2>
-      <p>This website is <strong>partially conformant</strong> with WCAG 2.1 AA. "Partially conformant" means that some parts of the content do not yet fully meet the standard, but we are actively working to resolve them.</p>
+          <h2 id="what-we-do">What we do</h2>
+          <ul>
+            <li>Use semantic HTML and a logical heading structure on every page.</li>
+            <li>Provide visible focus styles so the website is fully usable with a keyboard.</li>
+            <li>Maintain sufficient colour contrast and avoid conveying meaning by colour alone.</li>
+            <li>Add descriptive text alternatives for meaningful images.</li>
+            <li>Ensure forms and interactive components are labelled and announce changes to assistive technology.</li>
+            <li>Support browser zoom up to 200% without loss of content or functionality.</li>
+            <li>Respect the <em>prefers‑reduced‑motion</em> setting and avoid animation that flashes or scrolls aggressively.</li>
+          </ul>
 
-      <h2>Known limitations</h2>
-      <p>We are aware of, and working to fix, the following:</p>
-      <ul>
-        <li>Some decorative animations on hero sections may exceed comfortable motion levels for some users. We honour <em>prefers‑reduced‑motion</em>, but we are continuing to refine the threshold.</li>
-        <li>A small number of older custom illustrations may benefit from richer text alternatives.</li>
-      </ul>
-      <p>If you spot anything else that prevents you from using the site, please tell us — see below.</p>
+          <h2 id="conformance-status">Conformance status</h2>
+          <p>This website is <strong>partially conformant</strong> with WCAG 2.1 AA. "Partially conformant" means that some parts of the content do not yet fully meet the standard, but we are actively working to resolve them.</p>
 
-      <h2>Compatibility</h2>
-      <p>This website is designed to work with current versions of the following browsers and assistive technologies:</p>
-      <ul>
-        <li>Chrome, Edge, Firefox and Safari (current and previous major versions).</li>
-        <li>iOS Safari and Chrome on Android (current and previous major versions).</li>
-        <li>VoiceOver, NVDA, JAWS and TalkBack screen readers.</li>
-      </ul>
-      <p>You may notice reduced functionality on browsers more than two major versions out of date.</p>
+          <h2 id="known-limitations">Known limitations</h2>
+          <p>We are aware of, and working to fix, the following:</p>
+          <ul>
+            <li>Some decorative animations on hero sections may exceed comfortable motion levels for some users. We honour <em>prefers‑reduced‑motion</em>, but we are continuing to refine the threshold.</li>
+            <li>A small number of older custom illustrations may benefit from richer text alternatives.</li>
+          </ul>
+          <p>If you spot anything else that prevents you from using the site, please tell us — see below.</p>
 
-      <h2>Reporting an accessibility issue</h2>
-      <p>If you encounter a barrier or have any difficulty using this website, please tell us so we can fix it. Email <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a> with a short description of:</p>
-      <ul>
-        <li>What you were trying to do.</li>
-        <li>Where on the site the problem occurred (a URL is helpful).</li>
-        <li>The browser, device and any assistive technology you were using.</li>
-      </ul>
-      <p>We aim to acknowledge accessibility reports within one working day, and to provide a more detailed response within five working days. Our hours are 09:00 – 17:00, Monday to Friday (UK time).</p>
+          <h2 id="compatibility">Compatibility</h2>
+          <p>This website is designed to work with current versions of the following browsers and assistive technologies:</p>
+          <ul>
+            <li>Chrome, Edge, Firefox and Safari (current and previous major versions).</li>
+            <li>iOS Safari and Chrome on Android (current and previous major versions).</li>
+            <li>VoiceOver, NVDA, JAWS and TalkBack screen readers.</li>
+          </ul>
+          <p>You may notice reduced functionality on browsers more than two major versions out of date.</p>
 
-      <h2>How this statement was prepared</h2>
-      <p>This statement was last reviewed on 9 May 2026. It is based on our own internal testing using a combination of automated tools, manual keyboard testing, and screen‑reader checks across the browsers listed above.</p>
+          <h2 id="reporting-an-accessibility-issue">Reporting an accessibility issue</h2>
+          <p>If you encounter a barrier or have any difficulty using this website, please tell us so we can fix it. Email <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a> with a short description of:</p>
+          <ul>
+            <li>What you were trying to do.</li>
+            <li>Where on the site the problem occurred (a URL is helpful).</li>
+            <li>The browser, device and any assistive technology you were using.</li>
+          </ul>
+          <p>We aim to acknowledge accessibility reports within one working day, and to provide a more detailed response within five working days. Our hours are 09:00 – 17:00, Monday to Friday (UK time).</p>
 
-      <h2>Enforcement</h2>
-      <p>If you contact us with a complaint about accessibility and you are not satisfied with our response, you can contact the <a href="https://www.equalityni.org/" target="_blank" rel="noopener">Equality Commission for Northern Ireland</a>, which is responsible for enforcing relevant accessibility legislation in Northern Ireland.</p>
-    </div>
+          <h2 id="how-this-statement-was-prepared">How this statement was prepared</h2>
+          <p>This statement was last reviewed on 9 May 2026. It is based on our own internal testing using a combination of automated tools, manual keyboard testing, and screen‑reader checks across the browsers listed above.</p>
+
+          <h2 id="enforcement">Enforcement</h2>
+          <p>If you contact us with a complaint about accessibility and you are not satisfied with our response, you can contact the <a href="https://www.equalityni.org/" target="_blank" rel="noopener">Equality Commission for Northern Ireland</a>, which is responsible for enforcing relevant accessibility legislation in Northern Ireland.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <?php include __DIR__ . '/footer.php'; ?>
 
   <script src="assets/js/global.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
