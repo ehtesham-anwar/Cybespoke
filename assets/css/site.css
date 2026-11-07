@@ -339,6 +339,7 @@ body.menu-open { overflow: hidden; }
 .prose th, .prose td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
 .prose th { color: var(--text); font-weight: 600; }
 .legal { display: grid; grid-template-columns: 220px 1fr; gap: 64px; align-items: start; }
+.legal > .prose { min-width: 0; }
 .toc { position: sticky; top: 104px; font-size: 14px; }
 .toc p { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 12px; }
 .toc li + li { margin-top: 8px; }
@@ -371,6 +372,8 @@ body.menu-open { overflow: hidden; }
   .page-header { padding: 48px 0 32px; }
   .cards--2, .cards--4, .stats { grid-template-columns: 1fr; }
   .toc { display: none; }
+  .prose table { display: block; overflow-x: auto; }
+  .prose th, .prose td { min-width: 130px; }
 }
 
 /* ---------- Footer (shared markup) ---------- */
