@@ -10,7 +10,8 @@ Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted o
 | `/` | `index.html` |
 | `/work` | `work.html` |
 | `/start` (contact form) | `start.html` |
-| `/services/web`, `/services/mobile`, … | `services/*.html` (10 service pages) |
+| `/services/websites`, `/services/apps`, `/services/ai-automation`, `/services/run-grow` | `services/*.html` (4 service pages) |
+| `/about` | `about.html` |
 | `/privacy`, `/cookies`, `/terms`, `/accessibility` | legal pages |
 | `/pamphlet` | `pamphlet.html` — A4 flyer used for `cybespoke-pamphlet.pdf` (not linked from the site) |
 | any unknown URL | `404.html` |
@@ -19,10 +20,9 @@ Cloudflare Pages serves `work.html` at `/work` (clean URLs) automatically.
 
 ## Design
 
-- One design system for every page: `assets/css/site.css` — light mode first (dark mode via the moon button),
-  Inter font, one teal accent.
-- Shared JS: `assets/js/global.js` (theme toggle, scroll fade-in, WhatsApp button, nav shadow) and
-  `assets/js/site.js` (mobile menu).
+- Bold editorial look: `assets/css/site.css` — paper, near-black and one teal; Archivo for headlines,
+  Inter for text, JetBrains Mono for labels.
+- One script for every page: `assets/js/site.js` (mobile menu, fade-in on scroll, WhatsApp button, footer year).
 - The contact form on `/start` sends email with EmailJS straight from the browser.
 
 ## Editing
@@ -48,5 +48,5 @@ A plain `python3 -m http.server 8000` also works, but then use the full file nam
 
 Cloudflare config files in this repo:
 
-- `_redirects` — sends old `.php` links (e.g. `/work.php`) to the new clean URLs with a 301.
+- `_redirects` — sends old links (e.g. `/work.php`, or the old 10 service pages like `/services/crm`) to the current pages with a 301.
 - `_headers` — security headers and cache rules.

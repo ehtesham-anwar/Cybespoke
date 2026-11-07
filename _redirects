@@ -1,4 +1,4 @@
-# Old .php links -> new clean links (301 = moved for good)
+# Old .php links and old service pages -> current pages (301 = moved for good)
 /index.php / 301
 /work.php /work 301
 /start.php /start 301
@@ -7,13 +7,23 @@
 /terms.php /terms 301
 /accessibility.php /accessibility 301
 /pamphlet.php /pamphlet 301
-/services/ai.php /services/ai 301
-/services/bespoke.php /services/bespoke 301
-/services/crm.php /services/crm 301
-/services/data.php /services/data 301
-/services/ecommerce.php /services/ecommerce 301
-/services/mobile.php /services/mobile 301
-/services/security.php /services/security 301
-/services/seo.php /services/seo 301
-/services/web.php /services/web 301
-/services/workflows.php /services/workflows 301
+/services/web.php /services/websites 301
+/services/web /services/websites 301
+/services/ecommerce.php /services/websites 301
+/services/ecommerce /services/websites 301
+/services/mobile.php /services/apps 301
+/services/mobile /services/apps 301
+/services/crm.php /services/apps 301
+/services/crm /services/apps 301
+/services/bespoke.php /services/apps 301
+/services/bespoke /services/apps 301
+/services/ai.php /services/ai-automation 301
+/services/ai /services/ai-automation 301
+/services/workflows.php /services/ai-automation 301
+/services/workflows /services/ai-automation 301
+/services/data.php /services/ai-automation 301
+/services/data /services/ai-automation 301
+/services/security.php /services/run-grow 301
+/services/security /services/run-grow 301
+/services/seo.php /services/run-grow 301
+/services/seo /services/run-grow 301
