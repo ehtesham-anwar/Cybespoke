@@ -111,20 +111,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/global.css?v=<?= filemtime(__DIR__ . '/assets/css/global.css') ?>" />
-  <link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime(__DIR__ . '/assets/css/style.css') ?>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=<?= filemtime(__DIR__ . '/assets/css/site.css') ?>" />
 </head>
 
-<body class="page-enter">
+<body>
   <!-- NAV -->
   <?php $active = 'home';
   include __DIR__ . '/header.php'; ?>
 
   <!-- HERO -->
   <?php include __DIR__ . '/components/hero.php'; ?>
-
-  <!-- MARQUEE -->
 
   <!-- CAPABILITIES -->
   <?php include __DIR__ . '/components/capabilities.php'; ?>
@@ -139,7 +136,7 @@
   <?php include __DIR__ . '/footer.php'; ?>
 
   <script src="assets/js/global.js"></script>
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 
 </html>
