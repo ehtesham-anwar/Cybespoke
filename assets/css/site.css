@@ -387,7 +387,7 @@ body.menu-open { overflow: hidden; }
 .footer li + li { margin-top: 10px; }
 .footer ul a { color: var(--muted); transition: color .2s var(--ease); }
 .footer ul a:hover { color: var(--text); }
-.footer__bottom { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); }
+.footer .footer__bottom { display: flex; justify-content: space-between; gap: 16px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); }
 
 /* ---------- WhatsApp button (injected by global.js) ---------- */
 .wa-fab {
