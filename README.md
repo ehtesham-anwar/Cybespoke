@@ -1,48 +1,52 @@
 # Cybespoke — Studio Website
 
-A static, dark-mode website for **Cybespoke**, a bespoke digital studio building Web, Mobile, AI, and one-of-one Bespoke products.
+A static website for **Cybespoke**, a Belfast studio building websites, apps, AI tools and bespoke software.
+Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted on **Cloudflare Pages**.
 
 ## Pages
 
-- `index.html` — Homepage with animated hero, floating service tiles, marquee, services grid, stats and CTA.
-- `services/web.html` — **Terminal / cyber** aesthetic. Typewriter, glitch heading, code-window mock, mouse-parallax matrix grid, animated timeline.
-- `services/mobile.html` — **Aurora / device-stack** aesthetic. Tilted phone mockups with live notifications, mouse-parallax, draggable capability rail.
-- `services/ai.html` — **Neural network** aesthetic. Live `<canvas>` neural net animation, streaming "thinking" chips, animated eval scorecard.
-- `services/bespoke.html` — **Atelier / luxury** aesthetic. Gold accents, serif type, morphing liquid blob, scroll-revealed thread of steps.
+| URL | File |
+| --- | --- |
+| `/` | `index.html` |
+| `/work` | `work.html` |
+| `/start` (contact form) | `start.html` |
+| `/services/web`, `/services/mobile`, … | `services/*.html` (10 service pages) |
+| `/privacy`, `/cookies`, `/terms`, `/accessibility` | legal pages |
+| `/pamphlet` | `pamphlet.html` — A4 flyer used for `cybespoke-pamphlet.pdf` (not linked from the site) |
+| any unknown URL | `404.html` |
 
-Each service page has its own visual identity, color system, typography and signature animation.
+Cloudflare Pages serves `work.html` at `/work` (clean URLs) automatically.
 
-## Stack
+## Design
 
-- Pure HTML, CSS and a sprinkle of vanilla JS — no build step required.
-- Google Fonts: Inter, Space Grotesk, JetBrains Mono, Cormorant Garamond.
+- One design system for every page: `assets/css/site.css` — light mode first (dark mode via the moon button),
+  Inter font, one teal accent.
+- Shared JS: `assets/js/global.js` (theme toggle, scroll fade-in, WhatsApp button, nav shadow) and
+  `assets/js/site.js` (mobile menu).
+- The contact form on `/start` sends email with EmailJS straight from the browser.
+
+## Editing
+
+The header and footer are copied into every page. To change a menu or footer link, change it in **every** `.html`
+file (search and replace across the project works well).
 
 ## Run locally
 
-Just open `index.html` in a browser, or serve the directory:
-
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+npx wrangler pages dev .
 ```
 
-## Structure
+This copies Cloudflare's behaviour (clean URLs, `_redirects`, `_headers`, `404.html`).
+A plain `python3 -m http.server 8000` also works, but then use the full file names (e.g. `/work.html`).
 
-```
-.
-├── index.html
-├── assets/
-│   ├── css/global.css       # design tokens, nav, footer, reveal-on-scroll
-│   └── js/global.js         # cursor glow, reveal observer, year stamp
-└── services/
-    ├── web.html
-    ├── mobile.html
-    ├── ai.html
-    └── bespoke.html
-```
+## Deploy to Cloudflare Pages
 
-## Accessibility & motion
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → pick this repo.
+2. Build settings: **Framework preset:** None · **Build command:** *(leave empty)* · **Build output directory:** `/`
+3. Save and deploy. Every push to the production branch publishes the site.
+4. **Custom domains** → add `cybespoke.co.uk` (and `www`).
 
-- Respects `prefers-reduced-motion` — animations and transitions collapse to near-zero.
-- Focus styles and color contrast tuned for dark mode.
-- Cursor-glow effect is disabled on touch devices.
+Cloudflare config files in this repo:
+
+- `_redirects` — sends old `.php` links (e.g. `/work.php`) to the new clean URLs with a 301.
+- `_headers` — security headers and cache rules.
