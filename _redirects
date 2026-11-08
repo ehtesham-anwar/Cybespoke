@@ -10,11 +10,11 @@
 /accessibility.php /accessibility 301
 /pamphlet.php /pamphlet 301
 
-# Services before the security refocus (Nov 2026)
-/services/private-ai / 301
+# Services before the Nov 2026 refocus
+/services/private-ai /services/custom-ai 301
 /services/websites /services/build-grow 301
 /services/apps /services/build-grow 301
-/services/ai-automation /services/forward-deployed-engineers 301
+/services/ai-automation /services/custom-ai 301
 /services/run-grow /services/security 301
 /services/fde /services/forward-deployed-engineers 301
 
@@ -29,12 +29,12 @@
 /services/crm /services/build-grow 301
 /services/bespoke.php /services/build-grow 301
 /services/bespoke /services/build-grow 301
-/services/ai.php /services/forward-deployed-engineers 301
-/services/ai /services/forward-deployed-engineers 301
-/services/workflows.php /services/forward-deployed-engineers 301
-/services/workflows /services/forward-deployed-engineers 301
-/services/data.php /services/forward-deployed-engineers 301
-/services/data /services/forward-deployed-engineers 301
+/services/ai.php /services/custom-ai 301
+/services/ai /services/custom-ai 301
+/services/workflows.php /services/custom-ai 301
+/services/workflows /services/custom-ai 301
+/services/data.php /services/custom-ai 301
+/services/data /services/custom-ai 301
 /services/security.php /services/security 301
 /services/seo.php /services/build-grow 301
 /services/seo /services/build-grow 301
