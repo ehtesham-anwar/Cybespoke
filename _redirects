@@ -1,6 +1,8 @@
 # Old .php links and old service pages -> current pages (301 = moved for good)
 /index.php / 301
-/work.php /work 301
+/work.php / 301
+/work / 301
+/work.html / 301
 /start.php /start 301
 /privacy.php /privacy 301
 /cookies.php /cookies 301
