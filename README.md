@@ -9,7 +9,6 @@ Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted o
 | URL | File |
 | --- | --- |
 | `/` | `index.html` |
-| `/work` | `work.html` |
 | `/start` (contact form) | `start.html` |
 | `/services/private-ai`, `/services/security`, `/services/forward-deployed-engineers`, `/services/build-grow` | `services/*.html` (4 service pages) |
 | `/about` | `about.html` |
@@ -17,7 +16,7 @@ Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted o
 | `/pamphlet` | `pamphlet.html` — A4 flyer used for `cybespoke-pamphlet.pdf` (not linked from the site) |
 | any unknown URL | `404.html` |
 
-Cloudflare Pages serves `work.html` at `/work` (clean URLs) automatically.
+Cloudflare Pages serves `about.html` at `/about` (clean URLs) automatically.
 
 ## Design
 
@@ -38,7 +37,7 @@ npx wrangler pages dev .
 ```
 
 This copies Cloudflare's behaviour (clean URLs, `_redirects`, `_headers`, `404.html`).
-A plain `python3 -m http.server 8000` also works, but then use the full file names (e.g. `/work.html`).
+A plain `python3 -m http.server 8000` also works, but then use the full file names (e.g. `/about.html`).
 
 ## Deploy to Cloudflare Pages
 
@@ -49,5 +48,5 @@ A plain `python3 -m http.server 8000` also works, but then use the full file nam
 
 Cloudflare config files in this repo:
 
-- `_redirects` — sends old links (e.g. `/work.php`, or the old 10 service pages like `/services/crm`) to the current pages with a 301.
+- `_redirects` — sends old links (e.g. `/index.php`, or the old 10 service pages like `/services/crm`) to the current pages with a 301.
 - `_headers` — security headers and cache rules.
