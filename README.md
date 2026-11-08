@@ -1,6 +1,6 @@
 # Cybespoke — Studio Website
 
-A static website for **Cybespoke**, a Belfast studio selling private AI model deployment, security (AI security, pen tests,
+A static website for **Cybespoke**, a Belfast studio selling security (AI security, pen tests,
 hardening, compliance) and forward deployed engineers — with development & SEO as a side service.
 Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted on **Cloudflare Pages**.
 
@@ -10,7 +10,7 @@ Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted o
 | --- | --- |
 | `/` | `index.html` |
 | `/start` (contact form) | `start.html` |
-| `/services/private-ai`, `/services/security`, `/services/forward-deployed-engineers`, `/services/build-grow` | `services/*.html` (4 service pages) |
+| `/services/security`, `/services/forward-deployed-engineers`, `/services/build-grow` | `services/*.html` (3 service pages) |
 | `/about` | `about.html` |
 | `/privacy`, `/cookies`, `/terms`, `/accessibility` | legal pages |
 | `/pamphlet` | `pamphlet.html` — A4 flyer used for `cybespoke-pamphlet.pdf` (not linked from the site) |
