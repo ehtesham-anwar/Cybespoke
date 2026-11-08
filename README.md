@@ -1,6 +1,6 @@
 # Cybespoke — Studio Website
 
-A static website for **Cybespoke**, a Belfast studio selling custom AI systems (local model setup and harnesses), security (AI security, pen tests,
+A static website for **Cybespoke**, a Belfast studio selling AI custom software (local model setup and harnesses), security (AI security, pen tests,
 hardening, compliance) and forward deployed engineers — with development & SEO as a side service.
 Plain HTML, CSS and a little JavaScript. No build step, no server code. Hosted on **Cloudflare Pages**.
 
