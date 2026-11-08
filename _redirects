@@ -7,23 +7,31 @@
 /terms.php /terms 301
 /accessibility.php /accessibility 301
 /pamphlet.php /pamphlet 301
-/services/web.php /services/websites 301
-/services/web /services/websites 301
-/services/ecommerce.php /services/websites 301
-/services/ecommerce /services/websites 301
-/services/mobile.php /services/apps 301
-/services/mobile /services/apps 301
-/services/crm.php /services/apps 301
-/services/crm /services/apps 301
-/services/bespoke.php /services/apps 301
-/services/bespoke /services/apps 301
-/services/ai.php /services/ai-automation 301
-/services/ai /services/ai-automation 301
-/services/workflows.php /services/ai-automation 301
-/services/workflows /services/ai-automation 301
-/services/data.php /services/ai-automation 301
-/services/data /services/ai-automation 301
-/services/security.php /services/run-grow 301
-/services/security /services/run-grow 301
-/services/seo.php /services/run-grow 301
-/services/seo /services/run-grow 301
+
+# Services before the private AI & security refocus (Nov 2026)
+/services/websites /services/build-grow 301
+/services/apps /services/build-grow 301
+/services/ai-automation /services/private-ai 301
+/services/run-grow /services/security 301
+/services/fde /services/forward-deployed-engineers 301
+
+# Even older service URLs
+/services/web.php /services/build-grow 301
+/services/web /services/build-grow 301
+/services/ecommerce.php /services/build-grow 301
+/services/ecommerce /services/build-grow 301
+/services/mobile.php /services/build-grow 301
+/services/mobile /services/build-grow 301
+/services/crm.php /services/build-grow 301
+/services/crm /services/build-grow 301
+/services/bespoke.php /services/build-grow 301
+/services/bespoke /services/build-grow 301
+/services/ai.php /services/private-ai 301
+/services/ai /services/private-ai 301
+/services/workflows.php /services/private-ai 301
+/services/workflows /services/private-ai 301
+/services/data.php /services/private-ai 301
+/services/data /services/private-ai 301
+/services/security.php /services/security 301
+/services/seo.php /services/build-grow 301
+/services/seo /services/build-grow 301
