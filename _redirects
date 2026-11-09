@@ -16,7 +16,9 @@
 /services/apps /services/build-grow 301
 /services/ai-automation /services/custom-ai 301
 /services/run-grow /services/security 301
-/services/fde /services/forward-deployed-engineers 301
+/services/fde /services/custom-ai 301
+/services/forward-deployed-engineers /services/custom-ai 301
+/services/forward-deployed-engineers.html /services/custom-ai 301
 
 # Even older service URLs
 /services/web.php /services/build-grow 301
