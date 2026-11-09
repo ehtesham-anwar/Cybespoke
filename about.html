@@ -1,124 +1,289 @@
 <!doctype html>
-<html lang="en-GB" class="no-js">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Cybespoke Belfast</title>
-  <meta name="description" content="Cybespoke is a Belfast studio for AI custom software, security and forward deployed engineers. Fixed prices, weekly demos, and you own everything we build." />
+  <title>About Cybespoke — a Belfast studio that builds AI, keeps it safe and works in your team</title>
+  <meta name="description" content="We help UK and Irish businesses use AI safely: AI made for your business, security testing that finds holes first, and engineers who work inside your team." />
   <link rel="canonical" href="https://cybespoke.co.uk/about" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://cybespoke.co.uk/about" />
-  <meta property="og:title" content="About — Cybespoke Belfast" />
-  <meta property="og:description" content="Cybespoke is a Belfast studio for AI custom software, security and forward deployed engineers. Fixed prices, weekly demos, and you own everything we build." />
+  <meta property="og:title" content="About Cybespoke — a Belfast studio that builds AI, keeps it safe and works in your team" />
+  <meta property="og:description" content="We help UK and Irish businesses use AI safely: AI made for your business, security testing that finds holes first, and engineers who work inside your team." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About — Cybespoke Belfast" />
-  <meta name="twitter:description" content="Cybespoke is a Belfast studio for AI custom software, security and forward deployed engineers. Fixed prices, weekly demos, and you own everything we build." />
+  <meta name="twitter:title" content="About Cybespoke — a Belfast studio that builds AI, keeps it safe and works in your team" />
+  <meta name="twitter:description" content="We help UK and Irish businesses use AI safely: AI made for your business, security testing that finds holes first, and engineers who work inside your team." />
   <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
-  <meta name="theme-color" content="#0b0b0c" />
   <link rel="icon" type="image/png" sizes="32x32" href="/files/cybespoke-mark_square_32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .about-hero { padding: 170px 0 40px; position: relative; z-index: 2; }
+    .about-hero h1 { font-family: "Fraunces", serif; font-weight: 500; font-size: clamp(44px, 7vw, 92px); letter-spacing: -0.025em; line-height: 1.03; margin-top: 18px; max-width: 900px; }
+    .about-hero h1 .grad { background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .about-hero p { margin-top: 24px; max-width: 680px; font-size: 19px; color: var(--muted); line-height: 1.65; }
+    .about-where { margin-top: 70px; padding: 34px; border: 1px solid var(--line); border-radius: 22px; background: var(--bg-soft); }
+    .about-where h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 28px; }
+    .about-where p { margin-top: 10px; color: var(--muted); }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a href="/" class="brand" aria-label="Cybespoke — home">
-        <img src="/files/cybespoke-mark_256.png" alt="" width="34" height="34" />
-        <span>cybespoke</span>
-      </a>
-      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="/#services">Services</a>
-      <a href="/about" aria-current="page">About</a>
-      <a href="/start">Contact</a>
-        <a href="/start" class="nav__cta">Start a project →</a>
-      </nav>
+<body class="page-enter">
+  <header class="nav">
+  <a href="/" class="nav__brand" aria-label="Cybespoke — home"><img src="/files/cybespoke-mark_256.png" alt="Cybespoke" class="logo" /></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="/">Home</a>
+    <div class="nav__group">
+      <button type="button" class="nav__trigger" aria-haspopup="true" aria-expanded="false">Services <span class="nav__caret" aria-hidden="true"></span></button>
+      <div class="nav__mega" role="menu">
+        <a href="/services/custom-ai" class="m--ai" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></span>
+          <span><strong>AI made for you</strong><span class="desc">AI in your tools, or a new app</span></span>
+        </a>
+        <a href="/services/security" class="m--mob" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span><strong>Security</strong><span class="desc">Find weak spots before hackers do</span></span>
+        </a>
+        <a href="/services/forward-deployed-engineers" class="m--bes" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="6.5" r="2.5"/><path d="M21 14c0-2.2-1.8-4-4-4"/></svg></span>
+          <span><strong>An expert in your team</strong><span class="desc">A senior engineer who works with you</span></span>
+        </a>
+        <a href="/services/build-grow" class="m--seo" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></span>
+          <span><strong>Websites, apps &amp; Google</strong><span class="desc">Build it, then get found</span></span>
+        </a>
+      </div>
     </div>
-  </header>
-
+    <a href="/about" class="active">About</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <a href="/start" class="nav__cta">Start a project</a>
+</header>
   <main>
-    <section class="page-head">
-      <div class="wrap">
-        <p class="label">About</p>
-        <h1 class="display">A studio<br />that <span class="accent">ships.</span></h1>
-        <p class="lede">We help UK and Irish businesses use AI safely: AI custom software on local or cloud models, security testing that finds the gaps first, and engineers who work inside your team. Everything is yours at the end.</p>
-      </div>
+    <section class="about-hero container reveal">
+      <div class="section-eyebrow"><span class="dot"></span> About</div>
+      <h1>A small studio that <span class="grad">gets things done</span>.</h1>
+      <p>We help UK and Irish businesses use AI safely. We build AI made for your business (on your own computers or online), test your systems for security holes before hackers find them, and send engineers to work inside your team. Everything we build is yours at the end.</p>
     </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="display display--lg reveal">How we<br />work.</h2>
-          <p class="label">(01) — Five steps</p>
-        </div>
-        <ol class="steps">
-        <li class="step"><p class="step__num">01</p><h3 class="h3 step__title">Assess</h3><p class="muted">We learn your business, data and risks. You get a written plan and a fixed price.</p></li>
-        <li class="step"><p class="step__num">02</p><h3 class="h3 step__title">Pilot</h3><p class="muted">One real use case, live in weeks — so you see value before you commit more.</p></li>
-        <li class="step"><p class="step__num">03</p><h3 class="h3 step__title">Secure</h3><p class="muted">Pen tests, guardrails and access controls before wider roll‑out.</p></li>
-        <li class="step"><p class="step__num">04</p><h3 class="h3 step__title">Deploy</h3><p class="muted">Rolled out to your team, connected to your tools, with training.</p></li>
-        <li class="step"><p class="step__num">05</p><h3 class="h3 step__title">Run</h3><p class="muted">Monitoring, updates and security checks for a flat monthly fee.</p></li>
-        </ol>
+      <!-- PROCESS / APPROACH -->
+  <section class="process container reveal" id="process">
+    <div class="process__head">
+      <div>
+        <div class="section-eyebrow"><span class="dot"></span> How we work</div>
+        <h2>Five steps. No surprises.</h2>
       </div>
-    </section>
+      <p>Every project follows the same five steps. You always know what is happening and what it costs.</p>
+    </div>
 
-    <section class="section ink">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">✓</p>
-          <h2 class="h3 part__title">What you can count on</h2>
-          <p class="muted">The promises behind every project, big or small.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>Fixed‑price quotes</h3><p>What we quote is what you pay. No surprise invoices, no scope‑creep upcharges.</p></li>
-          <li class="item"><h3>Your data stays yours</h3><p>AI runs where you choose — your servers, your cloud, or trusted providers with no data retention.</p></li>
-          <li class="item"><h3>You own everything</h3><p>Code, accounts and infrastructure — all yours, from day one.</p></li>
-          <li class="item"><h3>One‑working‑day reply</h3><p>Email us, call us, message us — someone gets back within a working day. Often within the hour.</p></li>
-          <li class="item"><h3>Security by default</h3><p>Every build is tested and hardened before it goes live.</p></li>
-          <li class="item"><h3>Plain English</h3><p>Monthly progress reports and advice without jargon.</p></li>
-        </ul>
-      </div>
-    </section>
+    <ol class="process__list" data-process-timeline>
+      <span class="process__line" aria-hidden="true">
+        <span class="process__line-fill"></span>
+      </span>
 
-    <section class="section teal-band">
-      <div class="wrap">
-        <p class="statement reveal">Based in Belfast. Working with teams across the UK, Ireland and beyond.</p>
-        <p>Mon – Fri, 09:00 – 17:00 (UK time). In person in Belfast, or on a call wherever you are.</p>
-      </div>
-    </section>
-  </main>
+      <li class="phase phase--01" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
+        <div class="phase__body">
+          <span class="phase__label">Phase one</span>
+          <h3>Assess</h3>
+          <p class="phase__subline">We learn about you first.</p>
+          <p>We look at your business, your data and your risks. You get a written plan and a fixed price, so you know the cost before we start.</p>
+          <ul>
+            <li>A chat with your team</li>
+            <li>What "success" looks like</li>
+            <li>Written plan &amp; fixed price</li>
+          </ul>
+        </div>
+      </li>
 
-  <section class="ink contact" id="contact">
-    <div class="wrap">
-      <p class="label">(04) — Contact</p>
-      <h2 class="display display--xl reveal">Got an<br /><span class="accent">idea?</span></h2>
-      <div class="hero__foot">
-        <p class="lede">Tell us what you want AI to do, or what worries you about security — a few sentences is fine. We reply within one working day with honest thoughts and a free, fixed‑price quote.</p>
-        <div class="btn-row">
-          <a href="/start" class="btn btn--bright">Start a project →</a>
-          <a href="mailto:hello@cybespoke.co.uk" class="btn btn--line-light">hello@cybespoke.co.uk</a>
+      <li class="phase phase--02" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
+        <div class="phase__body">
+          <span class="phase__label">Phase two</span>
+          <h3>Pilot</h3>
+          <p class="phase__subline">One real task, working in weeks.</p>
+          <p>We pick one real job and make it work, usually in two to four weeks. You see it helping before you spend more.</p>
+          <ul>
+            <li>One real task, live</li>
+            <li>Weekly demos</li>
+            <li>You decide what comes next</li>
+          </ul>
         </div>
+      </li>
+
+      <li class="phase phase--03" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
+        <div class="phase__body">
+          <span class="phase__label">Phase three</span>
+          <h3>Secure</h3>
+          <p class="phase__subline">We check it is safe.</p>
+          <p>Before more people use it, our security team tries to break it. We add safety rules and make sure only the right people can get in.</p>
+          <ul>
+            <li>We try to hack it (safely)</li>
+            <li>Safety rules for the AI</li>
+            <li>Right access for the right people</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="phase phase--04" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
+        <div class="phase__body">
+          <span class="phase__label">Phase four</span>
+          <h3>Roll out</h3>
+          <p class="phase__subline">Your whole team gets it.</p>
+          <p>We connect it to the tools you already use, add more users and tasks, and train your team.</p>
+          <ul>
+            <li>Connected to your tools</li>
+            <li>Training for your team</li>
+            <li>Clear how‑to guides</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="phase phase--05" data-phase data-spotlight>
+        <span class="phase__marker" aria-hidden="true">
+          <span class="phase__dot"></span>
+          <span class="phase__ring"></span>
+        </span>
+        <div class="phase__body">
+          <span class="phase__label">Phase five</span>
+          <h3>Run</h3>
+          <p class="phase__subline">We keep it working.</p>
+          <p>We watch it day and night, update it and check its security, all for one flat monthly fee.</p>
+          <ul>
+            <li>Watched 24/7</li>
+            <li>Updates &amp; security checks</li>
+            <li>Monthly report in plain English</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Customer assurances -->
+    <div class="assurances">
+      <div class="assurance">
+        <div class="assurance__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+        </div>
+        <h4>Fixed‑price quotes</h4>
+        <p>The price we give is the price you pay. No surprise bills.</p>
       </div>
-      <footer class="footer">
-        <div class="footer__brand">
-          <p>cybespoke</p>
-          <p>An AI software &amp; security studio in Belfast. Mon – Fri, 09:00 – 17:00 (UK time). <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a></p>
+      <div class="assurance">
+        <div class="assurance__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
         </div>
-        <nav class="footer__nav" aria-label="Footer">
-          <div class="footer__col"><p class="label">Services</p><a href="/services/custom-ai">AI custom software</a><a href="/services/security">Security</a><a href="/services/forward-deployed-engineers">Forward deployed engineers</a><a href="/services/build-grow">Development &amp; SEO</a></div>
-          <div class="footer__col"><p class="label">Studio</p><a href="/about">About</a><a href="/start">Contact</a></div>
-          <div class="footer__col"><p class="label">Legal</p><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a></div>
-        </nav>
-      </footer>
-      <p class="footer__legal">© <span data-year>2026</span> Cybespoke · Crafted in Belfast</p>
+        <h4>Your data stays yours</h4>
+        <p>Your AI runs where you choose: your own computers, your cloud, or trusted companies that do not keep your data.</p>
+      </div>
+      <div class="assurance">
+        <div class="assurance__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <h4>You own everything</h4>
+        <p>The code, the accounts and the servers are all yours. No lock‑in. You can leave any time.</p>
+      </div>
+      <div class="assurance">
+        <div class="assurance__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+        </div>
+        <h4>One‑working‑day reply</h4>
+        <p>Email, call or message us. Someone replies within one working day, often within the hour.</p>
+      </div>
     </div>
   </section>
-
-  <script src="/assets/js/site.js"></script>
+    <section class="container">
+      <div class="about-where reveal">
+        <h3>Based in Belfast. Working across the UK, Ireland and beyond.</h3>
+        <p>Mon – Fri, 09:00 – 17:00 (UK time). Meet us in person in Belfast, or on a call wherever you are.</p>
+      </div>
+    </section>
+      <!-- CTA -->
+  <section class="container" id="contact">
+    <div class="cta-section reveal">
+      <div class="section-eyebrow"><span class="dot"></span> Get in touch</div>
+      <h2>Got something in mind?</h2>
+      <p>Tell us about it, even if it's only a rough idea. We'll reply within one working day with honest advice, a clear next step and a free quote.</p>
+      <div class="cta-section__actions">
+        <a href="/start" class="btn btn--primary">Contact us →</a>
+        <a href="mailto:hello@cybespoke.co.uk" class="btn btn--ghost">hello@cybespoke.co.uk</a>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand" aria-label="Cybespoke">
+        <img src="/files/cybespoke-full-fordark_1000.png" alt="Cybespoke" class="footer__logo footer__logo--dark" width="120" />
+        <img src="/files/cybespoke-full-forlight_1000.png" alt="Cybespoke" class="footer__logo footer__logo--light" width="120" />
+      </div>
+      <p class="footer__lede">We build AI for your business, keep it safe from hackers, and send experts to work with your team.</p>
+      <p class="footer__meta">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/custom-ai">AI made for you</a></li>
+        <li><a href="/services/security">Security</a></li>
+        <li><a href="/services/forward-deployed-engineers">An expert in your team</a></li>
+        <li><a href="/services/build-grow">Websites, apps &amp; Google</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/start">Start a project</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy">Privacy notice</a></li>
+        <li><a href="/cookies">Cookie policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+        <li><a href="/accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span data-year>2026</span> Cybespoke. All rights reserved.</span>
+    <span>Made in Belfast.</span>
+  </div>
+</footer>
+  <script src="/assets/js/global.js"></script>
+  <script src="/assets/js/script.js"></script>
 </body>
 </html>

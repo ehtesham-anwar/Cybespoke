@@ -1,218 +1,323 @@
 <!doctype html>
-<html lang="en-GB" class="no-js">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI custom software — Cybespoke Belfast</title>
-  <meta name="description" content="AI custom software from Belfast — built into your system or as a new web or mobile app, on local or cloud models, tuned to use fewer tokens." />
+  <title>AI made for your business — Cybespoke Belfast</title>
+  <meta name="description" content="We add AI to the software you already use, or build you a new web or phone app. It runs on your own computers or online, and we set it up so your AI bill stays small." />
   <link rel="canonical" href="https://cybespoke.co.uk/services/custom-ai" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://cybespoke.co.uk/services/custom-ai" />
-  <meta property="og:title" content="AI custom software — Cybespoke Belfast" />
-  <meta property="og:description" content="AI custom software from Belfast — built into your system or as a new web or mobile app, on local or cloud models, tuned to use fewer tokens." />
+  <meta property="og:title" content="AI made for your business — Cybespoke Belfast" />
+  <meta property="og:description" content="We add AI to the software you already use, or build you a new web or phone app. It runs on your own computers or online, and we set it up so your AI bill stays small." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI custom software — Cybespoke Belfast" />
-  <meta name="twitter:description" content="AI custom software from Belfast — built into your system or as a new web or mobile app, on local or cloud models, tuned to use fewer tokens." />
+  <meta name="twitter:title" content="AI made for your business — Cybespoke Belfast" />
+  <meta name="twitter:description" content="We add AI to the software you already use, or build you a new web or phone app. It runs on your own computers or online, and we set it up so your AI bill stays small." />
   <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
-  <meta name="theme-color" content="#0b0b0c" />
   <link rel="icon" type="image/png" sizes="32x32" href="/files/cybespoke-mark_square_32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <style>
+    :root { --p-from: #8b5cf6; --p-to: #ec4899; }
+    .svc-hero { position: relative; padding: 160px 0 60px; z-index: 2; overflow: hidden; }
+    .svc-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+    @media (max-width: 980px) { .svc-hero__inner { grid-template-columns: 1fr; } .svc-visual { max-width: 300px; } }
+    .svc-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .svc-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--p-from); box-shadow: 0 0 0 4px color-mix(in srgb, var(--p-from) 18%, transparent); }
+    .svc-hero h1 { font-size: clamp(40px, 6.5vw, 84px); letter-spacing: -0.025em; line-height: 1.04; font-family: "Fraunces", serif; font-weight: 500; margin-top: 22px; }
+    .grad { background: linear-gradient(120deg, var(--p-from), var(--p-to)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .svc-hero p.lede { margin-top: 22px; max-width: 580px; font-size: 18px; color: var(--muted); line-height: 1.65; }
+    .svc-hero .ctas { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+    .svc-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    .svc-jump a { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+    .svc-jump a:hover { color: var(--text); border-color: var(--line-strong); }
+    .svc-visual { position: relative; aspect-ratio: 1; max-width: 480px; margin-inline: auto; width: 100%; }
+    .svc-visual__bg { position: absolute; inset: 0; border-radius: 24px; background: linear-gradient(135deg, var(--p-from), var(--p-to)); opacity: 0.18; filter: blur(40px); }
+    .svc-icon-large { position: absolute; inset: 12%; border-radius: 24px; display: grid; place-items: center; background: linear-gradient(135deg, var(--p-from), var(--p-to)); box-shadow: 0 30px 60px -20px color-mix(in srgb, var(--p-from) 45%, transparent); color: #fff; }
+    .svc-icon-large svg { width: 40%; height: 40%; }
+    .features { padding: 70px 0 10px; position: relative; z-index: 2; scroll-margin-top: 80px; }
+    .features__intro { max-width: 720px; margin-top: 14px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+    .features__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    @media (max-width: 980px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .features__grid { grid-template-columns: 1fr; } }
+    .feature { padding: 28px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-soft); transition: transform .4s var(--easing-soft), border-color .35s; }
+    .feature:hover { transform: translateY(-4px); border-color: var(--line-strong); }
+    .feature__icon { width: 40px; height: 40px; border-radius: 10px; background: var(--tint-soft); border: 1px solid var(--line); display: grid; place-items: center; color: var(--p-from); margin-bottom: 16px; }
+    .feature__icon svg { width: 20px; height: 20px; }
+    .feature h3 { font-size: 17px; margin-bottom: 8px; font-family: "Inter Tight", sans-serif; font-weight: 600; }
+    .feature p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+    .feature a { color: var(--text); border-bottom: 1px solid var(--line-strong); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .chips span { font-family: "JetBrains Mono", monospace; font-size: 12px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); color: var(--muted); }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 36px; counter-reset: step; }
+    .steps.steps--4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 980px) { .steps, .steps.steps--4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .steps, .steps.steps--4 { grid-template-columns: 1fr; } }
+    .step { padding: 24px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-soft); }
+    .step__num { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--p-from); letter-spacing: 0.1em; }
+    .step h3 { font-size: 18px; margin: 10px 0 6px; font-family: "Inter Tight", sans-serif; font-weight: 600; }
+    .step p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } }
+    .plan { position: relative; padding: 30px; border-radius: 22px; border: 1px solid var(--line); background: var(--bg-soft); display: flex; flex-direction: column; }
+    .plan--pop { border-color: var(--p-from); box-shadow: 0 24px 60px -30px color-mix(in srgb, var(--p-from) 55%, transparent); }
+    .plan__tag { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .plan--pop .plan__tag { color: var(--p-from); }
+    .plan h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 28px; margin-top: 10px; }
+    .plan__price { font-size: 22px; font-weight: 600; margin-top: 8px; }
+    .plan__price small { font-size: 14px; font-weight: 400; color: var(--muted); }
+    .plan > p { color: var(--muted); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .plan ul { list-style: none; margin: 18px 0 24px; padding: 0; display: grid; gap: 8px; flex: 1; }
+    .plan li { font-size: 14.5px; color: var(--muted); padding-left: 22px; position: relative; }
+    .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--p-from); }
+    .faq { margin-top: 30px; max-width: 820px; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary { cursor: pointer; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--p-from); font-size: 22px; line-height: 1; transition: transform .3s; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { margin-top: 10px; color: var(--muted); line-height: 1.7; }
+    .svc-cta { margin: 80px 0 0; padding: 70px 44px; border-radius: 28px; background: radial-gradient(900px 460px at 0% 0%, color-mix(in srgb, var(--p-from) 25%, transparent), transparent 60%), radial-gradient(700px 440px at 100% 100%, color-mix(in srgb, var(--p-to) 22%, transparent), transparent 60%), var(--bg-soft); border: 1px solid var(--line); text-align: center; position: relative; overflow: hidden; }
+    @media (max-width: 560px) { .svc-cta { padding: 48px 22px; } }
+    .svc-cta h2 { max-width: 700px; margin: 0 auto; }
+    .svc-cta p { max-width: 540px; margin: 16px auto 28px; color: var(--muted); }
+    .pager { margin: 80px 0 0; padding: 24px 28px; border: 1px solid var(--line); border-radius: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .pager a { color: var(--muted); font-size: 14px; }
+    .pager a:hover { color: var(--text); }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a href="/" class="brand" aria-label="Cybespoke — home">
-        <img src="/files/cybespoke-mark_256.png" alt="" width="34" height="34" />
-        <span>cybespoke</span>
-      </a>
-      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="/#services" aria-current="page">Services</a>
-      <a href="/about">About</a>
-      <a href="/start">Contact</a>
-        <a href="/start" class="nav__cta">Start a project →</a>
-      </nav>
+<body class="page-enter">
+  <header class="nav">
+  <a href="/" class="nav__brand" aria-label="Cybespoke — home"><img src="/files/cybespoke-mark_256.png" alt="Cybespoke" class="logo" /></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="/">Home</a>
+    <div class="nav__group is-active">
+      <button type="button" class="nav__trigger" aria-haspopup="true" aria-expanded="false">Services <span class="nav__caret" aria-hidden="true"></span></button>
+      <div class="nav__mega" role="menu">
+        <a href="/services/custom-ai" class="m--ai active" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></span>
+          <span><strong>AI made for you</strong><span class="desc">AI in your tools, or a new app</span></span>
+        </a>
+        <a href="/services/security" class="m--mob" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span><strong>Security</strong><span class="desc">Find weak spots before hackers do</span></span>
+        </a>
+        <a href="/services/forward-deployed-engineers" class="m--bes" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="6.5" r="2.5"/><path d="M21 14c0-2.2-1.8-4-4-4"/></svg></span>
+          <span><strong>An expert in your team</strong><span class="desc">A senior engineer who works with you</span></span>
+        </a>
+        <a href="/services/build-grow" class="m--seo" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></span>
+          <span><strong>Websites, apps &amp; Google</strong><span class="desc">Build it, then get found</span></span>
+        </a>
+      </div>
     </div>
-  </header>
+    <a href="/about">About</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <a href="/start" class="nav__cta">Start a project</a>
+</header>
 
-    <main>
-    <section class="page-head">
-      <div class="wrap">
-        <p class="label crumb"><a href="/#services">Services</a> / 01</p>
-        <h1 class="display">AI custom<br /><span class="accent">software.</span></h1>
-        <div class="hero__foot">
-          <p class="lede">AI built into your current system, or a new web or mobile app — whatever suits you. Local or cloud models, tuned to use fewer tokens, so you get the most from every pound.</p>
-          <nav class="jump" aria-label="On this page">
-          <a href="#lean">A · Your way, kept lean</a>
-          <a href="#harness">B · The harness layer</a>
-          <a href="#local">C · Local models</a>
-          <a href="#build">D · What we build</a>
-          <a href="#run">E · Run &amp; support</a>
+  <main>
+    <section class="svc-hero">
+      <div class="container svc-hero__inner">
+        <div class="reveal">
+          <div class="svc-eyebrow"><span class="dot"></span> Service 01 · AI made for you</div>
+          <h1>AI made for <span class="grad">your</span> business.</h1>
+          <p class="lede">We add AI to the software you already use, or build you a new web or phone app. It can run on your own computers or online. And we set it up so you pay less for it every month.</p>
+          <div class="ctas">
+            <a href="/start" class="btn btn--primary"><span>Start a project →</span></a>
+            <a href="#your-way" class="btn btn--ghost"><span>What you get</span></a>
+          </div>
+          <nav class="svc-jump" aria-label="On this page">
+            <a href="#your-way">Your way, small bill</a>
+            <a href="#safety-layer">Stop it making things up</a>
+            <a href="#own-computers">AI on your own computers</a>
+            <a href="#what-we-build">What we build</a>
+            <a href="#support">Looking after it</a>
           </nav>
         </div>
+        <div class="svc-visual reveal">
+          <div class="svc-visual__bg"></div>
+          <div class="svc-icon-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></div>
+        </div>
       </div>
     </section>
 
-    <section class="section rule-top" id="lean">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">A</p>
-          <h2 class="h3 part__title">Your way, kept lean</h2>
-          <p class="muted">We fit AI into the tools you already use, or build you something new. Either way, we tune it to use fewer tokens — so your AI bill stays small. Example: same answers, but £400 a month instead of £1,000.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>Into your current system</h3><p>AI added to the software you already have — your CRM, website, back office or internal tools.</p></li>
-          <li class="item"><h3>A new web app</h3><p>A separate AI app in the browser, built just for your team or your customers.</p></li>
-          <li class="item"><h3>A new mobile app</h3><p>AI in an iPhone or Android app, when your people work on the go.</p></li>
-          <li class="item"><h3>Fewer tokens</h3><p>Short, sharp prompts and only the data that's needed — you pay for less, get the same answers.</p></li>
-          <li class="item"><h3>Smart routing &amp; caching</h3><p>Cheap models for easy jobs, top models only when needed. Repeat questions answered from cache, free.</p></li>
-          <li class="item"><h3>Spend limits &amp; reports</h3><p>See token use per user and task, with limits so there are no surprise bills.</p></li>
-        </ul>
+    <section class="features container" id="your-way">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Your way, small bill</div>
+        <h2 style="margin-top: 14px;">Built your way. Cheap to run.</h2>
+        <p class="features__intro">AI companies charge for every word the AI reads and writes (these are called <em>tokens</em>). We set your AI up to use fewer of them. <strong>Example:</strong> the same answers, but £400 a month instead of £1,000.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5a4 4 0 0 0-5.4 5.2L4 14.9a1.7 1.7 0 1 0 2.4 2.4l5.3-5.2a4 4 0 0 0 5.2-5.4l-2.6 2.6-2-2 2.2-2.8z"/></svg></div><h3>Inside your current software</h3><p>We add AI to the tools you already have: your customer list, website, back office or office systems.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></div><h3>A new web app</h3><p>A separate AI app that opens in a web browser, made just for your team or your customers.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18.5" r="0.7" fill="currentColor"/></svg></div><h3>A new phone app</h3><p>AI in an iPhone or Android app, for people who work on the move.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg></div><h3>Smaller AI bills</h3><p>Short, clear instructions and only the information the AI needs. You pay for less and get the same answers.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Smart choices, saved answers</h3><p>Cheap AI for easy jobs, the best AI only for hard ones. If someone asks the same thing twice, we reuse the saved answer for free.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9.5 10.5 13.5 14.5 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div><h3>Spending limits &amp; reports</h3><p>See how much each person and task costs, with limits so you never get a surprise bill.</p></div>
       </div>
     </section>
-    <section class="section ink" id="harness">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">B</p>
-          <h2 class="h3 part__title">Model still hallucinating? You need a harness layer.</h2>
-          <p class="muted">“Hallucinating” means the AI makes things up. A model on its own just guesses. The harness is everything around it: which model to use, what it can see, what it is allowed to do, and how you check its work.</p>
-          <ul class="chips" style="margin-top: 28px"><li>Local models</li><li>Cloud models</li><li>Llama</li><li>Mistral</li><li>Qwen</li><li>Claude</li><li>GPT</li><li>Gemini</li><li>Ollama</li><li>vLLM</li><li>MCP</li></ul>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>Model routing</h3><p>Private data goes to a local model. Simple tasks go to a cheap cloud model. Hard tasks go to the best one.</p></li>
-          <li class="item"><h3>Tools &amp; data</h3><p>The AI can search your documents, read your CRM or draft emails — only what you allow.</p></li>
-          <li class="item"><h3>Guardrails</h3><p>Blocks data leaks, prompt injection and risky actions. A human approves anything important.</p></li>
-          <li class="item"><h3>Logs &amp; audit</h3><p>See every question, answer and action — who, what and when.</p></li>
-          <li class="item"><h3>Fact checks &amp; tests</h3><p>Answers checked against your own data, with source links. If the AI isn't sure, it says so. Tested on your real tasks before go‑live.</p></li>
-          <li class="item"><h3>No lock‑in</h3><p>Swap models when a better or cheaper one comes out — without rebuilding.</p></li>
-        </ul>
+    <section class="features container" id="safety-layer">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Stop it making things up</div>
+        <h2 style="margin-top: 14px;">Does your AI make things up? It needs a safety layer.</h2>
+        <p class="features__intro">AI on its own sometimes guesses and gets things wrong. We build a "safety layer" around it (experts call this a <em>harness</em>). It decides which AI to use, what it can see, what it is allowed to do, and checks its work.</p>
+        <div class="chips"><span>On your own computers</span><span>Online</span><span>Llama</span><span>Mistral</span><span>Qwen</span><span>Claude</span><span>GPT</span><span>Gemini</span></div>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h10M5 8v8M19 8v8M7 18h10"/></svg></div><h3>The right AI for each job</h3><p>Private information goes to an AI on your own computers. Simple jobs go to a cheap online AI. Hard jobs go to the best one.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="2.5"/><path d="M4 5v14a8 2.5 0 0 0 16 0V5"/></svg></div><h3>Only what you allow</h3><p>The AI can search your files, read your customer list or write emails, but only the things you say yes to.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Safety rules</h3><p>Stops private data leaking out and stops people tricking the AI. A real person approves anything important.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>A full record</h3><p>See every question, answer and action: who did it, what happened and when.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Fact checks &amp; tests</h3><p>Answers are checked against your own information, with links to where they came from. If the AI is not sure, it says so. We test it on your real work before it goes live.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Change AI any time</h3><p>When a better or cheaper AI comes out, you can switch without starting again.</p></div>
       </div>
     </section>
-    <section class="section " id="local">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">C</p>
-          <h2 class="h3 part__title">Local model setup</h2>
-          <p class="muted">Want AI that never leaves your building? We set up open models on your own hardware or cloud account, ready for the harness to use.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>On your own servers</h3><p>Open models running on GPUs in your office or data centre. Nothing leaves the building.</p></li>
-          <li class="item"><h3>Your private cloud</h3><p>Models running inside your own AWS, Azure or Google Cloud account, in a UK or EU region.</p></li>
-          <li class="item"><h3>Offline &amp; air‑gapped</h3><p>Fully cut off from the internet, for the most sensitive work.</p></li>
-          <li class="item"><h3>Right‑sized hardware</h3><p>We tell you what GPUs you need — or whether you need any at all — before you spend a penny.</p></li>
-          <li class="item"><h3>Speed &amp; cost tuning</h3><p>Quantisation, batching and caching — faster answers on smaller, cheaper hardware.</p></li>
-          <li class="item"><h3>Fine‑tuning</h3><p>When a general model isn't enough, we train a smaller one on your data for your job.</p></li>
-        </ul>
+    <section class="features container" id="own-computers">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> AI on your own computers</div>
+        <h2 style="margin-top: 14px;">AI that never leaves your building.</h2>
+        <p class="features__intro">Want your information to stay with you? We set up free, open AI on your own computers or your own cloud account.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div><h3>On your own computers</h3><p>The AI runs on powerful computers in your office. Nothing leaves the building.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.5A3.8 3.8 0 0 0 6.5 19z"/></svg></div><h3>Your own private cloud</h3><p>The AI runs inside your own Amazon, Microsoft or Google cloud account, kept in the UK or EU.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Fully offline</h3><p>Completely cut off from the internet, for your most private work.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg></div><h3>Buy only what you need</h3><p>We tell you which computers you need (or if you need any at all) before you spend a penny.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Faster and cheaper</h3><p>We tune the AI so it gives quick answers on smaller, cheaper computers.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></svg></div><h3>Trained on your work</h3><p>If a general AI is not good enough, we teach a smaller one using your own examples.</p></div>
       </div>
     </section>
-    <section class="section ink" id="build">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">D</p>
-          <h2 class="h3 part__title">What we build with it</h2>
-          <p class="muted">Every system is built for your business and your workflow — not a one‑size‑fits‑all app.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>Team assistant</h3><p>A private chat for staff, using your logins, your data and your rules.</p></li>
-          <li class="item"><h3>Document search</h3><p>Ask questions about your files, contracts and policies — with links to the source.</p></li>
-          <li class="item"><h3>AI agents</h3><p>AI that does multi‑step jobs — sorting emails, filling forms, updating records.</p></li>
-          <li class="item"><h3>AI in your apps</h3><p>Features built into the tools your team and customers already use.</p></li>
-          <li class="item"><h3>Automated workflows</h3><p>Repetitive back‑office work handled by AI, with people checking the results.</p></li>
-          <li class="item"><h3>Internal tools</h3><p>Dashboards and admin tools with AI built in, so your team saves hours each week.</p></li>
-        </ul>
+    <section class="features container" id="what-we-build">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> What we build</div>
+        <h2 style="margin-top: 14px;">What we build with it.</h2>
+        <p class="features__intro">Every system is made for your business and the way you work. Not one app for everyone.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg></div><h3>Team assistant</h3><p>A private chat for your staff, using your logins, your information and your rules.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Search your documents</h3><p>Ask questions about your files, contracts and policies, and get answers with links to the page.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></div><h3>AI helpers that do tasks</h3><p>AI that does jobs with many steps, like sorting emails, filling in forms or updating records.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5a4 4 0 0 0-5.4 5.2L4 14.9a1.7 1.7 0 1 0 2.4 2.4l5.3-5.2a4 4 0 0 0 5.2-5.4l-2.6 2.6-2-2 2.2-2.8z"/></svg></div><h3>AI in your apps</h3><p>New AI features inside the tools your team and customers already use.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Boring jobs done for you</h3><p>Repeat office work done by AI, with a person checking the results.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9.5 10.5 13.5 14.5 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div><h3>Office tools</h3><p>Dashboards and admin screens with AI built in, saving your team hours each week.</p></div>
       </div>
     </section>
-    <section class="section " id="run">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">E</p>
-          <h2 class="h3 part__title">Run &amp; support</h2>
-          <p class="muted">We don't build it and leave. We keep your AI system accurate, safe and up to date for a flat monthly fee.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>Monitoring</h3><p>Errors, speed and cost watched around the clock.</p></li>
-          <li class="item"><h3>Model updates</h3><p>New models tested against your tasks and swapped in when they're better.</p></li>
-          <li class="item"><h3>Usage dashboards</h3><p>See how much AI is used, by whom, and what it costs.</p></li>
-          <li class="item"><h3>Security checks</h3><p>Every system is tested by our <a href="/services/security">security team</a> before it goes live.</p></li>
-          <li class="item"><h3>Training &amp; handover</h3><p>Clear docs and hands‑on training, so your team can run it too.</p></li>
-          <li class="item"><h3>Ongoing improvements</h3><p>New tools and tasks added as your team finds more uses.</p></li>
-        </ul>
+    <section class="features container" id="support">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Looking after it</div>
+        <h2 style="margin-top: 14px;">We don't build it and leave.</h2>
+        <p class="features__intro">We keep your AI correct, safe and up to date for one flat monthly fee.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Watched day and night</h3><p>We watch for errors, slow answers and rising costs, 24/7.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Kept up to date</h3><p>When a new AI comes out, we test it on your work and switch if it is better.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9.5 10.5 13.5 14.5 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div><h3>Usage reports</h3><p>See how much AI is used, by whom, and what it costs.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Security checks</h3><p>Our security team tests every system before it goes live.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></svg></div><h3>Training &amp; guides</h3><p>Clear guides and hands‑on training, so your team can run it too.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></div><h3>Keeps getting better</h3><p>We add new jobs as your team finds more ways to use it.</p></div>
       </div>
     </section>
-    <section class="section rule-top">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="display display--lg reveal">From idea<br />to live.</h2>
-          <p class="label">How a build works</p>
+
+    <section class="features container" id="steps">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> From idea to live</div>
+        <h2 style="margin-top: 14px;">How a build works.</h2>
+      </div>
+      <ol class="steps" style="list-style:none;padding:0;">
+        <li class="step reveal" data-spotlight><span class="step__num">01</span><h3>Look</h3><p>We look at your task, your information and your tools. You get a written plan and a fixed price.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">02</span><h3>Try</h3><p>One real task, working in two to four weeks, so you see the benefit fast.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">03</span><h3>Protect</h3><p>We try to hack it, add safety rules and set who can use it, before more people do.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">04</span><h3>Grow</h3><p>More people, more tasks, connected to your tools.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">05</span><h3>Look after</h3><p>We watch it, update it and support it for one flat monthly fee.</p></li>
+      </ol>
+    </section>
+
+    <section class="features container" id="faq">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Common questions</div>
+        <h2 style="margin-top: 14px;">Straight answers.</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>What is the "safety layer" (harness)?</summary><p>It is the software around the AI. Think of the AI as a brain: the safety layer gives it the right information, the right tools and clear limits, and keeps a record of what it does.</p></details>
+        <details><summary>AI on our own computers, or online: which is better?</summary><p>It depends on the job. AI on your own computers keeps private information with you. Online AI is often smarter and cheaper to start with. Many clients use both, and the safety layer picks the right one each time.</p></details>
+        <details><summary>Will you change our current software, or build something new?</summary><p>Whatever suits you. If your current software works well, we add AI to it. If not, we build a new web or phone app that connects to your information.</p></details>
+        <details><summary>How do you make the AI bill smaller?</summary><p>AI companies charge by the word (tokens). We keep instructions short, send only what is needed, use cheaper AI for easy jobs and reuse saved answers. Same results, smaller bill.</p></details>
+        <details><summary>Do we need to buy expensive computers?</summary><p>Not always. Many teams start with online AI, or rent computers by the hour in their own cloud. We only suggest buying when the numbers make sense.</p></details>
+        <details><summary>Are we stuck with one AI company?</summary><p>No. Our setup works with many AIs, so you can switch when a better or cheaper one comes out.</p></details>
+        <details><summary>Where does our information go?</summary><p>Only where you decide. Private information can stay on your own computers. For online AI, we pick companies that do not keep your data, with UK or EU servers where possible.</p></details>
+        <details><summary>Who owns it?</summary><p>You do. The code, the computers, the accounts, the instructions and any AI we train are all yours.</p></details>
+      </div>
+
+      <div class="svc-cta reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Get started</div>
+        <h2 style="margin-top: 18px;">Not sure where AI could help you?</h2>
+        <p>Tell us what takes your team the most time. We will suggest where AI can help, and give you a fixed price to try it.</p>
+        <div style="display:flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="/start" class="btn btn--primary"><span>Start a project →</span></a>
+          <a href="mailto:hello@cybespoke.co.uk" class="btn btn--ghost"><span>hello@cybespoke.co.uk</span></a>
         </div>
-        <ol class="steps">
-        <li class="step"><p class="step__num">01</p><h3 class="h3 step__title">Assess</h3><p class="muted">We look at your task, data and tools. You get a written plan and a fixed price.</p></li>
-        <li class="step"><p class="step__num">02</p><h3 class="h3 step__title">Pilot</h3><p class="muted">One real task, live in two to four weeks — so you see value fast.</p></li>
-        <li class="step"><p class="step__num">03</p><h3 class="h3 step__title">Secure</h3><p class="muted">Pen test, guardrails and access controls before wider use.</p></li>
-        <li class="step"><p class="step__num">04</p><h3 class="h3 step__title">Roll out</h3><p class="muted">More users, more tasks, connected to your tools.</p></li>
-        <li class="step"><p class="step__num">05</p><h3 class="h3 step__title">Run</h3><p class="muted">Monitoring, updates and support for a flat monthly fee.</p></li>
-        </ol>
+      </div>
+
+      <div class="pager reveal">
+        <a href="/services/build-grow">← Websites, apps &amp; Google</a>
+        <a href="/services/security">Security →</a>
       </div>
     </section>
-    <section class="section rule-top">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="display display--lg reveal">Common<br />questions.</h2>
-          <p class="label">The honest answers</p>
-        </div>
-        <div class="faq">
-          <details><summary>What is an AI harness?</summary><p>It's the software around an AI model. The model is the brain; the harness gives it the right information, the right tools and clear limits — and records what it does.</p></details>
-          <details><summary>Local or cloud models — which is better?</summary><p>It depends on the task. Local models keep sensitive data in your systems. Cloud models are often stronger and cheaper to start. Many clients use both, and the harness picks the right one for each job.</p></details>
-          <details><summary>Will you change our current system, or build something new?</summary><p>Whatever suits you. If your current software works, we add AI to it. If not, we build a separate web or mobile app that connects to your data.</p></details>
-          <details><summary>How do you cut token use?</summary><p>Tokens are what AI companies charge for. We keep prompts short, send only the data needed, use cheaper models for easy jobs and cache repeat answers. Same results, smaller bill.</p></details>
-          <details><summary>Do we need to buy GPUs?</summary><p>Not always. Many teams start with cloud models or their own private cloud and pay by the hour. We only suggest hardware when the numbers make sense.</p></details>
-          <details><summary>Are we locked into one AI company?</summary><p>No. The harness works with many models, so you can switch when a better or cheaper one comes out.</p></details>
-          <details><summary>Where does our data go?</summary><p>Only where you decide. Sensitive data can stay on local models. For cloud models, we pick providers with no data retention and UK/EU hosting where possible.</p></details>
-          <details><summary>Who owns it?</summary><p>You do. The code, servers, accounts, prompts and any fine‑tuned models are all yours.</p></details>
-        </div>
-      </div>
-    </section>
-    <a class="next-band" href="/services/security">
-      <div class="wrap">
-        <span class="label">Next service — 02</span>
-        <span class="display">Security →</span>
-      </div>
-    </a>
   </main>
 
-  <section class="ink contact" id="contact">
-    <div class="wrap">
-      <p class="label">(03) — Start here</p>
-      <h2 class="display display--xl reveal">Got an<br /><span class="accent">idea?</span></h2>
-      <div class="hero__foot">
-        <p class="lede">Tell us what you want AI to do, or what worries you about security — a few sentences is fine. We reply within one working day with honest thoughts and a free, fixed‑price quote.</p>
-        <div class="btn-row">
-          <a href="/start" class="btn btn--bright">Start a project →</a>
-          <a href="mailto:hello@cybespoke.co.uk" class="btn btn--line-light">hello@cybespoke.co.uk</a>
-        </div>
+  <footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand" aria-label="Cybespoke">
+        <img src="/files/cybespoke-full-fordark_1000.png" alt="Cybespoke" class="footer__logo footer__logo--dark" width="120" />
+        <img src="/files/cybespoke-full-forlight_1000.png" alt="Cybespoke" class="footer__logo footer__logo--light" width="120" />
       </div>
-      <footer class="footer">
-        <div class="footer__brand">
-          <p>cybespoke</p>
-          <p>An AI software &amp; security studio in Belfast. Mon – Fri, 09:00 – 17:00 (UK time). <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a></p>
-        </div>
-        <nav class="footer__nav" aria-label="Footer">
-          <div class="footer__col"><p class="label">Services</p><a href="/services/custom-ai">AI custom software</a><a href="/services/security">Security</a><a href="/services/forward-deployed-engineers">Forward deployed engineers</a><a href="/services/build-grow">Development &amp; SEO</a></div>
-          <div class="footer__col"><p class="label">Studio</p><a href="/about">About</a><a href="/start">Contact</a></div>
-          <div class="footer__col"><p class="label">Legal</p><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a></div>
-        </nav>
-      </footer>
-      <p class="footer__legal">© <span data-year>2026</span> Cybespoke · Crafted in Belfast</p>
+      <p class="footer__lede">We build AI for your business, keep it safe from hackers, and send experts to work with your team.</p>
+      <p class="footer__meta">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
     </div>
-  </section>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/custom-ai">AI made for you</a></li>
+        <li><a href="/services/security">Security</a></li>
+        <li><a href="/services/forward-deployed-engineers">An expert in your team</a></li>
+        <li><a href="/services/build-grow">Websites, apps &amp; Google</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/start">Start a project</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy">Privacy notice</a></li>
+        <li><a href="/cookies">Cookie policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+        <li><a href="/accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span data-year>2026</span> Cybespoke. All rights reserved.</span>
+    <span>Made in Belfast.</span>
+  </div>
+</footer>
 
-  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/global.js"></script>
 </body>
 </html>
