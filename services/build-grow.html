@@ -1,180 +1,304 @@
 <!doctype html>
-<html lang="en-GB" class="no-js">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var t=localStorage.getItem("cybespoke-theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Development & SEO — Cybespoke Belfast</title>
-  <meta name="description" content="Websites, apps and internal tools built securely in Belfast, plus SEO and marketing that help you get found on Google." />
+  <title>Websites, apps &amp; SEO (Google search) — Cybespoke Belfast</title>
+  <meta name="description" content="We build websites, online shops, phone apps and office tools, safe by default, and help more people find you on Google. Fixed prices, Belfast based." />
   <link rel="canonical" href="https://cybespoke.co.uk/services/build-grow" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Cybespoke" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://cybespoke.co.uk/services/build-grow" />
-  <meta property="og:title" content="Development & SEO — Cybespoke Belfast" />
-  <meta property="og:description" content="Websites, apps and internal tools built securely in Belfast, plus SEO and marketing that help you get found on Google." />
+  <meta property="og:title" content="Websites, apps &amp; SEO (Google search) — Cybespoke Belfast" />
+  <meta property="og:description" content="We build websites, online shops, phone apps and office tools, safe by default, and help more people find you on Google. Fixed prices, Belfast based." />
   <meta property="og:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Development & SEO — Cybespoke Belfast" />
-  <meta name="twitter:description" content="Websites, apps and internal tools built securely in Belfast, plus SEO and marketing that help you get found on Google." />
+  <meta name="twitter:title" content="Websites, apps &amp; SEO (Google search) — Cybespoke Belfast" />
+  <meta name="twitter:description" content="We build websites, online shops, phone apps and office tools, safe by default, and help more people find you on Google. Fixed prices, Belfast based." />
   <meta name="twitter:image" content="https://cybespoke.co.uk/assets/og-banner.svg" />
-  <meta name="theme-color" content="#0b0b0c" />
   <link rel="icon" type="image/png" sizes="32x32" href="/files/cybespoke-mark_square_32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/files/cybespoke-mark_square_180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/site.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/global.css" />
+  <style>
+    :root { --p-from: #2dd4bf; --p-to: #3b82f6; }
+    .svc-hero { position: relative; padding: 160px 0 60px; z-index: 2; overflow: hidden; }
+    .svc-hero__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+    @media (max-width: 980px) { .svc-hero__inner { grid-template-columns: 1fr; } .svc-visual { max-width: 300px; } }
+    .svc-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .svc-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--p-from); box-shadow: 0 0 0 4px color-mix(in srgb, var(--p-from) 18%, transparent); }
+    .svc-hero h1 { font-size: clamp(40px, 6.5vw, 84px); letter-spacing: -0.025em; line-height: 1.04; font-family: "Fraunces", serif; font-weight: 500; margin-top: 22px; }
+    .grad { background: linear-gradient(120deg, var(--p-from), var(--p-to)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .svc-hero p.lede { margin-top: 22px; max-width: 580px; font-size: 18px; color: var(--muted); line-height: 1.65; }
+    .svc-hero .ctas { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+    .svc-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    .svc-jump a { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+    .svc-jump a:hover { color: var(--text); border-color: var(--line-strong); }
+    .svc-visual { position: relative; aspect-ratio: 1; max-width: 480px; margin-inline: auto; width: 100%; }
+    .svc-visual__bg { position: absolute; inset: 0; border-radius: 24px; background: linear-gradient(135deg, var(--p-from), var(--p-to)); opacity: 0.18; filter: blur(40px); }
+    .svc-icon-large { position: absolute; inset: 12%; border-radius: 24px; display: grid; place-items: center; background: linear-gradient(135deg, var(--p-from), var(--p-to)); box-shadow: 0 30px 60px -20px color-mix(in srgb, var(--p-from) 45%, transparent); color: #fff; }
+    .svc-icon-large svg { width: 40%; height: 40%; }
+    .features { padding: 70px 0 10px; position: relative; z-index: 2; scroll-margin-top: 80px; }
+    .features__intro { max-width: 720px; margin-top: 14px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+    .features__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    @media (max-width: 980px) { .features__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .features__grid { grid-template-columns: 1fr; } }
+    .feature { padding: 28px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-soft); transition: transform .4s var(--easing-soft), border-color .35s; }
+    .feature:hover { transform: translateY(-4px); border-color: var(--line-strong); }
+    .feature__icon { width: 40px; height: 40px; border-radius: 10px; background: var(--tint-soft); border: 1px solid var(--line); display: grid; place-items: center; color: var(--p-from); margin-bottom: 16px; }
+    .feature__icon svg { width: 20px; height: 20px; }
+    .feature h3 { font-size: 17px; margin-bottom: 8px; font-family: "Inter Tight", sans-serif; font-weight: 600; }
+    .feature p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+    .feature a { color: var(--text); border-bottom: 1px solid var(--line-strong); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .chips span { font-family: "JetBrains Mono", monospace; font-size: 12px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); color: var(--muted); }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 36px; counter-reset: step; }
+    .steps.steps--4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 980px) { .steps, .steps.steps--4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .steps, .steps.steps--4 { grid-template-columns: 1fr; } }
+    .step { padding: 24px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-soft); }
+    .step__num { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--p-from); letter-spacing: 0.1em; }
+    .step h3 { font-size: 18px; margin: 10px 0 6px; font-family: "Inter Tight", sans-serif; font-weight: 600; }
+    .step p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } }
+    .plan { position: relative; padding: 30px; border-radius: 22px; border: 1px solid var(--line); background: var(--bg-soft); display: flex; flex-direction: column; }
+    .plan--pop { border-color: var(--p-from); box-shadow: 0 24px 60px -30px color-mix(in srgb, var(--p-from) 55%, transparent); }
+    .plan__tag { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .plan--pop .plan__tag { color: var(--p-from); }
+    .plan h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 28px; margin-top: 10px; }
+    .plan__price { font-size: 22px; font-weight: 600; margin-top: 8px; }
+    .plan__price small { font-size: 14px; font-weight: 400; color: var(--muted); }
+    .plan > p { color: var(--muted); font-size: 15px; line-height: 1.6; margin-top: 12px; }
+    .plan ul { list-style: none; margin: 18px 0 24px; padding: 0; display: grid; gap: 8px; flex: 1; }
+    .plan li { font-size: 14.5px; color: var(--muted); padding-left: 22px; position: relative; }
+    .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--p-from); }
+    .faq { margin-top: 30px; max-width: 820px; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary { cursor: pointer; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--p-from); font-size: 22px; line-height: 1; transition: transform .3s; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { margin-top: 10px; color: var(--muted); line-height: 1.7; }
+    .svc-cta { margin: 80px 0 0; padding: 70px 44px; border-radius: 28px; background: radial-gradient(900px 460px at 0% 0%, color-mix(in srgb, var(--p-from) 25%, transparent), transparent 60%), radial-gradient(700px 440px at 100% 100%, color-mix(in srgb, var(--p-to) 22%, transparent), transparent 60%), var(--bg-soft); border: 1px solid var(--line); text-align: center; position: relative; overflow: hidden; }
+    @media (max-width: 560px) { .svc-cta { padding: 48px 22px; } }
+    .svc-cta h2 { max-width: 700px; margin: 0 auto; }
+    .svc-cta p { max-width: 540px; margin: 16px auto 28px; color: var(--muted); }
+    .pager { margin: 80px 0 0; padding: 24px 28px; border: 1px solid var(--line); border-radius: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .pager a { color: var(--muted); font-size: 14px; }
+    .pager a:hover { color: var(--text); }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a href="/" class="brand" aria-label="Cybespoke — home">
-        <img src="/files/cybespoke-mark_256.png" alt="" width="34" height="34" />
-        <span>cybespoke</span>
-      </a>
-      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="nav" id="site-nav" aria-label="Main">
-      <a href="/#services" aria-current="page">Services</a>
-      <a href="/about">About</a>
-      <a href="/start">Contact</a>
-        <a href="/start" class="nav__cta">Start a project →</a>
-      </nav>
+<body class="page-enter">
+  <header class="nav">
+  <a href="/" class="nav__brand" aria-label="Cybespoke — home"><img src="/files/cybespoke-mark_256.png" alt="Cybespoke" class="logo" /></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="/">Home</a>
+    <div class="nav__group is-active">
+      <button type="button" class="nav__trigger" aria-haspopup="true" aria-expanded="false">Services <span class="nav__caret" aria-hidden="true"></span></button>
+      <div class="nav__mega" role="menu">
+        <a href="/services/custom-ai" class="m--ai" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.6 4.2L18 8.8l-3.4 2.7L15.4 16 12 13.7 8.6 16l.8-4.5L6 8.8l4.4-1.6L12 3z"/></svg></span>
+          <span><strong>AI made for you</strong><span class="desc">AI in your tools, or a new app</span></span>
+        </a>
+        <a href="/services/security" class="m--mob" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span><strong>Security</strong><span class="desc">Find weak spots before hackers do</span></span>
+        </a>
+        <a href="/services/forward-deployed-engineers" class="m--bes" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="6.5" r="2.5"/><path d="M21 14c0-2.2-1.8-4-4-4"/></svg></span>
+          <span><strong>An expert in your team</strong><span class="desc">A senior engineer who works with you</span></span>
+        </a>
+        <a href="/services/build-grow" class="m--seo active" role="menuitem">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></span>
+          <span><strong>Websites, apps &amp; Google</strong><span class="desc">Build it, then get found</span></span>
+        </a>
+      </div>
     </div>
-  </header>
+    <a href="/about">About</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+  <a href="/start" class="nav__cta">Start a project</a>
+</header>
 
-    <main>
-    <section class="page-head">
-      <div class="wrap">
-        <p class="label crumb"><a href="/#services">Services</a> / 04</p>
-        <h1 class="display">Development<br />&amp; <span class="accent">SEO.</span></h1>
-        <div class="hero__foot">
-          <p class="lede">We still build websites, apps and internal tools — secure by default — and help you get found on Google.</p>
-          <nav class="jump" aria-label="On this page">
-          <a href="#dev">A · Development</a>
-          <a href="#seo">B · SEO</a>
-          <a href="#pricing">C · SEO pricing</a>
+  <main>
+    <section class="svc-hero">
+      <div class="container svc-hero__inner">
+        <div class="reveal">
+          <div class="svc-eyebrow"><span class="dot"></span> Service 04 · Websites, apps &amp; Google</div>
+          <h1>Websites and apps that <span class="grad">get found</span>.</h1>
+          <p class="lede">We still build websites, phone apps and office tools, safe by default. And we help more people find you on Google.</p>
+          <div class="ctas">
+            <a href="/start" class="btn btn--primary"><span>Start a project →</span></a>
+            <a href="#build" class="btn btn--ghost"><span>What you get</span></a>
+          </div>
+          <nav class="svc-jump" aria-label="On this page">
+            <a href="#build">Websites &amp; apps</a>
+            <a href="#seo">Google search (SEO)</a>
+            <a href="#pricing">SEO prices</a>
           </nav>
         </div>
+        <div class="svc-visual reveal">
+          <div class="svc-visual__bg"></div>
+          <div class="svc-icon-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></div>
+        </div>
       </div>
     </section>
 
-    <section class="section rule-top" id="dev">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">A</p>
-          <h2 class="h3 part__title">Development</h2>
-          <p class="muted">Websites, apps and tools, built in‑house in Belfast. Fixed price, weekly demos, and you own every line of code.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>Websites &amp; shops</h3><p>Fast marketing sites and online shops that win customers.</p></li>
-          <li class="item"><h3>Web apps &amp; dashboards</h3><p>Customer portals, logins, billing and reports.</p></li>
-          <li class="item"><h3>Mobile apps</h3><p>iPhone and Android apps people keep on their home screen.</p></li>
-          <li class="item"><h3>Internal tools &amp; CRMs</h3><p>Back‑office software built around how your team works.</p></li>
-          <li class="item"><h3>Integrations</h3><p>Joining systems that were never meant to talk to each other.</p></li>
-          <li class="item"><h3>Secure hosting</h3><p>Every build hosted, patched and monitored — see <a href="/services/security">Security</a>.</p></li>
-        </ul>
+    <section class="features container" id="build">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Websites &amp; apps</div>
+        <h2 style="margin-top: 14px;">We build it.</h2>
+        <p class="features__intro">Websites, apps and tools, built by our own team in Belfast. Fixed price, weekly demos, and you own every line of code.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13.5" rx="2"/><path d="M2.5 8h19"/><path d="M9 21h6"/><path d="M12 17.5V21"/></svg></div><h3>Websites &amp; online shops</h3><p>Fast websites and online shops that win you customers.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="6.5" r="2.5"/><path d="M21 14c0-2.2-1.8-4-4-4"/></svg></div><h3>Customer portals &amp; dashboards</h3><p>Places where customers log in, pay bills and see reports.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18.5" r="0.7" fill="currentColor"/></svg></div><h3>Phone apps</h3><p>iPhone and Android apps people keep on their home screen.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5a4 4 0 0 0-5.4 5.2L4 14.9a1.7 1.7 0 1 0 2.4 2.4l5.3-5.2a4 4 0 0 0 5.2-5.4l-2.6 2.6-2-2 2.2-2.8z"/></svg></div><h3>Office tools</h3><p>Back‑office software, like a customer list (CRM), built around how your team works.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h10M5 8v8M19 8v8M7 18h10"/></svg></div><h3>Joining systems</h3><p>Getting systems that were never meant to talk to each other to share information.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 5 3.4 8.8 8 10 4.6-1.2 8-5 8-10v-6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Safe hosting</h3><p>Every build is kept online, updated and watched. See <a href="/services/security">Security</a>.</p></div>
       </div>
     </section>
-    <section class="section ink" id="seo">
-      <div class="wrap part">
-        <div class="part__intro reveal">
-          <p class="part__letter">B</p>
-          <h2 class="h3 part__title">SEO &amp; marketing</h2>
-          <p class="muted">A good website is only half the job. We help you climb search results and turn visitors into enquiries — with reports you'll actually read.</p>
-        </div>
-        <ul class="items">
-          <li class="item"><h3>SEO audit</h3><p>A plain‑English report on what's holding your site back — and what we'd do.</p></li>
-          <li class="item"><h3>On‑page &amp; technical SEO</h3><p>Titles, headings, structured data, speed and sitemaps — done properly.</p></li>
-          <li class="item"><h3>Local SEO</h3><p>Google Business Profile, local listings and reviews — so people nearby find you first.</p></li>
-          <li class="item"><h3>Content &amp; keywords</h3><p>The words your customers really type, turned into pages that rank.</p></li>
-          <li class="item"><h3>Google &amp; Meta ads</h3><p>Search ads and retargeting. No agency markup.</p></li>
-          <li class="item"><h3>Conversion fixes</h3><p>We fix the parts of your site that lose visitors.</p></li>
-        </ul>
+    <section class="features container" id="seo">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Google search (SEO)</div>
+        <h2 style="margin-top: 14px;">We help people find you.</h2>
+        <p class="features__intro">A good website is only half the job. We help you show up higher on Google (this is called <em>SEO</em>) and turn visitors into enquiries, with reports you'll actually read.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Website check‑up</h3><p>A plain‑English report on what is holding your site back, and what we would do.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><h3>Page &amp; behind‑the‑scenes fixes</h3><p>Page titles, headings, speed and the hidden details Google reads, done properly.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><h3>Local search</h3><p>Your Google Business Profile, local listings and reviews, so people nearby find you first.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></svg></div><h3>Words &amp; content</h3><p>The words your customers really type into Google, turned into pages that show up.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 17 9.5 10.5 13.5 14.5 21 7"/><polyline points="15 7 21 7 21 13"/></svg></div><h3>Google &amp; Facebook ads</h3><p>Paid ads on Google, and ads that remind past visitors about you. No agency markup.</p></div>
+        <div class="feature reveal" data-spotlight><div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>More enquiries</h3><p>We fix the parts of your site where visitors give up and leave.</p></div>
       </div>
     </section>
-    <section class="section rule-top" id="pricing">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="display display--lg reveal">Honest monthly<br />pricing.</h2>
-          <p class="label">SEO plans — cancel anytime</p>
+    <section class="features container" id="pricing">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> SEO prices</div>
+        <h2 style="margin-top: 14px;">Honest monthly prices.</h2>
+        <p class="features__intro">Stop any time. These are starting points. We will build a plan that fits your business.</p>
+      </div>
+      <div class="plans">
+        <div class="plan reveal" data-spotlight>
+          <span class="plan__tag">Starter</span>
+          <h3>Local</h3>
+          <div class="plan__price">£450 <small>/ month</small></div>
+          <p>For small businesses in Belfast and Northern Ireland who want to be found nearby.</p>
+          <ul><li>Website check‑up &amp; quick fixes</li><li>Google Business Profile set up</li><li>Improve 5 key pages</li><li>Local listings &amp; asking for reviews</li><li>Monthly report</li></ul>
+          <a href="/start" class="btn btn--ghost"><span>Start with Local →</span></a>
         </div>
-        <p class="muted" style="margin-bottom: 32px">Everything below is a starting point — we'll build a plan that actually fits your business.</p>
-        <div class="tiers">
-          <div class="tier">
-            <p class="label">Starter</p>
-            <h3 class="h3 tier__name">Local SEO</h3>
-            <p><span class="h3" style="font-size: 40px">£450</span> <span class="muted">/ month</span></p>
-            <p class="muted">For small businesses in Belfast and Northern Ireland who want to be found locally.</p>
-            <ul><li>SEO audit &amp; quick‑win fixes</li><li>Google Business Profile setup</li><li>On‑page SEO for 5 key pages</li><li>Local citations &amp; review prompts</li><li>Monthly report</li></ul>
-            <a href="/start" class="btn btn--line">Start with Local →</a>
-          </div>
-          <div class="tier tier--featured">
-            <p class="label">Most popular</p>
-            <h3 class="h3 tier__name">Growth</h3>
-            <p><span class="h3" style="font-size: 40px">£950</span> <span class="muted">/ month</span></p>
-            <p class="muted">For businesses ready to climb national rankings, publish content and run paid ads alongside.</p>
-            <ul><li>Everything in Local</li><li>Keyword research &amp; content plan</li><li>2 SEO articles per month</li><li>Google Ads management (£500 budget incl.)</li><li>Conversion tracking &amp; weekly reports</li></ul>
-            <a href="/start" class="btn btn--bright">Choose Growth →</a>
-          </div>
-          <div class="tier">
-            <p class="label">Bespoke</p>
-            <h3 class="h3 tier__name">Scale</h3>
-            <p><span class="h3" style="font-size: 40px">From £2k</span></p>
-            <p class="muted">For ambitious teams who want SEO, content, ads, CRO and analytics handled end‑to‑end.</p>
-            <ul><li>Everything in Growth</li><li>4+ articles per month</li><li>Google &amp; Meta ads management</li><li>Conversion rate optimisation</li><li>Direct line to your strategist</li></ul>
-            <a href="/start" class="btn btn--line">Talk to us →</a>
-          </div>
+        <div class="plan reveal plan--pop" data-spotlight>
+          <span class="plan__tag">Most popular</span>
+          <h3>Growth</h3>
+          <div class="plan__price">£950 <small>/ month</small></div>
+          <p>For businesses ready to show up across the UK, publish articles and run ads.</p>
+          <ul><li>Everything in Local</li><li>Find the words customers search for</li><li>2 articles a month</li><li>Google Ads run for you (£500 ad spend included)</li><li>See which visits become enquiries, weekly reports</li></ul>
+          <a href="/start" class="btn btn--primary"><span>Choose Growth →</span></a>
+        </div>
+        <div class="plan reveal" data-spotlight>
+          <span class="plan__tag">Made for you</span>
+          <h3>Scale</h3>
+          <div class="plan__price">From £2k</div>
+          <p>For bigger teams who want search, articles, ads and website improvements all handled.</p>
+          <ul><li>Everything in Growth</li><li>4+ articles a month</li><li>Google &amp; Facebook ads run for you</li><li>Ongoing changes to get more enquiries</li><li>Direct line to your expert</li></ul>
+          <a href="/start" class="btn btn--ghost"><span>Talk to us →</span></a>
         </div>
       </div>
     </section>
-    <section class="section rule-top">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="display display--lg reveal">Common<br />questions.</h2>
-          <p class="label">The honest answers</p>
+
+    <section class="features container" id="steps">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> How we work</div>
+        <h2 style="margin-top: 14px;">From first call to live.</h2>
+      </div>
+      <ol class="steps" style="list-style:none;padding:0;">
+        <li class="step reveal" data-spotlight><span class="step__num">01</span><h3>Talk</h3><p>We learn what you need and who it is for.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">02</span><h3>Plan</h3><p>You get a written plan and a fixed price.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">03</span><h3>Design</h3><p>See how it will look and work before we build it.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">04</span><h3>Build</h3><p>Weekly demos, so you can steer as we go.</p></li>
+        <li class="step reveal" data-spotlight><span class="step__num">05</span><h3>Launch &amp; grow</h3><p>We put it live, keep it safe, and help people find it.</p></li>
+      </ol>
+    </section>
+
+    <section class="features container" id="faq">
+      <div class="reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Common questions</div>
+        <h2 style="margin-top: 14px;">Straight answers.</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>How long until we show up higher on Google?</summary><p>Small wins in the first month, like speed, page titles and your Google Business Profile. Bigger jumps usually take three to six months.</p></details>
+        <details><summary>Do you tie us into long contracts?</summary><p>No. SEO is month by month. Builds have a fixed price.</p></details>
+        <details><summary>Do we need a new website to work with you?</summary><p>Not always. We start with what you have, and tell you honestly if a new one is worth it.</p></details>
+        <details><summary>Will we own everything?</summary><p>Yes. Code, words, accounts and tracking all belong to you.</p></details>
+      </div>
+
+      <div class="svc-cta reveal">
+        <div class="svc-eyebrow"><span class="dot"></span> Get started</div>
+        <h2 style="margin-top: 18px;">Got a website or app in mind?</h2>
+        <p>Tell us about it, even if it is a rough idea. We will reply within one working day with a fixed price.</p>
+        <div style="display:flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="/start" class="btn btn--primary"><span>Start a project →</span></a>
+          <a href="mailto:hello@cybespoke.co.uk" class="btn btn--ghost"><span>hello@cybespoke.co.uk</span></a>
         </div>
-        <div class="faq">
-          <details><summary>How long does SEO take to work?</summary><p>Small wins in the first month — speed, titles, Google Business Profile. Real ranking shifts usually take three to six months.</p></details>
-          <details><summary>Do you tie us into long contracts?</summary><p>No. SEO is month to month. Builds are fixed price.</p></details>
-          <details><summary>Do we need a new website to work with you?</summary><p>Not always. We start with what you've got, and tell you honestly if a rebuild is worth it.</p></details>
-          <details><summary>Will we own everything?</summary><p>Yes. Code, content, accounts and tracking all belong to you.</p></details>
-        </div>
+      </div>
+
+      <div class="pager reveal">
+        <a href="/services/forward-deployed-engineers">← An expert in your team</a>
+        <a href="/services/custom-ai">AI made for you →</a>
       </div>
     </section>
-    <a class="next-band" href="/services/custom-ai">
-      <div class="wrap">
-        <span class="label">Next service — 01</span>
-        <span class="display">AI custom software →</span>
-      </div>
-    </a>
   </main>
 
-  <section class="ink contact" id="contact">
-    <div class="wrap">
-      <p class="label">(03) — Start here</p>
-      <h2 class="display display--xl reveal">Got an<br /><span class="accent">idea?</span></h2>
-      <div class="hero__foot">
-        <p class="lede">Tell us what you want AI to do, or what worries you about security — a few sentences is fine. We reply within one working day with honest thoughts and a free, fixed‑price quote.</p>
-        <div class="btn-row">
-          <a href="/start" class="btn btn--bright">Start a project →</a>
-          <a href="mailto:hello@cybespoke.co.uk" class="btn btn--line-light">hello@cybespoke.co.uk</a>
-        </div>
+  <footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand" aria-label="Cybespoke">
+        <img src="/files/cybespoke-full-fordark_1000.png" alt="Cybespoke" class="footer__logo footer__logo--dark" width="120" />
+        <img src="/files/cybespoke-full-forlight_1000.png" alt="Cybespoke" class="footer__logo footer__logo--light" width="120" />
       </div>
-      <footer class="footer">
-        <div class="footer__brand">
-          <p>cybespoke</p>
-          <p>An AI software &amp; security studio in Belfast. Mon – Fri, 09:00 – 17:00 (UK time). <a href="mailto:hello@cybespoke.co.uk">hello@cybespoke.co.uk</a></p>
-        </div>
-        <nav class="footer__nav" aria-label="Footer">
-          <div class="footer__col"><p class="label">Services</p><a href="/services/custom-ai">AI custom software</a><a href="/services/security">Security</a><a href="/services/forward-deployed-engineers">Forward deployed engineers</a><a href="/services/build-grow">Development &amp; SEO</a></div>
-          <div class="footer__col"><p class="label">Studio</p><a href="/about">About</a><a href="/start">Contact</a></div>
-          <div class="footer__col"><p class="label">Legal</p><a href="/privacy">Privacy</a><a href="/cookies">Cookies</a><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a></div>
-        </nav>
-      </footer>
-      <p class="footer__legal">© <span data-year>2026</span> Cybespoke · Crafted in Belfast</p>
+      <p class="footer__lede">We build AI for your business, keep it safe from hackers, and send experts to work with your team.</p>
+      <p class="footer__meta">Hours: 09:00 – 17:00, Mon – Fri (UK time)</p>
     </div>
-  </section>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/custom-ai">AI made for you</a></li>
+        <li><a href="/services/security">Security</a></li>
+        <li><a href="/services/forward-deployed-engineers">An expert in your team</a></li>
+        <li><a href="/services/build-grow">Websites, apps &amp; Google</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/start">Start a project</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy">Privacy notice</a></li>
+        <li><a href="/cookies">Cookie policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+        <li><a href="/accessibility">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span data-year>2026</span> Cybespoke. All rights reserved.</span>
+    <span>Made in Belfast.</span>
+  </div>
+</footer>
 
-  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/global.js"></script>
 </body>
 </html>
