@@ -20,9 +20,12 @@ Cloudflare Pages serves `about.html` at `/about` (clean URLs) automatically.
 
 ## Design
 
-- Bold editorial look: `assets/css/site.css` — paper, near-black and one teal; Archivo for headlines,
-  Inter for text, JetBrains Mono for labels.
-- One script for every page: `assets/js/site.js` (mobile menu, fade-in on scroll, WhatsApp button, footer year).
+- The original (PHP-era) look, now plain static HTML: `assets/css/global.css` on every page, plus
+  `assets/css/style.css` for the home and about pages. Fraunces for headlines, Inter Tight for text,
+  JetBrains Mono for labels. Light/dark toggle in the header.
+- Scripts: `assets/js/global.js` on every page (theme toggle, fade-in on scroll, WhatsApp button, footer year),
+  plus `assets/js/script.js` on home and about (step timeline).
+- Service pages keep their own colours and styles in a `<style>` block at the top of each file.
 - The contact form on `/start` sends email with EmailJS straight from the browser.
 
 ## Editing
